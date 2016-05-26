@@ -1,0 +1,4 @@
+F:\项目\WSCAT\Project\WSCATProject\Model\bin\Debug\Model.dll
+F:\项目\WSCAT\Project\WSCATProject\Model\bin\Debug\Model.pdb
+F:\项目\WSCAT\Project\WSCATProject\Model\obj\Debug\Model.dll
+F:\项目\WSCAT\Project\WSCATProject\Model\obj\Debug\Model.pdb

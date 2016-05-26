@@ -1,0 +1,7 @@
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\HelperUtility.dll
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\HelperUtility.pdb
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.dll
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.pdb
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.ExUI.labtextbox.resources
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.ExUI.MultiHeaderView.resources
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.csproj.GenerateResource.Cache

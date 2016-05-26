@@ -1,0 +1,4 @@
+F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\BLL.dll
+F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\BLL.pdb
+F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.dll
+F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.pdb
