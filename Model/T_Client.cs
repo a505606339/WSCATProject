@@ -12,7 +12,7 @@ namespace Model
 		#region Model
 		private int _cli_id;
 		private string _cli_name;
-		private byte[] _cli_zhiwen;
+		private string _cli_zhiwen;
 		private string _cli_picname;
 		private string _cli_phone;
 		private string _cli_phonetwo;
@@ -58,7 +58,7 @@ namespace Model
 		/// <summary>
 		/// 指纹
 		/// </summary>
-		public byte[] Cli_zhiwen
+		public string Cli_zhiwen
 		{
 			set{ _cli_zhiwen=value;}
 			get{return _cli_zhiwen;}

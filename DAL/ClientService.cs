@@ -24,7 +24,7 @@ namespace DAL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool ExistsByID(int Cli_ID)
+		public bool Exists(int Cli_ID)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select count(1) from T_Client");
@@ -50,7 +50,7 @@ namespace DAL
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Cli_Name", SqlDbType.VarChar,30),
-					new SqlParameter("@Cli_zhiwen", SqlDbType.Image),
+					new SqlParameter("@Cli_zhiwen", SqlDbType.VarChar,1026),
 					new SqlParameter("@Cli_PicName", SqlDbType.VarChar,50),
 					new SqlParameter("@Cli_Phone", SqlDbType.VarChar,15),
 					new SqlParameter("@Cli_PhoneTwo", SqlDbType.VarChar,15),
@@ -153,7 +153,7 @@ namespace DAL
 			strSql.Append(" where Cli_Code=@Cli_Code");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Cli_Name", SqlDbType.VarChar,30),
-					new SqlParameter("@Cli_zhiwen", SqlDbType.Image),
+					new SqlParameter("@Cli_zhiwen", SqlDbType.VarChar,1026),
 					new SqlParameter("@Cli_PicName", SqlDbType.VarChar,50),
 					new SqlParameter("@Cli_Phone", SqlDbType.VarChar,15),
 					new SqlParameter("@Cli_PhoneTwo", SqlDbType.VarChar,15),
@@ -221,18 +221,17 @@ namespace DAL
 		}
 
 		/// <summary>
-		/// 删除一条数据
+		/// 删除一条数据 
 		/// </summary>
-		public bool Delete(string Cli_Code)
+		public bool Delete(int Cli_ID)
 		{
-			
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from T_Client ");
-			strSql.Append(" where Cli_Code=@Cli_Code");
+			strSql.Append(" where Cli_ID=@Cli_ID");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Cli_Code", SqlDbType.VarChar)
+					new SqlParameter("@Cli_ID", SqlDbType.Int)
 			};
-			parameters[0].Value = Cli_Code;
+			parameters[0].Value = Cli_ID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -247,7 +246,7 @@ namespace DAL
 		/// <summary>
 		/// 批量删除数据
 		/// </summary>
-		public bool DeleteList(string Cli_Codelist )
+		public bool DeleteList(string Cli_Codelist)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from T_Client ");
@@ -265,16 +264,17 @@ namespace DAL
 
 
 		/// <summary>
-		/// 得到一个对象实体
-		/// </summary>
-		public T_Client GetModel(int Cli_Code)
+        /// 得到一个对象实体
+        /// </summary>
+        /// <param name="Cli_Code">客户编号</param>
+        /// <returns></returns>
+		public T_Client GetModel(string Cli_Code)
 		{
-			
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select top 1 Cli_ID,Cli_Name,Cli_zhiwen,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable,Cli_Code from T_Client ");
-			strSql.Append(" where Cli_ID=@Cli_ID");
+			strSql.Append(" where Cli_Code=@Cli_Code");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Cli_ID", SqlDbType.Int,4)
+					new SqlParameter("@Cli_Code", SqlDbType.VarChar,50)
 			};
 			parameters[0].Value = Cli_Code;
 
@@ -307,9 +307,9 @@ namespace DAL
 				{
 					model.Cli_Name=row["Cli_Name"].ToString();
 				}
-				if(row["Cli_zhiwen"]!=null && row["Cli_zhiwen"].ToString()!="")
+				if(row["Cli_zhiwen"]!=null)
 				{
-					model.Cli_zhiwen=(byte[])row["Cli_zhiwen"];
+					model.Cli_zhiwen=row["Cli_zhiwen"].ToString();
 				}
 				if(row["Cli_PicName"]!=null)
 				{
@@ -422,6 +422,7 @@ namespace DAL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
+        /// <param name="strWhere">where条件语句</param>
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
@@ -528,13 +529,15 @@ namespace DAL
 		}*/
 
         #endregion  BasicMethod
+
         #region  ExtensionMethod
+
         /// <summary>
         /// 判断该客户编号判断是否存在
         /// </summary>
         /// <param name="Cli_Code"></param>
         /// <returns></returns>
-        public bool ExistsByCode(string Cli_Code)
+        public bool Exists(string Cli_Code)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from T_Client");
@@ -546,7 +549,31 @@ namespace DAL
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+        /// <summary>
+        /// 根据客户编号删除
+        /// </summary>
+        /// <param name="Cli_Code"></param>
+        /// <returns></returns>
+        public bool Delete(string Cli_Code)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from T_Client ");
+            strSql.Append(" where Cli_Code=@Cli_Code");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@Cli_Code", SqlDbType.VarChar,50)
+            };
+            parameters[0].Value = Cli_Code;
 
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         #endregion  ExtensionMethod
     }

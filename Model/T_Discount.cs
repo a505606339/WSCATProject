@@ -10,95 +10,95 @@ namespace Model
 		public T_Discount()
 		{}
 		#region Model
-		private int _ct_id;
-		private string _ct_name;
-		private string _ct_clientid;
-		private DateTime? _ct_createdate;
-		private DateTime? _ct_cleardate= DateTime.Now;
-		private decimal? _ct_discount=0M;
-		private int? _ct_enable=1;
-		private int? _ct_clear=1;
-		private string _ct_remark;
-		private string _ct_code;
+		private int _Dis_id;
+		private string _Dis_name;
+		private string _Dis_clientcode;
+		private DateTime? _Dis_createdate;
+		private DateTime? _Dis_cleardate= DateTime.Now;
+		private decimal? _Dis_discount=0M;
+		private int? _Dis_enable=1;
+		private int? _Dis_clear=1;
+		private string _Dis_remark;
+		private string _Dis_code;
 		/// <summary>
 		/// 
 		/// </summary>
-		public int CT_ID
+		public int Dis_ID
 		{
-			set{ _ct_id=value;}
-			get{return _ct_id;}
+			set{ _Dis_id=value;}
+			get{return _Dis_id;}
 		}
 		/// <summary>
 		/// 客户名称
 		/// </summary>
-		public string CT_Name
+		public string Dis_Name
 		{
-			set{ _ct_name=value;}
-			get{return _ct_name;}
+			set{ _Dis_name=value;}
+			get{return _Dis_name;}
 		}
 		/// <summary>
 		/// 客户ID
 		/// </summary>
-		public string CT_ClientID
+		public string Dis_ClientCode
 		{
-			set{ _ct_clientid=value;}
-			get{return _ct_clientid;}
+			set{ _Dis_clientcode = value;}
+			get{return _Dis_clientcode; }
 		}
 		/// <summary>
 		/// 建立时间
 		/// </summary>
-		public DateTime? CT_CreateDate
+		public DateTime? Dis_CreateDate
 		{
-			set{ _ct_createdate=value;}
-			get{return _ct_createdate;}
+			set{ _Dis_createdate=value;}
+			get{return _Dis_createdate;}
 		}
 		/// <summary>
 		/// 到期时间
 		/// </summary>
-		public DateTime? CT_ClearDate
+		public DateTime? Dis_ClearDate
 		{
-			set{ _ct_cleardate=value;}
-			get{return _ct_cleardate;}
+			set{ _Dis_cleardate=value;}
+			get{return _Dis_cleardate;}
 		}
 		/// <summary>
 		/// 折数（%）
 		/// </summary>
-		public decimal? CT_Discount
+		public decimal? Dis_Discount
 		{
-			set{ _ct_discount=value;}
-			get{return _ct_discount;}
+			set{ _Dis_discount=value;}
+			get{return _Dis_discount;}
 		}
 		/// <summary>
 		/// 是否可用
 		/// </summary>
-		public int? CT_Enable
+		public int? Dis_Enable
 		{
-			set{ _ct_enable=value;}
-			get{return _ct_enable;}
+			set{ _Dis_enable=value;}
+			get{return _Dis_enable;}
 		}
 		/// <summary>
 		/// 是否删除
 		/// </summary>
-		public int? CT_Clear
+		public int? Dis_Clear
 		{
-			set{ _ct_clear=value;}
-			get{return _ct_clear;}
+			set{ _Dis_clear=value;}
+			get{return _Dis_clear;}
 		}
 		/// <summary>
 		/// 备注
 		/// </summary>
-		public string CT_Remark
+		public string Dis_Remark
 		{
-			set{ _ct_remark=value;}
-			get{return _ct_remark;}
+			set{ _Dis_remark=value;}
+			get{return _Dis_remark;}
 		}
 		/// <summary>
 		/// 折扣编号
 		/// </summary>
-		public string CT_Code
+		public string Dis_Code
 		{
-			set{ _ct_code=value;}
-			get{return _ct_code;}
+			set{ _Dis_code=value;}
+			get{return _Dis_code;}
 		}
 		#endregion Model
 
