@@ -2,12 +2,13 @@
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
+using DAL;
 using Model;
 
 namespace DAL
 {
 	/// <summary>
-	/// 数据访问类:T_Client
+	/// 数据访问类:Client
 	/// </summary>
 	public partial class ClientService
 	{
@@ -36,75 +37,79 @@ namespace DAL
 
 			return DbHelperSQL.Exists(strSql.ToString(),parameters);
 		}
-        
-        /// <summary>
-        /// 增加一条数据
-        /// </summary>
-        public int Add(T_Client model)
+
+
+		/// <summary>
+		/// 增加一条数据
+		/// </summary>
+		public int Add(Client model)
 		{
-            StringBuilder strSql=new StringBuilder();
+            
+			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into T_Client(");
-			strSql.Append("Cli_Name,Cli_zhiwen,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable,Cli_Code)");
+			strSql.Append("Cli_Code,Cli_zhiwen,Cli_Name,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_TypeCode,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable)");
 			strSql.Append(" values (");
-			strSql.Append("@Cli_Name,@Cli_zhiwen,@Cli_PicName,@Cli_Phone,@Cli_PhoneTwo,@Cli_faxes,@Cli_area,@Cli_Address,@Cli_LinkMan,@Cli_DiscountCode,@Cli_Bankaccounts,@Cli_OpenBank,@Cli_Olddata,@Cli_Oldreturn,@Cli_Newoutdata,@Cli_Newintodata,@Cli_Createdata,@Cli_Limit,@Cli_RemainLimit,@Cli_ClearLimitdate,@Cli_ShouldMoney,@Cli_GetMoney,@Cli_PreMoney,@Cli_Remark,@Cli_safetone,@Cli_safettwo,@Cli_Enable,@Cli_Code)");
+			strSql.Append("@Cli_Code,@Cli_zhiwen,@Cli_Name,@Cli_PicName,@Cli_Phone,@Cli_PhoneTwo,@Cli_faxes,@Cli_area,@Cli_Address,@Cli_LinkMan,@Cli_TypeCode,@Cli_DiscountCode,@Cli_Bankaccounts,@Cli_OpenBank,@Cli_Olddata,@Cli_Oldreturn,@Cli_Newoutdata,@Cli_Newintodata,@Cli_Createdata,@Cli_Limit,@Cli_RemainLimit,@Cli_ClearLimitdate,@Cli_ShouldMoney,@Cli_GetMoney,@Cli_PreMoney,@Cli_Remark,@Cli_safetone,@Cli_safettwo,@Cli_Enable)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Cli_Name", SqlDbType.VarChar,30),
-					new SqlParameter("@Cli_zhiwen", SqlDbType.VarChar,1026),
-					new SqlParameter("@Cli_PicName", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Phone", SqlDbType.VarChar,15),
-					new SqlParameter("@Cli_PhoneTwo", SqlDbType.VarChar,15),
-					new SqlParameter("@Cli_faxes", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_area", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Address", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_LinkMan", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_DiscountCode", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Bankaccounts", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_OpenBank", SqlDbType.VarChar,50),
+					new SqlParameter("@Cli_Code", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_zhiwen", SqlDbType.NVarChar,-1),
+					new SqlParameter("@Cli_Name", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_PicName", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Phone", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_PhoneTwo", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_faxes", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_area", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Address", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_LinkMan", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_TypeCode", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_DiscountCode", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Bankaccounts", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_OpenBank", SqlDbType.NVarChar,512),
 					new SqlParameter("@Cli_Olddata", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Oldreturn", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Newoutdata", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Newintodata", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Createdata", SqlDbType.DateTime),
-					new SqlParameter("@Cli_Limit", SqlDbType.VarChar,10),
-					new SqlParameter("@Cli_RemainLimit", SqlDbType.VarChar,10),
+					new SqlParameter("@Cli_Limit", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_RemainLimit", SqlDbType.NVarChar,512),
 					new SqlParameter("@Cli_ClearLimitdate", SqlDbType.DateTime),
-					new SqlParameter("@Cli_ShouldMoney", SqlDbType.Decimal,9),
-					new SqlParameter("@Cli_GetMoney", SqlDbType.Decimal,9),
-					new SqlParameter("@Cli_PreMoney", SqlDbType.Decimal,9),
-					new SqlParameter("@Cli_Remark", SqlDbType.VarChar,100),
-					new SqlParameter("@Cli_safetone", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_safettwo", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Enable", SqlDbType.Int,4),
-					new SqlParameter("@Cli_Code", SqlDbType.VarChar,50)};
-			parameters[0].Value = model.Cli_Name;
+					new SqlParameter("@Cli_ShouldMoney", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_GetMoney", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_PreMoney", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Remark", SqlDbType.NVarChar,1024),
+					new SqlParameter("@Cli_safetone", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_safettwo", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Enable", SqlDbType.Int,4)};
+			parameters[0].Value = model.Cli_Code;
 			parameters[1].Value = model.Cli_zhiwen;
-			parameters[2].Value = model.Cli_PicName;
-			parameters[3].Value = model.Cli_Phone;
-			parameters[4].Value = model.Cli_PhoneTwo;
-			parameters[5].Value = model.Cli_faxes;
-			parameters[6].Value = model.Cli_area;
-			parameters[7].Value = model.Cli_Address;
-			parameters[8].Value = model.Cli_LinkMan;
-			parameters[9].Value = model.Cli_DiscountCode;
-			parameters[10].Value = model.Cli_Bankaccounts;
-			parameters[11].Value = model.Cli_OpenBank;
-			parameters[12].Value = model.Cli_Olddata;
-			parameters[13].Value = model.Cli_Oldreturn;
-			parameters[14].Value = model.Cli_Newoutdata;
-			parameters[15].Value = model.Cli_Newintodata;
-			parameters[16].Value = model.Cli_Createdata;
-			parameters[17].Value = model.Cli_Limit;
-			parameters[18].Value = model.Cli_RemainLimit;
-			parameters[19].Value = model.Cli_ClearLimitdate;
-			parameters[20].Value = model.Cli_ShouldMoney;
-			parameters[21].Value = model.Cli_GetMoney;
-			parameters[22].Value = model.Cli_PreMoney;
-			parameters[23].Value = model.Cli_Remark;
-			parameters[24].Value = model.Cli_safetone;
-			parameters[25].Value = model.Cli_safettwo;
-			parameters[26].Value = model.Cli_Enable;
-			parameters[27].Value = model.Cli_Code;
+			parameters[2].Value = model.Cli_Name;
+			parameters[3].Value = model.Cli_PicName;
+			parameters[4].Value = model.Cli_Phone;
+			parameters[5].Value = model.Cli_PhoneTwo;
+			parameters[6].Value = model.Cli_faxes;
+			parameters[7].Value = model.Cli_area;
+			parameters[8].Value = model.Cli_Address;
+			parameters[9].Value = model.Cli_LinkMan;
+			parameters[10].Value = model.Cli_TypeCode;
+			parameters[11].Value = model.Cli_DiscountCode;
+			parameters[12].Value = model.Cli_Bankaccounts;
+			parameters[13].Value = model.Cli_OpenBank;
+			parameters[14].Value = model.Cli_Olddata;
+			parameters[15].Value = model.Cli_Oldreturn;
+			parameters[16].Value = model.Cli_Newoutdata;
+			parameters[17].Value = model.Cli_Newintodata;
+			parameters[18].Value = model.Cli_Createdata;
+			parameters[19].Value = model.Cli_Limit;
+			parameters[20].Value = model.Cli_RemainLimit;
+			parameters[21].Value = model.Cli_ClearLimitdate;
+			parameters[22].Value = model.Cli_ShouldMoney;
+			parameters[23].Value = model.Cli_GetMoney;
+			parameters[24].Value = model.Cli_PreMoney;
+			parameters[25].Value = model.Cli_Remark;
+			parameters[26].Value = model.Cli_safetone;
+			parameters[27].Value = model.Cli_safettwo;
+			parameters[28].Value = model.Cli_Enable;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -119,12 +124,13 @@ namespace DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(T_Client model)
+		public bool Update(Client model)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update T_Client set ");
-			strSql.Append("Cli_Name=@Cli_Name,");
+			strSql.Append("Cli_Code=@Cli_Code,");
 			strSql.Append("Cli_zhiwen=@Cli_zhiwen,");
+			strSql.Append("Cli_Name=@Cli_Name,");
 			strSql.Append("Cli_PicName=@Cli_PicName,");
 			strSql.Append("Cli_Phone=@Cli_Phone,");
 			strSql.Append("Cli_PhoneTwo=@Cli_PhoneTwo,");
@@ -132,6 +138,7 @@ namespace DAL
 			strSql.Append("Cli_area=@Cli_area,");
 			strSql.Append("Cli_Address=@Cli_Address,");
 			strSql.Append("Cli_LinkMan=@Cli_LinkMan,");
+			strSql.Append("Cli_TypeCode=@Cli_TypeCode,");
 			strSql.Append("Cli_DiscountCode=@Cli_DiscountCode,");
 			strSql.Append("Cli_Bankaccounts=@Cli_Bankaccounts,");
 			strSql.Append("Cli_OpenBank=@Cli_OpenBank,");
@@ -150,64 +157,68 @@ namespace DAL
 			strSql.Append("Cli_safetone=@Cli_safetone,");
 			strSql.Append("Cli_safettwo=@Cli_safettwo,");
 			strSql.Append("Cli_Enable=@Cli_Enable");
-			strSql.Append(" where Cli_Code=@Cli_Code");
+			strSql.Append(" where Cli_ID=@Cli_ID");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Cli_Name", SqlDbType.VarChar,30),
-					new SqlParameter("@Cli_zhiwen", SqlDbType.VarChar,1026),
-					new SqlParameter("@Cli_PicName", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Phone", SqlDbType.VarChar,15),
-					new SqlParameter("@Cli_PhoneTwo", SqlDbType.VarChar,15),
-					new SqlParameter("@Cli_faxes", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_area", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Address", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_LinkMan", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_DiscountCode", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_Bankaccounts", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_OpenBank", SqlDbType.VarChar,50),
+					new SqlParameter("@Cli_Code", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_zhiwen", SqlDbType.NVarChar,-1),
+					new SqlParameter("@Cli_Name", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_PicName", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Phone", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_PhoneTwo", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_faxes", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_area", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Address", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_LinkMan", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_TypeCode", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_DiscountCode", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Bankaccounts", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_OpenBank", SqlDbType.NVarChar,512),
 					new SqlParameter("@Cli_Olddata", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Oldreturn", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Newoutdata", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Newintodata", SqlDbType.DateTime),
 					new SqlParameter("@Cli_Createdata", SqlDbType.DateTime),
-					new SqlParameter("@Cli_Limit", SqlDbType.VarChar,10),
-					new SqlParameter("@Cli_RemainLimit", SqlDbType.VarChar,10),
+					new SqlParameter("@Cli_Limit", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_RemainLimit", SqlDbType.NVarChar,512),
 					new SqlParameter("@Cli_ClearLimitdate", SqlDbType.DateTime),
-					new SqlParameter("@Cli_ShouldMoney", SqlDbType.Decimal,9),
-					new SqlParameter("@Cli_GetMoney", SqlDbType.Decimal,9),
-					new SqlParameter("@Cli_PreMoney", SqlDbType.Decimal,9),
-					new SqlParameter("@Cli_Remark", SqlDbType.VarChar,100),
-					new SqlParameter("@Cli_safetone", SqlDbType.VarChar,50),
-					new SqlParameter("@Cli_safettwo", SqlDbType.VarChar,50),
+					new SqlParameter("@Cli_ShouldMoney", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_GetMoney", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_PreMoney", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_Remark", SqlDbType.NVarChar,1024),
+					new SqlParameter("@Cli_safetone", SqlDbType.NVarChar,512),
+					new SqlParameter("@Cli_safettwo", SqlDbType.NVarChar,512),
 					new SqlParameter("@Cli_Enable", SqlDbType.Int,4),
-					new SqlParameter("@Cli_Code", SqlDbType.VarChar,50)};
-			parameters[0].Value = model.Cli_Name;
+					new SqlParameter("@Cli_ID", SqlDbType.Int,4)};
+			parameters[0].Value = model.Cli_Code;
 			parameters[1].Value = model.Cli_zhiwen;
-			parameters[2].Value = model.Cli_PicName;
-			parameters[3].Value = model.Cli_Phone;
-			parameters[4].Value = model.Cli_PhoneTwo;
-			parameters[5].Value = model.Cli_faxes;
-			parameters[6].Value = model.Cli_area;
-			parameters[7].Value = model.Cli_Address;
-			parameters[8].Value = model.Cli_LinkMan;
-			parameters[9].Value = model.Cli_DiscountCode;
-			parameters[10].Value = model.Cli_Bankaccounts;
-			parameters[11].Value = model.Cli_OpenBank;
-			parameters[12].Value = model.Cli_Olddata;
-			parameters[13].Value = model.Cli_Oldreturn;
-			parameters[14].Value = model.Cli_Newoutdata;
-			parameters[15].Value = model.Cli_Newintodata;
-			parameters[16].Value = model.Cli_Createdata;
-			parameters[17].Value = model.Cli_Limit;
-			parameters[18].Value = model.Cli_RemainLimit;
-			parameters[19].Value = model.Cli_ClearLimitdate;
-			parameters[20].Value = model.Cli_ShouldMoney;
-			parameters[21].Value = model.Cli_GetMoney;
-			parameters[22].Value = model.Cli_PreMoney;
-			parameters[23].Value = model.Cli_Remark;
-			parameters[24].Value = model.Cli_safetone;
-			parameters[25].Value = model.Cli_safettwo;
-			parameters[26].Value = model.Cli_Enable;
-			parameters[27].Value = model.Cli_Code;
+			parameters[2].Value = model.Cli_Name;
+			parameters[3].Value = model.Cli_PicName;
+			parameters[4].Value = model.Cli_Phone;
+			parameters[5].Value = model.Cli_PhoneTwo;
+			parameters[6].Value = model.Cli_faxes;
+			parameters[7].Value = model.Cli_area;
+			parameters[8].Value = model.Cli_Address;
+			parameters[9].Value = model.Cli_LinkMan;
+			parameters[10].Value = model.Cli_TypeCode;
+			parameters[11].Value = model.Cli_DiscountCode;
+			parameters[12].Value = model.Cli_Bankaccounts;
+			parameters[13].Value = model.Cli_OpenBank;
+			parameters[14].Value = model.Cli_Olddata;
+			parameters[15].Value = model.Cli_Oldreturn;
+			parameters[16].Value = model.Cli_Newoutdata;
+			parameters[17].Value = model.Cli_Newintodata;
+			parameters[18].Value = model.Cli_Createdata;
+			parameters[19].Value = model.Cli_Limit;
+			parameters[20].Value = model.Cli_RemainLimit;
+			parameters[21].Value = model.Cli_ClearLimitdate;
+			parameters[22].Value = model.Cli_ShouldMoney;
+			parameters[23].Value = model.Cli_GetMoney;
+			parameters[24].Value = model.Cli_PreMoney;
+			parameters[25].Value = model.Cli_Remark;
+			parameters[26].Value = model.Cli_safetone;
+			parameters[27].Value = model.Cli_safettwo;
+			parameters[28].Value = model.Cli_Enable;
+			parameters[29].Value = model.Cli_ID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -221,15 +232,16 @@ namespace DAL
 		}
 
 		/// <summary>
-		/// 删除一条数据 
+		/// 删除一条数据
 		/// </summary>
 		public bool Delete(int Cli_ID)
 		{
+			
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from T_Client ");
 			strSql.Append(" where Cli_ID=@Cli_ID");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Cli_ID", SqlDbType.Int)
+					new SqlParameter("@Cli_ID", SqlDbType.Int,4)
 			};
 			parameters[0].Value = Cli_ID;
 
@@ -246,11 +258,11 @@ namespace DAL
 		/// <summary>
 		/// 批量删除数据
 		/// </summary>
-		public bool DeleteList(string Cli_Codelist)
+		public bool DeleteList(string Cli_IDlist )
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from T_Client ");
-			strSql.Append(" where Cli_Code in (" + Cli_Codelist + ") ");
+			strSql.Append(" where Cli_ID in ("+Cli_IDlist + ")  ");
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString());
 			if (rows > 0)
 			{
@@ -264,21 +276,20 @@ namespace DAL
 
 
 		/// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        /// <param name="Cli_Code">客户编号</param>
-        /// <returns></returns>
-		public T_Client GetModel(string Cli_Code)
+		/// 得到一个对象实体
+		/// </summary>
+		public Client GetModel(int Cli_ID)
 		{
+			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select top 1 Cli_ID,Cli_Name,Cli_zhiwen,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable,Cli_Code from T_Client ");
-			strSql.Append(" where Cli_Code=@Cli_Code");
+			strSql.Append("select  top 1 Cli_ID,Cli_Code,Cli_zhiwen,Cli_Name,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_TypeCode,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable from T_Client ");
+			strSql.Append(" where Cli_ID=@Cli_ID");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Cli_Code", SqlDbType.VarChar,50)
+					new SqlParameter("@Cli_ID", SqlDbType.Int,4)
 			};
-			parameters[0].Value = Cli_Code;
+			parameters[0].Value = Cli_ID;
 
-			Model.T_Client model=new T_Client();
+			Client model=new Client();
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
@@ -294,22 +305,26 @@ namespace DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public T_Client DataRowToModel(DataRow row)
+		public Client DataRowToModel(DataRow row)
 		{
-			T_Client model=new T_Client();
+			Client model=new Client();
 			if (row != null)
 			{
 				if(row["Cli_ID"]!=null && row["Cli_ID"].ToString()!="")
 				{
 					model.Cli_ID=int.Parse(row["Cli_ID"].ToString());
 				}
-				if(row["Cli_Name"]!=null)
+				if(row["Cli_Code"]!=null)
 				{
-					model.Cli_Name=row["Cli_Name"].ToString();
+					model.Cli_Code=row["Cli_Code"].ToString();
 				}
 				if(row["Cli_zhiwen"]!=null)
 				{
 					model.Cli_zhiwen=row["Cli_zhiwen"].ToString();
+				}
+				if(row["Cli_Name"]!=null)
+				{
+					model.Cli_Name=row["Cli_Name"].ToString();
 				}
 				if(row["Cli_PicName"]!=null)
 				{
@@ -338,6 +353,10 @@ namespace DAL
 				if(row["Cli_LinkMan"]!=null)
 				{
 					model.Cli_LinkMan=row["Cli_LinkMan"].ToString();
+				}
+				if(row["Cli_TypeCode"]!=null)
+				{
+					model.Cli_TypeCode=row["Cli_TypeCode"].ToString();
 				}
 				if(row["Cli_DiscountCode"]!=null)
 				{
@@ -383,17 +402,17 @@ namespace DAL
 				{
 					model.Cli_ClearLimitdate=DateTime.Parse(row["Cli_ClearLimitdate"].ToString());
 				}
-				if(row["Cli_ShouldMoney"]!=null && row["Cli_ShouldMoney"].ToString()!="")
+				if(row["Cli_ShouldMoney"]!=null)
 				{
-					model.Cli_ShouldMoney=decimal.Parse(row["Cli_ShouldMoney"].ToString());
+					model.Cli_ShouldMoney=row["Cli_ShouldMoney"].ToString();
 				}
-				if(row["Cli_GetMoney"]!=null && row["Cli_GetMoney"].ToString()!="")
+				if(row["Cli_GetMoney"]!=null)
 				{
-					model.Cli_GetMoney=decimal.Parse(row["Cli_GetMoney"].ToString());
+					model.Cli_GetMoney=row["Cli_GetMoney"].ToString();
 				}
-				if(row["Cli_PreMoney"]!=null && row["Cli_PreMoney"].ToString()!="")
+				if(row["Cli_PreMoney"]!=null)
 				{
-					model.Cli_PreMoney=decimal.Parse(row["Cli_PreMoney"].ToString());
+					model.Cli_PreMoney=row["Cli_PreMoney"].ToString();
 				}
 				if(row["Cli_Remark"]!=null)
 				{
@@ -411,10 +430,6 @@ namespace DAL
 				{
 					model.Cli_Enable=int.Parse(row["Cli_Enable"].ToString());
 				}
-				if(row["Cli_Code"]!=null)
-				{
-					model.Cli_Code=row["Cli_Code"].ToString();
-				}
 			}
 			return model;
 		}
@@ -422,11 +437,10 @@ namespace DAL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-        /// <param name="strWhere">where条件语句</param>
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Cli_ID,Cli_Name,Cli_zhiwen,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable,Cli_Code ");
+			strSql.Append("select Cli_ID,Cli_Code,Cli_zhiwen,Cli_Name,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_TypeCode,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable ");
 			strSql.Append(" FROM T_Client ");
 			if(strWhere.Trim()!="")
 			{
@@ -446,7 +460,7 @@ namespace DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Cli_ID,Cli_Name,Cli_zhiwen,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable,Cli_Code ");
+			strSql.Append(" Cli_ID,Cli_Code,Cli_zhiwen,Cli_Name,Cli_PicName,Cli_Phone,Cli_PhoneTwo,Cli_faxes,Cli_area,Cli_Address,Cli_LinkMan,Cli_TypeCode,Cli_DiscountCode,Cli_Bankaccounts,Cli_OpenBank,Cli_Olddata,Cli_Oldreturn,Cli_Newoutdata,Cli_Newintodata,Cli_Createdata,Cli_Limit,Cli_RemainLimit,Cli_ClearLimitdate,Cli_ShouldMoney,Cli_GetMoney,Cli_PreMoney,Cli_Remark,Cli_safetone,Cli_safettwo,Cli_Enable ");
 			strSql.Append(" FROM T_Client ");
 			if(strWhere.Trim()!="")
 			{
@@ -543,14 +557,15 @@ namespace DAL
             strSql.Append("select count(1) from T_Client");
             strSql.Append(" where Cli_Code=@Cli_Code");
             SqlParameter[] parameters = {
-                    new SqlParameter("@Cli_Code", SqlDbType.VarChar)
+                    new SqlParameter("@Cli_Code", SqlDbType.VarChar,512)
             };
             parameters[0].Value = Cli_Code;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+
         /// <summary>
-        /// 根据客户编号删除
+        /// 根据客户编号做假删除
         /// </summary>
         /// <param name="Cli_Code"></param>
         /// <returns></returns>
@@ -560,7 +575,7 @@ namespace DAL
             strSql.Append("delete from T_Client ");
             strSql.Append(" where Cli_Code=@Cli_Code");
             SqlParameter[] parameters = {
-                    new SqlParameter("@Cli_Code", SqlDbType.VarChar,50)
+                    new SqlParameter("@Cli_Code", SqlDbType.VarChar,512)
             };
             parameters[0].Value = Cli_Code;
 
@@ -574,7 +589,6 @@ namespace DAL
                 return false;
             }
         }
-
         #endregion  ExtensionMethod
     }
 }

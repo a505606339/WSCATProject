@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Encrypt\XYEEncoding.cs" />
     <Compile Include="Excel\GenerateExcel.cs" />
     <Compile Include="ExUI\imageButton.cs">
       <SubType>Component</SubType>

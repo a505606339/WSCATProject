@@ -5,3 +5,5 @@ F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\Model.pdb
 F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.dll
 F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.pdb
+F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\HelperUtility.dll
+F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\HelperUtility.pdb

@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\ClientTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\ClientTypeForm.Designer.cs">
+      <DependentUpon>ClientTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ClientTypeFormEx\CreateClientTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\ClientTypeFormEx\CreateClientTypeForm.Designer.cs">
+      <DependentUpon>CreateClientTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,12 @@
     <Compile Include="WarehouseForm.Designer.cs">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Base\ClientTypeForm.resx">
+      <DependentUpon>ClientTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\ClientTypeFormEx\CreateClientTypeForm.resx">
+      <DependentUpon>CreateClientTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientNameForm.resx">
       <DependentUpon>ClientNameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -596,6 +614,7 @@
   <ItemGroup>
     <None Include="Resources\资料导入.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

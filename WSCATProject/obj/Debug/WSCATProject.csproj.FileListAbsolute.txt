@@ -38,3 +38,5 @@ F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.Instru
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.DotNetBar2.xml
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.Instrumentation.xml
+F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.ClientTypeForm.resources
+F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.ClientTypeFormEx.CreateClientTypeForm.resources

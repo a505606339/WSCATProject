@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientService.cs" />
     <Compile Include="ClientTypeService.cs" />
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="DiscountService.cs" />
@@ -49,9 +50,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerializationService.cs" />
     <Compile Include="SQLHelper.cs" />
-    <Compile Include="ClientService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">
+      <Project>{f600b9d0-f52a-4740-b3c9-4ddf382600cc}</Project>
+      <Name>HelperUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{a4d8ab56-7d72-4adc-9c8f-99f8dc56f55c}</Project>
       <Name>Model</Name>
