@@ -146,7 +146,7 @@ namespace DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from T_ClientType ");
-			strSql.Append(" where CT_ID in ("+CT_IDlist + ")  ");
+			strSql.Append(" where CT_ID in (" + CT_IDlist + ")  ");
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString());
 			if (rows > 0)
 			{
@@ -236,7 +236,7 @@ namespace DAL
 			strSql.Append(" FROM T_ClientType ");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+                strSql.Append(" where " + strWhere);
 			}
 			return DbHelperSQL.Query(strSql.ToString());
 		}
@@ -340,7 +340,7 @@ namespace DAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(string CT_Code)
+        public bool Exists(string CT_Code,int CT_Enable)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from T_ClientType");
@@ -350,25 +350,85 @@ namespace DAL
                     new SqlParameter("@CT_Enable", SqlDbType.Int)
             };
             parameters[0].Value = CT_Code;
-            parameters[1].Value = 1;
+            parameters[1].Value = CT_Enable;
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
 
         /// <summary>
-        /// 删除一条数据 
+        /// 假删除一条数据，将enable置为0
         /// </summary>
         public bool Delete(string CT_Code)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from T_ClientType ");
+            strSql.Append("update T_ClientType");
+            strSql.Append(" set CT_Enable=0");
             strSql.Append(" where CT_Code=@CT_Code");
             SqlParameter[] parameters = {
-                    new SqlParameter("@CT_Code", SqlDbType.VarChar,50)
+                    new SqlParameter("@CT_Code", SqlDbType.VarChar,512)
             };
             parameters[0].Value = CT_Code;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 根据Code更新一条数据
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool UpdateByCode(ClientType model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update T_ClientType set ");
+            strSql.Append("CT_Name=@CT_Name,");
+            strSql.Append("CT_Remark=@CT_Remark,");
+            strSql.Append("CT_Safetyone=@CT_Safetyone,");
+            strSql.Append("CT_Safetytwo=@CT_Safetytwo,");
+            strSql.Append("CT_Enable=@CT_Enable");
+            strSql.Append(" where CT_Code=@CT_Code");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@CT_Name", SqlDbType.NVarChar,512),
+                    new SqlParameter("@CT_Remark", SqlDbType.NVarChar,1024),
+                    new SqlParameter("@CT_Safetyone", SqlDbType.NVarChar,512),
+                    new SqlParameter("@CT_Safetytwo", SqlDbType.NVarChar,512),
+                    new SqlParameter("@CT_Enable", SqlDbType.Int,4),
+                    new SqlParameter("@CT_Code", SqlDbType.NVarChar,512)};
+            parameters[0].Value = model.CT_Name;
+            parameters[1].Value = model.CT_Remark;
+            parameters[2].Value = model.CT_Safetyone;
+            parameters[3].Value = model.CT_Safetytwo;
+            parameters[4].Value = model.CT_Enable;
+            parameters[5].Value = model.CT_Code;
+
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+		/// 假删除表里的所有数据
+		/// </summary>
+		public bool FakeDeleteList()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update T_ClientType ");
+            strSql.Append(" set CT_Enable = 0 where CT_Enable = 1");
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rows > 0)
             {
                 return true;

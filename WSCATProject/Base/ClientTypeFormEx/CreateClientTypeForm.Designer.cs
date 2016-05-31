@@ -30,9 +30,9 @@
         {
             this.buttonXOK = new DevComponents.DotNetBar.ButtonX();
             this.textBoxXName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelXName = new DevComponents.DotNetBar.LabelX();
             this.richTextBoxExRe = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelXRemark = new DevComponents.DotNetBar.LabelX();
             this.buttonXCancel = new DevComponents.DotNetBar.ButtonX();
             this.SuspendLayout();
             // 
@@ -62,17 +62,17 @@
             this.textBoxXName.Size = new System.Drawing.Size(181, 21);
             this.textBoxXName.TabIndex = 1;
             // 
-            // labelX1
+            // labelXName
             // 
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(15, 12);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
-            this.labelX1.TabIndex = 2;
-            this.labelX1.Text = "类别名称：";
+            this.labelXName.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelXName.Location = new System.Drawing.Point(15, 12);
+            this.labelXName.Name = "labelXName";
+            this.labelXName.Size = new System.Drawing.Size(75, 23);
+            this.labelXName.TabIndex = 2;
+            this.labelXName.Text = "类别名称：";
             // 
             // richTextBoxExRe
             // 
@@ -89,17 +89,17 @@
             this.richTextBoxExRe.Size = new System.Drawing.Size(181, 39);
             this.richTextBoxExRe.TabIndex = 2;
             // 
-            // labelX2
+            // labelXRemark
             // 
             // 
             // 
             // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(39, 41);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(75, 23);
-            this.labelX2.TabIndex = 4;
-            this.labelX2.Text = "备注：";
+            this.labelXRemark.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelXRemark.Location = new System.Drawing.Point(39, 41);
+            this.labelXRemark.Name = "labelXRemark";
+            this.labelXRemark.Size = new System.Drawing.Size(75, 23);
+            this.labelXRemark.TabIndex = 4;
+            this.labelXRemark.Text = "备注：";
             // 
             // buttonXCancel
             // 
@@ -110,7 +110,7 @@
             this.buttonXCancel.Size = new System.Drawing.Size(58, 23);
             this.buttonXCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonXCancel.TabIndex = 4;
-            this.buttonXCancel.Text = "取消";
+            this.buttonXCancel.Text = "关闭";
             this.buttonXCancel.Click += new System.EventHandler(this.buttonXCancel_Click);
             // 
             // CreateClientTypeForm
@@ -121,18 +121,16 @@
             this.ClientSize = new System.Drawing.Size(281, 121);
             this.Controls.Add(this.buttonXCancel);
             this.Controls.Add(this.richTextBoxExRe);
-            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.labelXRemark);
             this.Controls.Add(this.textBoxXName);
-            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this.labelXName);
             this.Controls.Add(this.buttonXOK);
             this.DoubleBuffered = true;
-            this.EnableGlass = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateClientTypeForm";
             this.Text = "新增客户";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateClientTypeForm_FormClosing);
             this.Load += new System.EventHandler(this.CreateClientTypeForm_Load);
             this.ResumeLayout(false);
 
@@ -142,9 +140,9 @@
 
         private DevComponents.DotNetBar.ButtonX buttonXOK;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxXName;
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.LabelX labelXName;
         private DevComponents.DotNetBar.Controls.RichTextBoxEx richTextBoxExRe;
-        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX labelXRemark;
         private DevComponents.DotNetBar.ButtonX buttonXCancel;
     }
 }

@@ -31,7 +31,6 @@ namespace HelperUtility.Encrypt
                             dt.Columns[j].DataType == typeof(DateTime)) ?
                             dt.Rows[i][j] :
                             XYEEncoding.strHexDecode(dt.Rows[i][j].ToString());
-                        Console.WriteLine(temp);
 
                         dr[j] = temp;
                     }

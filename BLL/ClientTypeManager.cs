@@ -138,17 +138,34 @@ namespace BLL
         {
             return dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
         }
-        /// <summary>
-        /// 分页获取数据列表
-        /// </summary>
-        //public DataSet GetList(int PageSize,int PageIndex,string strWhere)
-        //{
-        //return dal.GetList(PageSize,PageIndex,strWhere);
-        //}
+
 
         #endregion  BasicMethod
 
         #region  ExtensionMethod
+        
+        /// <summary>
+        /// 根据code做假删除,把型号的enable置为0
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public bool Delete(string code)
+        {
+            return dal.Delete(code);
+        }
+
+        public bool UpdateByCode(ClientType ct)
+        {
+            return dal.UpdateByCode(ct);
+        }
+
+        /// <summary>
+		/// 假删除表里的所有数据
+		/// </summary>
+        public bool FakeDeleteList()
+        {
+            return dal.FakeDeleteList();
+        }
 
         #endregion  ExtensionMethod
     }

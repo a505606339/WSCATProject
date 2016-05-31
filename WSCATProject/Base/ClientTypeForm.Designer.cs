@@ -54,16 +54,29 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.删除DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.全部删除AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.全部展开SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.查找FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.新增类型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.删除类型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除全部ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TypeID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.TypeCode = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.TypeName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.TypeRemark = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.修改类型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -332,10 +345,12 @@
             // 
             this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.新增ToolStripMenuItem,
+            this.toolStripSeparator3,
             this.编辑ToolStripMenuItem,
+            this.toolStripSeparator4,
             this.删除DToolStripMenuItem,
             this.全部删除AToolStripMenuItem,
-            this.全部展开SToolStripMenuItem,
+            this.toolStripSeparator5,
             this.查找FToolStripMenuItem});
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -346,42 +361,56 @@
             // 新增ToolStripMenuItem
             // 
             this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
-            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.新增ToolStripMenuItem.Text = "新增分类(&C)";
             this.新增ToolStripMenuItem.Click += new System.EventHandler(this.新增ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(137, 6);
             // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
             this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.编辑ToolStripMenuItem.Text = "编辑(&E)";
+            this.编辑ToolStripMenuItem.Click += new System.EventHandler(this.编辑ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(137, 6);
             // 
             // 删除DToolStripMenuItem
             // 
             this.删除DToolStripMenuItem.Name = "删除DToolStripMenuItem";
             this.删除DToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.删除DToolStripMenuItem.Text = "删除(&D)";
+            this.删除DToolStripMenuItem.Click += new System.EventHandler(this.删除DToolStripMenuItem_Click);
             // 
             // 全部删除AToolStripMenuItem
             // 
             this.全部删除AToolStripMenuItem.Name = "全部删除AToolStripMenuItem";
             this.全部删除AToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.全部删除AToolStripMenuItem.Text = "全部删除(&A)";
+            this.全部删除AToolStripMenuItem.Click += new System.EventHandler(this.全部删除AToolStripMenuItem_Click);
             // 
-            // 全部展开SToolStripMenuItem
+            // toolStripSeparator5
             // 
-            this.全部展开SToolStripMenuItem.Name = "全部展开SToolStripMenuItem";
-            this.全部展开SToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.全部展开SToolStripMenuItem.Text = "全部展开(&S)";
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(137, 6);
             // 
             // 查找FToolStripMenuItem
             // 
             this.查找FToolStripMenuItem.Name = "查找FToolStripMenuItem";
             this.查找FToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.查找FToolStripMenuItem.Text = "查找...(&F)";
+            this.查找FToolStripMenuItem.Click += new System.EventHandler(this.查找FToolStripMenuItem_Click);
             // 
             // superGridControl1
             // 
+            this.superGridControl1.ContextMenuStrip = this.contextMenuStrip1;
             this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl1.Location = new System.Drawing.Point(0, 51);
@@ -389,25 +418,92 @@
             // 
             // 
             // 
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn1);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn2);
+            this.superGridControl1.PrimaryGrid.AllowEdit = false;
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeID);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeCode);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeName);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeRemark);
+            this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.superGridControl1.Size = new System.Drawing.Size(401, 341);
             this.superGridControl1.TabIndex = 4;
             this.superGridControl1.Text = "superGridControl1";
+            this.superGridControl1.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl1_CellDoubleClick);
             // 
-            // gridColumn2
+            // contextMenuStrip1
             // 
-            this.gridColumn2.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.gridColumn2.DataPropertyName = "CT_Remark";
-            this.gridColumn2.HeaderText = "备注";
-            this.gridColumn2.Name = "TypeRemark";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增类型ToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.删除类型ToolStripMenuItem,
+            this.删除全部ToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.刷新ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 104);
             // 
-            // gridColumn1
+            // 新增类型ToolStripMenuItem
             // 
-            this.gridColumn1.DataPropertyName = "CT_Name";
-            this.gridColumn1.HeaderText = "类型";
-            this.gridColumn1.Name = "TypeName";
-            this.gridColumn1.Width = 150;
+            this.新增类型ToolStripMenuItem.Name = "新增类型ToolStripMenuItem";
+            this.新增类型ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.新增类型ToolStripMenuItem.Text = "新增类型";
+            this.新增类型ToolStripMenuItem.Click += new System.EventHandler(this.新增类型ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
+            // 
+            // 删除类型ToolStripMenuItem
+            // 
+            this.删除类型ToolStripMenuItem.Name = "删除类型ToolStripMenuItem";
+            this.删除类型ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删除类型ToolStripMenuItem.Text = "删除";
+            this.删除类型ToolStripMenuItem.Click += new System.EventHandler(this.删除类型ToolStripMenuItem_Click);
+            // 
+            // 删除全部ToolStripMenuItem
+            // 
+            this.删除全部ToolStripMenuItem.Name = "删除全部ToolStripMenuItem";
+            this.删除全部ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删除全部ToolStripMenuItem.Text = "删除全部";
+            this.删除全部ToolStripMenuItem.Click += new System.EventHandler(this.删除全部ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(121, 6);
+            // 
+            // 刷新ToolStripMenuItem
+            // 
+            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.刷新ToolStripMenuItem.Text = "刷新";
+            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click);
+            // 
+            // TypeID
+            // 
+            this.TypeID.DataPropertyName = "CT_ID";
+            this.TypeID.Name = "TypeID";
+            this.TypeID.Visible = false;
+            // 
+            // TypeCode
+            // 
+            this.TypeCode.DataPropertyName = "CT_Code";
+            this.TypeCode.Name = "TypeCode";
+            this.TypeCode.Visible = false;
+            // 
+            // TypeName
+            // 
+            this.TypeName.DataPropertyName = "CT_Name";
+            this.TypeName.HeaderText = "类型";
+            this.TypeName.Name = "TypeName";
+            this.TypeName.Width = 150;
+            // 
+            // TypeRemark
+            // 
+            this.TypeRemark.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.TypeRemark.DataPropertyName = "CT_Remark";
+            this.TypeRemark.HeaderText = "备注";
+            this.TypeRemark.Name = "TypeRemark";
             // 
             // panel1
             // 
@@ -420,6 +516,12 @@
             this.panel1.Size = new System.Drawing.Size(401, 392);
             this.panel1.TabIndex = 2;
             // 
+            // 修改类型ToolStripMenuItem
+            // 
+            this.修改类型ToolStripMenuItem.Name = "修改类型ToolStripMenuItem";
+            this.修改类型ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改类型ToolStripMenuItem.Text = "修改";
+            // 
             // ClientTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -429,9 +531,11 @@
             this.Controls.Add(this.panel1);
             this.EnableGlass = false;
             this.Name = "ClientTypeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ClientTypeForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -467,11 +571,23 @@
         private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除DToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 全部删除AToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 全部展开SToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查找FToolStripMenuItem;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeName;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeRemark;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 新增类型ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除类型ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除全部ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem 修改类型ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeID;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeCode;
     }
 }
