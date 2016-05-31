@@ -103,12 +103,6 @@
     <Compile Include="FinanceForm\PaymentOrderForm.Designer.cs">
       <DependentUpon>PaymentOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="InDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientNameForm.resx">
       <DependentUpon>ClientNameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InDataForm.resx">
       <DependentUpon>InDataForm.cs</DependentUpon>

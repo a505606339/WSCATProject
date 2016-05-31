@@ -13,18 +13,18 @@ using HelperUtility.Encrypt;
 
 namespace WSCATProject.Base
 {
-    public partial class ClientTypeForm : Form
+    public partial class ClientTypeForm : DevComponents.DotNetBar.RibbonForm
     {
         public ClientTypeForm()
         {
             InitializeComponent();
         }
 
-        private static bool s;
-        public static bool S
+        private bool refresh;
+        public bool ReFresh
         {
-            get { return s; }
-            set { s = value; }
+            get { return refresh; }
+            set { refresh = value; }
         }
 
         private void ClientTypeForm_Load(object sender, EventArgs e)
@@ -33,52 +33,37 @@ namespace WSCATProject.Base
             ClientType ct = new ClientType();
             ClientTypeService cts = new ClientTypeService();
             DataSet ds = cts.GetList("");
-            if (ds.Tables.Count > 0)
-            {
-                DataTable dt = ds.Tables[0].Clone();
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    DataRow dr = ds.Tables[0].NewRow();
-                    for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
-                    {
-                        object temp = XYEEncoding.strHexDecode(ds.Tables[0].Rows[i][j].ToString());
-                        if (temp != null && temp.ToString() != "")
-                        {
-                            dr[j] = temp;
-                        }
-                    }
-                    dt.Rows.Add(dr.ItemArray);
-                }
-                superGridControl1.PrimaryGrid.DataSource = dt;
-            }
+            bindingDGVForDataTable(ds);
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ClientTypeFormEx.CreateClientTypeForm cltf = new ClientTypeFormEx.CreateClientTypeForm();
-            cltf.ShowDialog();
-            if(s)
+            cltf.StartPosition = FormStartPosition.CenterParent;
+            cltf.ShowDialog(this);
+            if(refresh)
             {
                 ClientType ct = new ClientType();
                 ClientTypeService cts = new ClientTypeService();
                 DataSet ds = cts.GetList("");
-                if (ds.Tables.Count > 0)
+                bindingDGVForDataTable(ds);
+                refresh = false;
+            }
+        }
+
+        /// <summary>
+        /// 将DataSet里的第一个table解密后绑定到控件上
+        /// </summary>
+        /// <param name="ds"></param>
+        private void bindingDGVForDataTable(DataSet ds)
+        {
+            if (ds.Tables.Count > 0)
+            {
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    DataTable dt = ds.Tables[0].Clone();
-                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                    {
-                        DataRow dr = ds.Tables[0].NewRow();
-                        for (int j = 0; j < ds.Tables[0].Columns.Count; j++)
-                        {
-                            object temp = XYEEncoding.strHexDecode(ds.Tables[0].Rows[i][j].ToString());
-                            if (temp != null && temp.ToString() != "")
-                            {
-                                dr[j] = temp;
-                            }
-                        }
-                        dt.Rows.Add(dr.ItemArray);
-                    }
-                    superGridControl1.PrimaryGrid.DataSource = dt;
+                    CodingHelper codingHelper = new CodingHelper();
+                    superGridControl1.PrimaryGrid.DataSource =
+                        codingHelper.DataTableReCoding(ds.Tables[0]);
                 }
             }
         }

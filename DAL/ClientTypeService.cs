@@ -166,7 +166,7 @@ namespace DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 CT_ID,CT_Code,CT_Name,CT_Remark,CT_Safetyone,CT_Safetytwo,CT_Enable from T_ClientType ");
+			strSql.Append("select top 1 CT_ID,CT_Code,CT_Name,CT_Remark,CT_Safetyone,CT_Safetytwo,CT_Enable from T_ClientType ");
 			strSql.Append(" where CT_ID=@CT_ID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@CT_ID", SqlDbType.Int,4)

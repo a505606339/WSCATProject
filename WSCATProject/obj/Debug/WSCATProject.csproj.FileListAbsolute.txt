@@ -30,7 +30,6 @@ F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Returne
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.ReturnedSelectForm.resources
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.StorageSelectForm.resources
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.WarehouseForm.resources
-F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Form1.resources
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.DotNetBar.Layout.dll
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.DotNetBar.SuperGrid.dll
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\bin\Debug\DevComponents.DotNetBar2.dll
