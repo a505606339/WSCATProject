@@ -18,11 +18,14 @@ namespace Model
 		private string _cli_phone;
 		private string _cli_phonetwo;
 		private string _cli_faxes;
+        private string _cli_Citycode;
 		private string _cli_area;
 		private string _cli_address;
 		private string _cli_linkman;
+        private string _cli_company;
 		private string _cli_typecode;
-		private string _cli_discountcode;
+        private string _cli_typename;
+        private string _cli_discountcode;
 		private string _cli_bankaccounts;
 		private string _cli_openbank;
 		private DateTime? _cli_olddata;
@@ -32,7 +35,7 @@ namespace Model
 		private DateTime? _cli_createdata= DateTime.Now;
 		private string _cli_limit;
 		private string _cli_remainlimit;
-		private DateTime? _cli_clearlimitdate;
+		private string _cli_clearlimitdate;
 		private string _cli_shouldmoney;
 		private string _cli_getmoney;
 		private string _cli_premoney;
@@ -65,7 +68,7 @@ namespace Model
 			get{return _cli_zhiwen;}
 		}
 		/// <summary>
-		/// 
+		/// 客户名
 		/// </summary>
 		public string Cli_Name
 		{
@@ -219,7 +222,7 @@ namespace Model
 		/// <summary>
 		/// 结账日期
 		/// </summary>
-		public DateTime? Cli_ClearLimitdate
+		public string Cli_ClearLimitdate
 		{
 			set{ _cli_clearlimitdate=value;}
 			get{return _cli_clearlimitdate;}
@@ -280,8 +283,53 @@ namespace Model
 			set{ _cli_enable=value;}
 			get{return _cli_enable;}
 		}
-		#endregion Model
+        /// <summary>
+        /// 单位名
+        /// </summary>
+        public string Cli_Company
+        {
+            get
+            {
+                return _cli_company;
+            }
 
-	}
+            set
+            {
+                _cli_company = value;
+            }
+        }
+        /// <summary>
+        /// 地区编号
+        /// </summary>
+        public string Cli_Citycode
+        {
+            get
+            {
+                return _cli_Citycode;
+            }
+
+            set
+            {
+                _cli_Citycode = value;
+            }
+        }
+        /// <summary>
+        /// 客户类别名称
+        /// </summary>
+        public string Cli_typename
+        {
+            get
+            {
+                return _cli_typename;
+            }
+
+            set
+            {
+                _cli_typename = value;
+            }
+        }
+        #endregion Model
+
+    }
 }
 

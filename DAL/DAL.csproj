@@ -41,15 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CityService.cs" />
     <Compile Include="ClientService.cs" />
     <Compile Include="ClientTypeService.cs" />
     <Compile Include="DbHelperSQL.cs" />
     <Compile Include="DiscountService.cs" />
     <Compile Include="MaterialService.cs" />
     <Compile Include="MaterialTypeService.cs" />
+    <Compile Include="PermissionService.cs" />
+    <Compile Include="ProfessionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleService.cs" />
     <Compile Include="SerializationService.cs" />
     <Compile Include="SQLHelper.cs" />
+    <Compile Include="StorageService.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">

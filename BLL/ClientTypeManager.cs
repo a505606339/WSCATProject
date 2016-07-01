@@ -167,6 +167,23 @@ namespace BLL
             return dal.FakeDeleteList();
         }
 
+        /// <summary>
+        /// 根据名称模糊检索
+        /// </summary>
+        /// <param name="name">用户名</param>
+        /// <returns></returns>
+        public DataSet Search(string name)
+        {
+            if(string.IsNullOrWhiteSpace(name))
+            {
+                return dal.GetList("CT_Enable = 1");
+            }
+            else
+            {
+                return dal.Search(name);
+            }
+        }
+
         #endregion  ExtensionMethod
     }
 }

@@ -28,7 +28,7 @@ namespace Model
 		private DateTime? _ma_createdate= DateTime.Now;
 		private string _ma_supplier;
 		private string _ma_supid;
-		private string _ma_number;
+		private string _ma_zhujima;
 		private string _ma_unit;
 		private string _ma_inprice;
 		private DateTime? _ma_indate;
@@ -70,7 +70,7 @@ namespace Model
 			get{return _ma_model;}
 		}
 		/// <summary>
-		/// 
+		/// RFID
 		/// </summary>
 		public string Ma_RFID
 		{
@@ -78,7 +78,7 @@ namespace Model
 			get{return _ma_rfid;}
 		}
 		/// <summary>
-		/// 
+		/// 条码
 		/// </summary>
 		public string Ma_Barcode
 		{
@@ -182,12 +182,12 @@ namespace Model
 			get{return _ma_supid;}
 		}
 		/// <summary>
-		/// 数量
+		/// 助记码
 		/// </summary>
-		public string Ma_Number
+		public string Ma_zhujima
 		{
-			set{ _ma_number=value;}
-			get{return _ma_number;}
+			set{ _ma_zhujima = value;}
+			get{return _ma_zhujima; }
 		}
 		/// <summary>
 		/// 单位

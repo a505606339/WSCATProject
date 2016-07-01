@@ -324,8 +324,8 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClose.Location = new System.Drawing.Point(1091, 8);
             this.buttonClose.Name = "buttonClose";
@@ -442,7 +442,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = Properties.Resources.checkMore;
+            this.pictureBox4.Image = global::WSCATProject.Properties.Resources.checkMore;
             this.pictureBox4.Location = new System.Drawing.Point(190, 78);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
@@ -453,7 +453,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = Properties.Resources.checkMore;
+            this.pictureBox3.Image = global::WSCATProject.Properties.Resources.checkMore;
             this.pictureBox3.Location = new System.Drawing.Point(472, 47);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(20, 20);
@@ -464,7 +464,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = Properties.Resources.checkMore;
+            this.pictureBox2.Image = global::WSCATProject.Properties.Resources.checkMore;
             this.pictureBox2.Location = new System.Drawing.Point(472, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(20, 20);
@@ -485,7 +485,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = Properties.Resources.checkMore;
+            this.pictureBox1.Image = global::WSCATProject.Properties.Resources.checkMore;
             this.pictureBox1.Location = new System.Drawing.Point(190, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);

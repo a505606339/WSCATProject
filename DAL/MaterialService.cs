@@ -46,9 +46,9 @@ namespace DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into T_Material(");
-			strSql.Append("Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_Number,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo)");
+			strSql.Append("Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_zhujima,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo)");
 			strSql.Append(" values (");
-			strSql.Append("@Ma_PicName,@Ma_Name,@Ma_Model,@Ma_RFID,@Ma_Barcode,@Ma_Code,@Ma_TypeID,@Ma_TypeName,@Ma_Price,@Ma_PriceA,@Ma_PriceB,@Ma_PriceC,@Ma_PriceD,@Ma_PriceE,@Ma_CreateDate,@Ma_Supplier,@Ma_SupID,@Ma_Number,@Ma_Unit,@Ma_InPrice,@Ma_InDate,@Ma_Remark,@Ma_Enable,@Ma_Clear,@Ma_Safeyone,@Ma_Safetytwo)");
+			strSql.Append("@Ma_PicName,@Ma_Name,@Ma_Model,@Ma_RFID,@Ma_Barcode,@Ma_Code,@Ma_TypeID,@Ma_TypeName,@Ma_Price,@Ma_PriceA,@Ma_PriceB,@Ma_PriceC,@Ma_PriceD,@Ma_PriceE,@Ma_CreateDate,@Ma_Supplier,@Ma_SupID,@Ma_zhujima,@Ma_Unit,@Ma_InPrice,@Ma_InDate,@Ma_Remark,@Ma_Enable,@Ma_Clear,@Ma_Safeyone,@Ma_Safetytwo)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Ma_PicName", SqlDbType.NVarChar,512),
@@ -68,7 +68,7 @@ namespace DAL
 					new SqlParameter("@Ma_CreateDate", SqlDbType.DateTime),
 					new SqlParameter("@Ma_Supplier", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_SupID", SqlDbType.NVarChar,512),
-					new SqlParameter("@Ma_Number", SqlDbType.NVarChar,512),
+					new SqlParameter("@Ma_zhujima", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_Unit", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_InPrice", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_InDate", SqlDbType.DateTime),
@@ -94,7 +94,7 @@ namespace DAL
 			parameters[14].Value = model.Ma_CreateDate;
 			parameters[15].Value = model.Ma_Supplier;
 			parameters[16].Value = model.Ma_SupID;
-			parameters[17].Value = model.Ma_Number;
+			parameters[17].Value = model.Ma_zhujima;
 			parameters[18].Value = model.Ma_Unit;
 			parameters[19].Value = model.Ma_InPrice;
 			parameters[20].Value = model.Ma_InDate;
@@ -138,7 +138,7 @@ namespace DAL
 			strSql.Append("Ma_CreateDate=@Ma_CreateDate,");
 			strSql.Append("Ma_Supplier=@Ma_Supplier,");
 			strSql.Append("Ma_SupID=@Ma_SupID,");
-			strSql.Append("Ma_Number=@Ma_Number,");
+			strSql.Append("Ma_zhujima=@Ma_zhujima,");
 			strSql.Append("Ma_Unit=@Ma_Unit,");
 			strSql.Append("Ma_InPrice=@Ma_InPrice,");
 			strSql.Append("Ma_InDate=@Ma_InDate,");
@@ -166,7 +166,7 @@ namespace DAL
 					new SqlParameter("@Ma_CreateDate", SqlDbType.DateTime),
 					new SqlParameter("@Ma_Supplier", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_SupID", SqlDbType.NVarChar,512),
-					new SqlParameter("@Ma_Number", SqlDbType.NVarChar,512),
+					new SqlParameter("@Ma_zhujima", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_Unit", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_InPrice", SqlDbType.NVarChar,512),
 					new SqlParameter("@Ma_InDate", SqlDbType.DateTime),
@@ -193,7 +193,7 @@ namespace DAL
 			parameters[14].Value = model.Ma_CreateDate;
 			parameters[15].Value = model.Ma_Supplier;
 			parameters[16].Value = model.Ma_SupID;
-			parameters[17].Value = model.Ma_Number;
+			parameters[17].Value = model.Ma_zhujima;
 			parameters[18].Value = model.Ma_Unit;
 			parameters[19].Value = model.Ma_InPrice;
 			parameters[20].Value = model.Ma_InDate;
@@ -266,7 +266,7 @@ namespace DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Ma_ID,Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_Number,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo from T_Material ");
+			strSql.Append("select  top 1 Ma_ID,Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_zhujima,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo from T_Material ");
 			strSql.Append(" where Ma_ID=@Ma_ID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Ma_ID", SqlDbType.Int,4)
@@ -366,9 +366,9 @@ namespace DAL
 				{
 					model.Ma_SupID=row["Ma_SupID"].ToString();
 				}
-				if(row["Ma_Number"]!=null)
+				if(row["Ma_zhujima"] !=null)
 				{
-					model.Ma_Number=row["Ma_Number"].ToString();
+					model.Ma_zhujima = row["Ma_zhujima"].ToString();
 				}
 				if(row["Ma_Unit"]!=null)
 				{
@@ -412,11 +412,11 @@ namespace DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Ma_ID,Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_Number,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo ");
-			strSql.Append(" FROM T_Material ");
+			strSql.Append("select Ma_ID,Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_zhujima,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo ");
+			strSql.Append(" FROM T_Material where Ma_Clear = 1 and Ma_Enable = 1");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" and "+strWhere);
 			}
 			return DbHelperSQL.Query(strSql.ToString());
 		}
@@ -432,11 +432,11 @@ namespace DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Ma_ID,Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_Number,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo ");
-			strSql.Append(" FROM T_Material ");
+			strSql.Append(" Ma_ID,Ma_PicName,Ma_Name,Ma_Model,Ma_RFID,Ma_Barcode,Ma_Code,Ma_TypeID,Ma_TypeName,Ma_Price,Ma_PriceA,Ma_PriceB,Ma_PriceC,Ma_PriceD,Ma_PriceE,Ma_CreateDate,Ma_Supplier,Ma_SupID,Ma_zhujima,Ma_Unit,Ma_InPrice,Ma_InDate,Ma_Remark,Ma_Enable,Ma_Clear,Ma_Safeyone,Ma_Safetytwo ");
+			strSql.Append(" FROM T_Material where Ma_Clear = 1 and Ma_Enable = 1");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" and "+strWhere);
 			}
 			strSql.Append(" order by " + filedOrder);
 			return DbHelperSQL.Query(strSql.ToString());
@@ -448,10 +448,10 @@ namespace DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM T_Material ");
+			strSql.Append("select count(1) FROM T_Material where Ma_Clear = 1 and Ma_Enable = 1");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" and "+strWhere);
 			}
 			object obj = DbHelperSQL.GetSingle(strSql.ToString());
 			if (obj == null)
@@ -525,7 +525,7 @@ namespace DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from T_Material");
-            strSql.Append(" where Ma_Code=@Ma_Code");
+            strSql.Append(" where Ma_Code=@Ma_Code and Ma_Clear = 1 and Ma_Enable = 1");
             SqlParameter[] parameters = {
                     new SqlParameter("@Ma_Code", SqlDbType.VarChar,512)
             };
@@ -537,12 +537,13 @@ namespace DAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(string Ma_Code)
+        public bool DeleteFake(string Ma_Code)
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from T_Material ");
-            strSql.Append(" where Ma_Code=@Ma_Code");
+            strSql.Append("update T_Material set");
+            strSql.Append(" Ma_Clear = 0");
+            strSql.Append(" where Ma_Code = @Ma_Code");
             SqlParameter[] parameters = {
                     new SqlParameter("@Ma_Code", SqlDbType.VarChar,512)
             };

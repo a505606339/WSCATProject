@@ -11,19 +11,14 @@ namespace Model
 		{}
 		#region Model
 		private int _mt_id;
-		private string _mt_remark;
-		private int? _mt_enable=1;
+        private string _mt_code;
+        private string _mt_name;
+        private string _mt_parentid;
+        private int? _mt_enable=1;
 		private int? _mt_clear=1;
-		private string _mt_safetyone;
-		private string _mt_safetytwo;
-		private string _mt_code;
-		private string _mt_onegroup;
-		private string _mt_twogroup;
-		private string _mt_threegroup;
-		private string _mt_fourgroup;
-		private string _mt_fivegroup;
+		
 		/// <summary>
-		/// 
+		/// 自增
 		/// </summary>
 		public int MT_ID
 		{
@@ -31,17 +26,33 @@ namespace Model
 			get{return _mt_id;}
 		}
 		/// <summary>
-		/// 备注
+		/// 编号
 		/// </summary>
-		public string MT_Remark
+		public string MT_Code
 		{
-			set{ _mt_remark=value;}
-			get{return _mt_remark;}
+			set{ _mt_code = value;}
+			get{return _mt_code; }
 		}
-		/// <summary>
-		/// 是否启用
+        /// <summary>
+		/// 类别名称
 		/// </summary>
-		public int? MT_Enable
+		public string MT_Name
+        {
+            set { _mt_name = value; }
+            get { return _mt_name; }
+        }
+        /// <summary>
+		/// 类别名称
+		/// </summary>
+		public string MT_ParentID
+        {
+            set { _mt_parentid = value; }
+            get { return _mt_parentid; }
+        }
+        /// <summary>
+        /// 是否启用
+        /// </summary>
+        public int? MT_Enable
 		{
 			set{ _mt_enable=value;}
 			get{return _mt_enable;}
@@ -54,70 +65,7 @@ namespace Model
 			set{ _mt_clear=value;}
 			get{return _mt_clear;}
 		}
-		/// <summary>
-		/// 保留字段1
-		/// </summary>
-		public string MT_Safetyone
-		{
-			set{ _mt_safetyone=value;}
-			get{return _mt_safetyone;}
-		}
-		/// <summary>
-		/// 保留字段2
-		/// </summary>
-		public string MT_Safetytwo
-		{
-			set{ _mt_safetytwo=value;}
-			get{return _mt_safetytwo;}
-		}
-		/// <summary>
-		/// 类别编号
-		/// </summary>
-		public string MT_Code
-		{
-			set{ _mt_code=value;}
-			get{return _mt_code;}
-		}
-		/// <summary>
-		/// 一级类别
-		/// </summary>
-		public string MT_OneGroup
-		{
-			set{ _mt_onegroup=value;}
-			get{return _mt_onegroup;}
-		}
-		/// <summary>
-		/// 二级类别
-		/// </summary>
-		public string MT_TwoGroup
-		{
-			set{ _mt_twogroup=value;}
-			get{return _mt_twogroup;}
-		}
-		/// <summary>
-		/// 三级类别
-		/// </summary>
-		public string MT_ThreeGroup
-		{
-			set{ _mt_threegroup=value;}
-			get{return _mt_threegroup;}
-		}
-		/// <summary>
-		/// 四级类别
-		/// </summary>
-		public string MT_FourGroup
-		{
-			set{ _mt_fourgroup=value;}
-			get{return _mt_fourgroup;}
-		}
-		/// <summary>
-		/// 五级类别
-		/// </summary>
-		public string MT_FiveGroup
-		{
-			set{ _mt_fivegroup=value;}
-			get{return _mt_fivegroup;}
-		}
+		
 		#endregion Model
 
 	}

@@ -22,14 +22,21 @@ namespace HelperUtility.Encrypt
             int key2 = 19;
             for (int i = 0; i < strBytes.Length; i++)
             {
-                strBytes[i] = byte.Parse(strCodeHex.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
-                byte code = strBytes[i];
-                code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
-                code = (byte)~code;
-                byte code2 = (byte)~(key1 ^ key2);
-                code = (byte)(code ^ code2);
-                code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
-                codeBytes[i] = code;
+                try
+                {
+                    strBytes[i] = byte.Parse(strCodeHex.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte code = strBytes[i];
+                    code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
+                    code = (byte)~code;
+                    byte code2 = (byte)~(key1 ^ key2);
+                    code = (byte)(code ^ code2);
+                    code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
+                    codeBytes[i] = code;
+                }
+                catch
+                {
+                    return "";
+                }
             }
             if (codeBytes.Length >= 1)
                 strCode = BitConverter.ToString(codeBytes).Replace("-", "");
@@ -50,6 +57,8 @@ namespace HelperUtility.Encrypt
             int key2 = 19;
             for (int i = 0; i < strBytes.Length; i++)
             {
+                try
+                {
                     byte code = strBytes[i];
                     code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
                     code = (byte)~code;
@@ -57,6 +66,11 @@ namespace HelperUtility.Encrypt
                     code = (byte)(code ^ code2);
                     code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
                     codeBytes[i] = code;
+                }
+                catch
+                {
+                    return "";
+                }
             }
             if (codeBytes.Length >= 1)
                 strCode = BitConverter.ToString(codeBytes).Replace("-", "");
@@ -78,15 +92,22 @@ namespace HelperUtility.Encrypt
             int key2 = 19;
             for (int i = 0; i < strBytes.Length; i++)
             {
-                strBytes[i] = byte.Parse(strDecodeHex.Substring(i * 2, 2), 
-                    System.Globalization.NumberStyles.HexNumber);
-                byte code = strBytes[i];
-                code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
-                code = (byte)~code;
-                byte code2 = (byte)~(key1 ^ key2);
-                code = (byte)(code ^ code2);
-                code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
-                decodeBytes[i] = code;
+                try
+                {
+                    strBytes[i] = byte.Parse(strDecodeHex.Substring(i * 2, 2),
+                                        System.Globalization.NumberStyles.HexNumber);
+                    byte code = strBytes[i];
+                    code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
+                    code = (byte)~code;
+                    byte code2 = (byte)~(key1 ^ key2);
+                    code = (byte)(code ^ code2);
+                    code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
+                    decodeBytes[i] = code;
+                }
+                catch
+                {
+                    return "";
+                }
             }
             if (decodeBytes.Length >= 1)
                 strDecode = UTF8Encoding.Default.GetString(decodeBytes, 0, decodeBytes.Length);
@@ -108,14 +129,21 @@ namespace HelperUtility.Encrypt
             int key2 = 19;
             for (int i = 0; i < strBytes.Length; i++)
             {
-                strBytes[i] = byte.Parse(strDecodeHex.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
-                byte code = strBytes[i];
-                code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
-                code = (byte)~code;
-                byte code2 = (byte)~(key1 ^ key2);
-                code = (byte)(code ^ code2);
-                code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
-                decodeBytes[i] = code;
+                try
+                {
+                    strBytes[i] = byte.Parse(strDecodeHex.Substring(i * 2, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte code = strBytes[i];
+                    code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
+                    code = (byte)~code;
+                    byte code2 = (byte)~(key1 ^ key2);
+                    code = (byte)(code ^ code2);
+                    code = (byte)(((code & 0x0f) << 4) + ((code & 0xf0) >> 4));
+                    decodeBytes[i] = code;
+                }
+                catch
+                {
+                    return "";
+                }
             }
             if (decodeBytes.Length >= 1)
                 strDecode = BitConverter.ToString(decodeBytes).Replace("-", "");

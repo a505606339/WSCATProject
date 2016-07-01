@@ -1,11 +1,12 @@
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\BLL.dll
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\BLL.pdb
-F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.dll
-F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.pdb
-F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\DAL.dll
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\HelperUtility.dll
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\Model.dll
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\DAL.pdb
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\HelperUtility.pdb
 F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\Model.pdb
+F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.dll
+F:\项目\WSCAT\Project\WSCATProject\BLL\obj\Debug\BLL.pdb
+F:\项目\WSCAT\Project\WSCATProject\BLL\bin\Debug\NPOI.dll

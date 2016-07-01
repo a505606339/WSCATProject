@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Model;
+using HelperUtility.Encrypt;
 using System.Data;
 
 namespace BLL
@@ -77,7 +78,8 @@ namespace BLL
         /// </summary>
         public DataSet GetList(string strWhere)
         {
-            return dal.GetList(strWhere);
+            CodingHelper ch = new CodingHelper();
+            return ch.DataSetReCoding(dal.GetList(strWhere));
         }
         /// <summary>
         /// 获得前几行数据
@@ -138,9 +140,8 @@ namespace BLL
         {
             return dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
         }
-        /// <summary>
-        /// 分页获取数据列表
-        /// </summary>
+
+        //分页获取数据列表
         //public DataSet GetList(int PageSize,int PageIndex,string strWhere)
         //{
         //return dal.GetList(PageSize,PageIndex,strWhere);
@@ -149,6 +150,80 @@ namespace BLL
         #endregion  BasicMethod
 
         #region  ExtensionMethod
+
+        /// <summary>
+        /// 用事务新增客户和折扣
+        /// </summary>
+        public bool AddClientAndDiscount(Client client, Discount discount)
+        {
+            return dal.AddClientAndDiscount(client, discount);
+        }
+
+        /// <summary>
+        /// 根据code更新客户数据列表
+        /// </summary>
+        public bool UpdateByCode(Client client)
+        {
+            return dal.UpdateByCode(client);
+        }
+
+        /// <summary>
+        /// 根据点击的节点用linq的lambda表达式检索数据 
+        /// </summary>
+        /// <param name="dt">所有数据列表</param>
+        /// <param name="nodeText">查询的文本</param>
+        /// /// <param name="field">查询的数据列</param>
+        /// <returns></returns>
+        public DataTable searchClientByNodeClick(DataTable dt, string nodeText, string field)
+        {
+            if(nodeText == "所有节点")
+            {
+                return dt;
+            }
+            else
+            {
+                string f = "";
+                switch(field)
+                {
+                    case "客户名称":
+                        f = "Cli_Name";
+                        break;
+                    case "单位名称":
+                        f = "Cli_Company";
+                        break;
+                    case "联系人":
+                        f = "Cli_LinkMan";
+                        break;
+                    case "手机号":
+                        f = "Cli_Phone";
+                        break;
+                    case "地区":
+                        f = "Cli_area";
+                        break;
+                }
+                var result = dt.AsEnumerable().
+                Where(c => c[f].ToString().Contains(nodeText));
+                
+                //为防止无法检索到任何数据的情况下无法复制结果datatable给新的datatable
+                //故用中间量先进行检查
+                DataTable resultDT = dt.Clone();
+                if (result.Count() > 0)
+                {
+                    resultDT = result.CopyToDataTable();
+                }
+                return resultDT;
+            }
+        }
+        
+        /// <summary>
+        /// 根据code做假删除
+        /// </summary>
+        /// <param name="code">编号</param>
+        /// <returns></returns>
+        public bool DeleteFake(string code)
+        {
+            return dal.DeleteFake(XYEEncoding.strCodeHex(code));
+        }
 
         #endregion  ExtensionMethod
     }

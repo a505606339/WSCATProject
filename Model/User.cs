@@ -11,6 +11,7 @@ namespace Model
 		{}
 		#region Model
 		private int _user_id;
+        private string _user_code;
 		private string _user_zhiwen;
 		private string _user_name;
 		private string _user_cardcode;
@@ -73,8 +74,24 @@ namespace Model
 			set{ _user_manager=value;}
 			get{return _user_manager;}
 		}
-		#endregion Model
 
-	}
+        /// <summary>
+        /// 编号
+        /// </summary>
+        public string User_code
+        {
+            get
+            {
+                return _user_code;
+            }
+
+            set
+            {
+                _user_code = value;
+            }
+        }
+        #endregion Model
+
+    }
 }
 

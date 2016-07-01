@@ -381,7 +381,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// 根据Code更新一条数据
+        /// 根据Code更新一条数据 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -437,6 +437,22 @@ namespace DAL
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 根据名称模糊检索
+        /// </summary>
+        /// <param name="name">用户名</param>
+        /// <returns></returns>
+        public DataSet Search(string name)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select CT_ID,CT_Code,CT_Name,CT_Remark from T_ClientType");
+            strSql.Append(" where CT_Enable = 1 and CT_Name Like '%");
+            strSql.Append(name);
+            strSql.Append("%'");
+            DataSet ds = DbHelperSQL.Query(strSql.ToString());
+            return ds;
         }
         #endregion  ExtensionMethod
     }

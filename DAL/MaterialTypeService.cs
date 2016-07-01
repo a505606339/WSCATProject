@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -29,7 +29,7 @@ namespace DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select count(1) from T_MaterialType");
-			strSql.Append(" where MT_ID=@MT_ID");
+			strSql.Append(" where MT_ID=@MT_ID and MT_Enable = 1 and MT_Clear = 1");
 			SqlParameter[] parameters = {
 					new SqlParameter("@MT_ID", SqlDbType.Int,4)
 			};
@@ -46,33 +46,21 @@ namespace DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into T_MaterialType(");
-			strSql.Append("MT_Remark,MT_Enable,MT_Clear,MT_Safetyone,MT_Safetytwo,MT_Code,MT_OneGroup,MT_TwoGroup,MT_ThreeGroup,MT_FourGroup,MT_FiveGroup)");
+			strSql.Append("MT_Code,MT_Name,MT_ParentID,MT_Enable,MT_Clear)");
 			strSql.Append(" values (");
-			strSql.Append("@MT_Remark,@MT_Enable,@MT_Clear,@MT_Safetyone,@MT_Safetytwo,@MT_Code,@MT_OneGroup,@MT_TwoGroup,@MT_ThreeGroup,@MT_FourGroup,@MT_FiveGroup)");
+			strSql.Append("@MT_Code,@MT_Name,@MT_ParentID,@MT_Enable,@MT_Clear)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
-					new SqlParameter("@MT_Remark", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_Enable", SqlDbType.Int,4),
-					new SqlParameter("@MT_Clear", SqlDbType.Int,4),
-					new SqlParameter("@MT_Safetyone", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_Safetytwo", SqlDbType.NVarChar,512),
 					new SqlParameter("@MT_Code", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_OneGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_TwoGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_ThreeGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_FourGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_FiveGroup", SqlDbType.NVarChar,512)};
-			parameters[0].Value = model.MT_Remark;
-			parameters[1].Value = model.MT_Enable;
-			parameters[2].Value = model.MT_Clear;
-			parameters[3].Value = model.MT_Safetyone;
-			parameters[4].Value = model.MT_Safetytwo;
-			parameters[5].Value = model.MT_Code;
-			parameters[6].Value = model.MT_OneGroup;
-			parameters[7].Value = model.MT_TwoGroup;
-			parameters[8].Value = model.MT_ThreeGroup;
-			parameters[9].Value = model.MT_FourGroup;
-			parameters[10].Value = model.MT_FiveGroup;
+					new SqlParameter("@MT_Name", SqlDbType.NVarChar,512),
+					new SqlParameter("@MT_ParentID", SqlDbType.NVarChar,512),
+					new SqlParameter("@MT_Enable", SqlDbType.Int),
+					new SqlParameter("@MT_Clear", SqlDbType.Int)};
+			parameters[0].Value = model.MT_Code;
+			parameters[1].Value = model.MT_Name;
+			parameters[2].Value = model.MT_ParentID;
+			parameters[3].Value = model.MT_Enable;
+			parameters[4].Value = model.MT_Clear;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -91,43 +79,25 @@ namespace DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update T_MaterialType set ");
-			strSql.Append("MT_Remark=@MT_Remark,");
+			strSql.Append("MT_Code=@MT_Code,");
+			strSql.Append("MT_Name=@MT_Name,");
+			strSql.Append("MT_ParentID=@MT_ParentID,");
 			strSql.Append("MT_Enable=@MT_Enable,");
 			strSql.Append("MT_Clear=@MT_Clear,");
-			strSql.Append("MT_Safetyone=@MT_Safetyone,");
-			strSql.Append("MT_Safetytwo=@MT_Safetytwo,");
-			strSql.Append("MT_Code=@MT_Code,");
-			strSql.Append("MT_OneGroup=@MT_OneGroup,");
-			strSql.Append("MT_TwoGroup=@MT_TwoGroup,");
-			strSql.Append("MT_ThreeGroup=@MT_ThreeGroup,");
-			strSql.Append("MT_FourGroup=@MT_FourGroup,");
-			strSql.Append("MT_FiveGroup=@MT_FiveGroup");
 			strSql.Append(" where MT_ID=@MT_ID");
 			SqlParameter[] parameters = {
-					new SqlParameter("@MT_Remark", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_Enable", SqlDbType.Int,4),
-					new SqlParameter("@MT_Clear", SqlDbType.Int,4),
-					new SqlParameter("@MT_Safetyone", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_Safetytwo", SqlDbType.NVarChar,512),
 					new SqlParameter("@MT_Code", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_OneGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_TwoGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_ThreeGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_FourGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_FiveGroup", SqlDbType.NVarChar,512),
-					new SqlParameter("@MT_ID", SqlDbType.Int,4)};
-			parameters[0].Value = model.MT_Remark;
-			parameters[1].Value = model.MT_Enable;
-			parameters[2].Value = model.MT_Clear;
-			parameters[3].Value = model.MT_Safetyone;
-			parameters[4].Value = model.MT_Safetytwo;
-			parameters[5].Value = model.MT_Code;
-			parameters[6].Value = model.MT_OneGroup;
-			parameters[7].Value = model.MT_TwoGroup;
-			parameters[8].Value = model.MT_ThreeGroup;
-			parameters[9].Value = model.MT_FourGroup;
-			parameters[10].Value = model.MT_FiveGroup;
-			parameters[11].Value = model.MT_ID;
+					new SqlParameter("@MT_Name", SqlDbType.NVarChar,512),
+					new SqlParameter("@MT_ParentID", SqlDbType.NVarChar,512),
+					new SqlParameter("@MT_Enable", SqlDbType.Int),
+					new SqlParameter("@MT_Clear", SqlDbType.Int),
+					new SqlParameter("@MT_ID", SqlDbType.Int)};
+			parameters[0].Value = model.MT_Code;
+			parameters[1].Value = model.MT_Name;
+			parameters[2].Value = model.MT_ParentID;
+			parameters[3].Value = model.MT_Enable;
+			parameters[4].Value = model.MT_Clear;
+			parameters[5].Value = model.MT_ID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -183,7 +153,6 @@ namespace DAL
 			}
 		}
 
-
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
@@ -191,8 +160,8 @@ namespace DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 MT_ID,MT_Remark,MT_Enable,MT_Clear,MT_Safetyone,MT_Safetytwo,MT_Code,MT_OneGroup,MT_TwoGroup,MT_ThreeGroup,MT_FourGroup,MT_FiveGroup from T_MaterialType ");
-			strSql.Append(" where MT_ID=@MT_ID");
+			strSql.Append("select  top 1 MT_ID,MT_Code,MT_Name,MT_ParentID,MT_Enable,MT_Clear from T_MaterialType");
+			strSql.Append(" where MT_ID=@MT_ID and MT_Enable = 1 and MT_Clear = 1");
 			SqlParameter[] parameters = {
 					new SqlParameter("@MT_ID", SqlDbType.Int,4)
 			};
@@ -210,7 +179,6 @@ namespace DAL
 			}
 		}
 
-
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
@@ -223,49 +191,25 @@ namespace DAL
 				{
 					model.MT_ID=int.Parse(row["MT_ID"].ToString());
 				}
-				if(row["MT_Remark"]!=null)
-				{
-					model.MT_Remark=row["MT_Remark"].ToString();
-				}
-				if(row["MT_Enable"]!=null && row["MT_Enable"].ToString()!="")
+                if (row["MT_Code"] != null)
+                {
+                    model.MT_Code = row["MT_Code"].ToString();
+                }
+                if (row["MT_Name"] != null)
+                {
+                    model.MT_Name = row["MT_Name"].ToString();
+                }
+                if (row["MT_ParentID"] != null)
+                {
+                    model.MT_ParentID = row["MT_ParentID"].ToString();
+                }
+                if (row["MT_Enable"]!=null && row["MT_Enable"].ToString()!="")
 				{
 					model.MT_Enable=int.Parse(row["MT_Enable"].ToString());
 				}
 				if(row["MT_Clear"]!=null && row["MT_Clear"].ToString()!="")
 				{
 					model.MT_Clear=int.Parse(row["MT_Clear"].ToString());
-				}
-				if(row["MT_Safetyone"]!=null)
-				{
-					model.MT_Safetyone=row["MT_Safetyone"].ToString();
-				}
-				if(row["MT_Safetytwo"]!=null)
-				{
-					model.MT_Safetytwo=row["MT_Safetytwo"].ToString();
-				}
-				if(row["MT_Code"]!=null)
-				{
-					model.MT_Code=row["MT_Code"].ToString();
-				}
-				if(row["MT_OneGroup"]!=null)
-				{
-					model.MT_OneGroup=row["MT_OneGroup"].ToString();
-				}
-				if(row["MT_TwoGroup"]!=null)
-				{
-					model.MT_TwoGroup=row["MT_TwoGroup"].ToString();
-				}
-				if(row["MT_ThreeGroup"]!=null)
-				{
-					model.MT_ThreeGroup=row["MT_ThreeGroup"].ToString();
-				}
-				if(row["MT_FourGroup"]!=null)
-				{
-					model.MT_FourGroup=row["MT_FourGroup"].ToString();
-				}
-				if(row["MT_FiveGroup"]!=null)
-				{
-					model.MT_FiveGroup=row["MT_FiveGroup"].ToString();
 				}
 			}
 			return model;
@@ -277,11 +221,11 @@ namespace DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select MT_ID,MT_Remark,MT_Enable,MT_Clear,MT_Safetyone,MT_Safetytwo,MT_Code,MT_OneGroup,MT_TwoGroup,MT_ThreeGroup,MT_FourGroup,MT_FiveGroup ");
-			strSql.Append(" FROM T_MaterialType ");
+			strSql.Append("select MT_ID,MT_Code,MT_Name,MT_ParentID,MT_Enable,MT_Clear");
+			strSql.Append(" FROM T_MaterialType where MT_Enable = 1 and MT_Clear = 1");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" and "+strWhere);
 			}
 			return DbHelperSQL.Query(strSql.ToString());
 		}
@@ -297,11 +241,11 @@ namespace DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" MT_ID,MT_Remark,MT_Enable,MT_Clear,MT_Safetyone,MT_Safetytwo,MT_Code,MT_OneGroup,MT_TwoGroup,MT_ThreeGroup,MT_FourGroup,MT_FiveGroup ");
-			strSql.Append(" FROM T_MaterialType ");
+			strSql.Append(" MT_ID,MT_Code,MT_Name,MT_ParentID,MT_Enable,MT_Clear ");
+			strSql.Append(" FROM T_MaterialType where MT_Enable = 1 and MT_Clear = 1");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" and " + strWhere);
 			}
 			strSql.Append(" order by " + filedOrder);
 			return DbHelperSQL.Query(strSql.ToString());
@@ -313,10 +257,10 @@ namespace DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM T_MaterialType ");
+			strSql.Append("select count(1) FROM T_MaterialType where MT_Enable = 1 and MT_Clear = 1");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" and "+strWhere);
 			}
 			object obj = DbHelperSQL.GetSingle(strSql.ToString());
 			if (obj == null)
@@ -389,7 +333,7 @@ namespace DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from T_MaterialType");
-            strSql.Append(" where MT_Code=@MT_Code");
+            strSql.Append(" where MT_Code=@MT_Code and MT_Enable = 1 and MT_Clear = 1");
             SqlParameter[] parameters = {
                     new SqlParameter("@MT_Code", SqlDbType.VarChar,512)
             };
@@ -397,6 +341,88 @@ namespace DAL
 
             return DbHelperSQL.Exists(strSql.ToString(), parameters);
         }
+
+        /// <summary>
+		/// 根据code更新一条数据
+		/// </summary>
+		public bool UpdateByCode(MaterialType model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update T_MaterialType set ");
+            strSql.Append("MT_Name=@MT_Name,");
+            strSql.Append("MT_ParentID=@MT_ParentID,");
+            strSql.Append("MT_Enable=@MT_Enable,");
+            strSql.Append("MT_Clear=@MT_Clear,");
+            strSql.Append(" where MT_Code=@MT_Code");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@MT_Name", SqlDbType.NVarChar,512),
+                    new SqlParameter("@MT_ParentID", SqlDbType.NVarChar,512),
+                    new SqlParameter("@MT_Enable", SqlDbType.Int),
+                    new SqlParameter("@MT_Clear", SqlDbType.Int),
+                    new SqlParameter("@MT_Code", SqlDbType.NVarChar,512)};
+            parameters[0].Value = model.MT_Name;
+            parameters[1].Value = model.MT_ParentID;
+            parameters[2].Value = model.MT_Enable;
+            parameters[3].Value = model.MT_Clear;
+            parameters[4].Value = model.MT_Code;
+
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 根据code做假删除
+        /// </summary>
+        /// <param name="code">要删除的类型code</param>
+        /// <returns></returns>
+        public bool DeleteFake(string code)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update T_MaterialType set MT_Clear = 0");
+            strSql.Append(" where MT_Code=@MT_Code");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@MT_Code", SqlDbType.VarChar,512)
+            };
+            parameters[0].Value = code;
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 假删除所有除了根节点之外的所有节点
+        /// </summary>
+        /// <param name="idList"></param>
+        /// <returns></returns>
+        public bool DeleteAllFake()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update T_MaterialType set MT_Clear = 0 ");
+            strSql.Append(" where MT_Enable == 1 and MT_Clear == 1 and MT_ParentID <> D4");
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         #endregion  ExtensionMethod
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using Model;
+using HelperUtility.Encrypt;
 using System.Data;
 
 namespace BLL
@@ -36,6 +37,10 @@ namespace BLL
         /// </summary>
         public int Add(MaterialType model)
         {
+            model.MT_Code = XYEEncoding.strCodeHex(model.MT_Code);
+            model.MT_Name = XYEEncoding.strCodeHex(model.MT_Name);
+            model.MT_ParentID = XYEEncoding.strCodeHex(model.MT_ParentID);
+            
             return dal.Add(model);
         }
 
@@ -78,7 +83,8 @@ namespace BLL
         /// </summary>
         public DataSet GetList(string strWhere)
         {
-            return dal.GetList(strWhere);
+            CodingHelper ch = new CodingHelper();
+            return ch.DataSetReCoding(dal.GetList(strWhere));
         }
 
         /// <summary>
@@ -121,14 +127,6 @@ namespace BLL
         }
 
         /// <summary>
-        /// 获得数据列表
-        /// </summary>
-        public DataSet GetAllList()
-        {
-            return GetList("");
-        }
-
-        /// <summary>
         /// 分页获取数据列表
         /// </summary>
         public int GetRecordCount(string strWhere)
@@ -155,6 +153,45 @@ namespace BLL
         #endregion  BasicMethod
 
         #region  ExtensionMethod
+
+        /// <summary>
+        /// 是否存在该记录
+        /// </summary>
+        public bool Exists(string MT_Code)
+        {
+            return dal.Exists(MT_Code);
+        }
+
+        /// <summary>
+		/// 根据code更新一条数据
+		/// </summary>
+		public bool UpdateByCode(MaterialType model)
+        {
+            model.MT_Name = XYEEncoding.strCodeHex(model.MT_Name);
+            model.MT_Code = XYEEncoding.strCodeHex(model.MT_Code);
+            model.MT_ParentID = XYEEncoding.strCodeHex(model.MT_ParentID);
+
+            return dal.UpdateByCode(model);
+        }
+
+        /// <summary>
+        /// 根据code假删除数据
+        /// </summary>
+        /// <param name="code">编号</param>
+        /// <returns></returns>
+        public bool DeleteFake(string code)
+        {
+            return dal.DeleteFake(XYEEncoding.strCodeHex(code));
+        }
+
+        /// <summary>
+        /// 假删除所有除了根节点之外的所有节点
+        /// </summary>
+        /// <returns></returns>
+        public bool DeleteAllFake()
+        {
+            return dal.DeleteAllFake();
+        }
 
         #endregion  ExtensionMethod
     }

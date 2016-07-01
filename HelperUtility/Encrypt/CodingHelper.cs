@@ -39,5 +39,36 @@ namespace HelperUtility.Encrypt
             }
             return TempDT;
         }
+
+        public DataSet DataSetReCoding(DataSet ds)
+        {
+            DataSet TempDS = ds.Clone();
+            if(ds.Tables.Count > 0)
+            {
+                //遍历表 并复制数据
+                for(int t = 0;t<ds.Tables.Count;t++)
+                {
+                    for (int i = 0; i < ds.Tables[t].Rows.Count; i++)
+                    {
+                        DataRow dr = ds.Tables[t].NewRow();
+                        for (int j = 0; j < ds.Tables[t].Columns.Count; j++)
+                        {
+                            object temp = null;
+
+                            //时间和int以及bool不加密 需排除
+                            temp = (ds.Tables[t].Columns[j].DataType == typeof(int) ||
+                                ds.Tables[t].Columns[j].DataType == typeof(DateTime) ||
+                                ds.Tables[t].Columns[j].DataType == typeof(Boolean)) ?
+                                ds.Tables[t].Rows[i][j] :
+                                XYEEncoding.strHexDecode(ds.Tables[t].Rows[i][j].ToString());
+
+                            dr[j] = temp;
+                        }
+                        TempDS.Tables[t].Rows.Add(dr.ItemArray);
+                    }
+                }
+            }
+            return TempDS;
+        }
     }
 }

@@ -120,6 +120,7 @@ namespace DAL
                 return true;
             }
         }
+
         #endregion
 
         #region  执行简单SQL语句
@@ -217,7 +218,7 @@ namespace DAL
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(SQLString, connection);
-                System.Data.SqlClient.SqlParameter myParameter = new System.Data.SqlClient.SqlParameter("@content", SqlDbType.NText);
+                SqlParameter myParameter = new SqlParameter("@content", SqlDbType.NText);
                 myParameter.Value = content;
                 cmd.Parameters.Add(myParameter);
                 try
@@ -226,7 +227,7 @@ namespace DAL
                     int rows = cmd.ExecuteNonQuery();
                     return rows;
                 }
-                catch (System.Data.SqlClient.SqlException e)
+                catch (SqlException e)
                 {
                     throw e;
                 }
@@ -328,7 +329,7 @@ namespace DAL
                             return obj;
                         }
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (SqlException e)
                     {
                         connection.Close();
                         throw e;
@@ -356,7 +357,7 @@ namespace DAL
                             return obj;
                         }
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (SqlException e)
                     {
                         connection.Close();
                         throw e;
@@ -379,7 +380,7 @@ namespace DAL
                 SqlDataReader myReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 return myReader;
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (SqlException e)
             {
                 throw e;
             }   
@@ -401,7 +402,7 @@ namespace DAL
                     SqlDataAdapter command = new SqlDataAdapter(SQLString, connection);
                     command.Fill(ds, "ds");
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (SqlException ex)
                 {
                     throw new Exception(ex.Message);
                 }
@@ -420,15 +421,13 @@ namespace DAL
                     command.SelectCommand.CommandTimeout = Times;
                     command.Fill(ds, "ds");
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (SqlException ex)
                 {
                     throw new Exception(ex.Message);
                 }
                 return ds;
             }
         }
-
-
 
         #endregion
 
@@ -452,7 +451,7 @@ namespace DAL
                         cmd.Parameters.Clear();
                         return rows;
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (SqlException e)
                     {
                         throw e;
                     }
@@ -567,7 +566,7 @@ namespace DAL
                             return obj;
                         }
                     }
-                    catch (System.Data.SqlClient.SqlException e)
+                    catch (SqlException e)
                     {
                         throw e;
                     }
@@ -656,7 +655,7 @@ namespace DAL
                 }
             }
         }
-
+        
         #endregion
 
         #region 存储过程操作
@@ -780,6 +779,7 @@ namespace DAL
             return command;
         }
         #endregion
+
 
     }
 
