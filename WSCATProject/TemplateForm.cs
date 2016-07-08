@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevComponents.DotNetBar.SuperGrid;
 
 namespace WSCATProject
 {
@@ -23,9 +25,9 @@ namespace WSCATProject
             InitBottomLab();
             InitBottonLabText();
             InitButton();
-            multiHeaderView1.ColumnHeadersHeight = 40;
-            multiHeaderView1.ColumnHeadersHeightSizeMode =
-                DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewFujia.ReadOnly = true;
+            dataGridViewFujia.AllowUserToResizeColumns = false;
+            dataGridViewFujia.AllowUserToResizeRows = false;
         }
 
         //对view添加列标题 
@@ -116,12 +118,39 @@ namespace WSCATProject
             }
         }
 
+        //控制面板是否显示
         private bool _btnAdd = false;
 
         protected bool BtnAdd
         {
             get { return _btnAdd; }
             set { _btnAdd = value; }
+        }
+
+        protected virtual void dataGridViewFujia_VisibleChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+            Dispose();
+        }
+
+        private void superGridControl1_BeginEdit(object sender, GridEditEventArgs e)
+        {
+            if(e.GridCell.GridColumn.Name == "material")
+            {
+                resizablePanelData.Visible = true;
+                resizablePanelData.Location = new Point(e.GridCell.UnMergedBounds.X ,
+                    e.GridCell.UnMergedBounds.Bottom + panel7.Location.Y + 65);
+            }
+        }
+
+        private void superGridControl1_CloseEdit(object sender, GridCloseEditEventArgs e)
+        {
+            resizablePanelData.Visible = false;
         }
     }
 }

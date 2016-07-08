@@ -8,3 +8,4 @@ F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.csprojResolveAssemblyRefe
 F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.dll
 F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.pdb
 F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\NPOI.dll
+F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\DAL.dll.config

@@ -177,6 +177,12 @@ namespace DAL
                         " where Per_Code = '" + XYEEncoding.strCodeHex(dr["Per_Code"].ToString()) + "';");
                 }
             }
+
+            if(strSql.Length == 0)
+            {
+                return false;
+            }
+
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
             if (rows > 0)
             {
@@ -188,6 +194,11 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// 批量插入权限信息到数据库中
+        /// </summary>
+        /// <param name="pList"></param>
+        /// <returns></returns> 
         public int AddBatch(List<Permission> pList)
         {
             if(pList.Count < 1)
@@ -195,7 +206,7 @@ namespace DAL
                 return 0;
             }
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("insert into T_Permission(Per_Code,Per_ModuleName,Per_ReadState,Per_WriteState,Per_AuditState,Per_AuditState,Per_Type,Per_RoleCode) ");
+            strSql.Append("insert into T_Permission(Per_Code,Per_ModuleName,Per_ReadState,Per_WriteState,Per_AuditState,Per_Clear,Per_Type,Per_RoleCode) ");
             strSql.Append(" values ");
             foreach(var permission in pList)
             {
@@ -206,8 +217,10 @@ namespace DAL
                 strSql.Append(permission.Per_AuditState + ",");
                 strSql.Append(permission.Per_Clear + ",'");
                 strSql.Append(permission.Per_Type + "','");
-                strSql.Append(permission.Per_RoleCode + "')");
+                strSql.Append(permission.Per_RoleCode + "'),");
             }
+            //移除最后一个逗号
+            strSql.Remove(strSql.Length - 1, 1);
             int result = DbHelperSQL.ExecuteSql(strSql.ToString());
             return result;
         }

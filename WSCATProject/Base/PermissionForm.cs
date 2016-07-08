@@ -12,6 +12,7 @@ using HelperUtility;
 using System.Collections;
 using DevComponents.DotNetBar.SuperGrid;
 using Model;
+using HelperUtility.Encrypt;
 
 namespace WSCATProject.Base
 {
@@ -72,16 +73,17 @@ namespace WSCATProject.Base
         }
 
         /// <summary>
-        /// 加载datagridview
+        /// 加载datagridview 
         /// </summary>
         private void loadPermission()
         {
-            PermissionManager pm = new PermissionManager();
-            _datalist = pm.GetList("").Tables[0];
-            superGridControlPer.PrimaryGrid.DataSource = _datalist;
-            _datalist.AcceptChanges();
+            //PermissionManager pm = new PermissionManager();
+            //_datalist = pm.GetList("Per_RoleCode = '" + 
+            //    XYEEncoding.strCodeHex(treeViewUser.SelectedNode.Tag.ToString()) + "'").Tables[0];
+            //superGridControlPer.PrimaryGrid.DataSource = _datalist;
+            //_datalist.AcceptChanges();
         }
-
+        //全选
         private void buttonSelectAll_Click(object sender, EventArgs e)
         {
             GridItemsCollection gc = superGridControlPer.PrimaryGrid.Rows;
@@ -92,7 +94,7 @@ namespace WSCATProject.Base
                 gr.Cells["Per_AuditState"].Value = true;
             }
         }
-
+        //反选
         private void buttonInverse_Click(object sender, EventArgs e)
         {
             GridItemsCollection gc = superGridControlPer.PrimaryGrid.Rows;
@@ -165,6 +167,28 @@ namespace WSCATProject.Base
             tn.Text = nodeText;
             tn.Tag = code;
             treeViewUser.Nodes.Add(tn);
+        }
+
+        private void treeViewUser_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //根据点击的节点来查询权限信息,若点击的是管理员,则把编辑给禁止掉
+            if (treeViewUser.SelectedNode.Text == "管理员")
+            {
+                superGridControlPer.PrimaryGrid.AllowEdit = false;
+                buttonSelectAll.Enabled = false;
+                buttonInverse.Enabled = false;
+                buttonSave.Enabled = false;
+            }
+            else
+            {
+                superGridControlPer.PrimaryGrid.AllowEdit = true;
+            }
+            PermissionManager pm = new PermissionManager();
+            string rolecode = treeViewUser.SelectedNode.Tag.ToString();
+            _datalist = pm.
+                GetList("Per_RoleCode = '" + XYEEncoding.strCodeHex(rolecode) + "'").Tables[0];
+            superGridControlPer.PrimaryGrid.DataSource = _datalist;
+            _datalist.AcceptChanges();
         }
     }
     

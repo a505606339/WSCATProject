@@ -30,29 +30,57 @@ namespace WSCATProject.Base
             Role role = new Role();
             string percode = BuildCode.ModuleCode("PE");
             string rolecode = BuildCode.ModuleCode("RO");
+            // 新增一个角色信息
+            role.Role_Code = rolecode;
+            role.Role_Modules = "";
+            role.Role_Name = textBoxName.Text.Trim();
+            int roleAddResult = 0;
 
-            List<Permission> permList = new List<Permission>();
-            string[] nameList =
-                { "用户资料", "权限分配", "仓库资料", "货品资料",
-                "供应商资料", "物料信息","仓库系统","销售系统",
-                "售后系统","采购系统","财务系统","考勤系统" };
-            initPermission(permList, rolecode, nameList);
-            
-            string name = textBoxName.Text.Trim();
-            string code = rolecode;
+            try
+            {
+                roleAddResult = rm.Add(role);
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("增加角色失败,请检查服务器连接.错误信息:" + ex.Message);
+            }
 
-            role.Role_Code = code;
-            role.Role_Name = name;
-            
-            //触发事件新增节点
-            refresh?.Invoke(name, code);
+            if (roleAddResult == 0)
+            {
+                MessageBox.Show("未能成功新增角色数据,请重试");
+                return;
+            }
+
+            try
+            {
+                List<Permission> permList = new List<Permission>();
+                string[] nameList =
+                    {   "用户资料", "权限分配", "仓库资料", "货品资料",
+                            "供应商资料", "物料信息","仓库系统","销售系统",
+                            "售后系统","采购系统","财务系统","考勤系统" };
+                //填充权限实体列表
+                initPermission(permList, rolecode, nameList);
+                int result = pm.AddBatch(permList);
+                if (result > 0)
+                {
+                    MessageBox.Show("新增用户角色成功,该角色所有模块默认不可读写.");
+                }
+                //触发事件新增节点
+                refresh?.Invoke(textBoxName.Text, rolecode);
+            }
+            catch(Exception ex)
+            {
+                rm.Delete(roleAddResult);
+                MessageBox.Show("分配角色权限,请检查服务器连接.错误信息:" + ex.Message);
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
-
+        
         /// <summary>
         /// 根据权限名称来新增名称数量个权限信息,绑定到该角色上.默认没有有任何权限
         /// </summary>
@@ -111,6 +139,7 @@ namespace WSCATProject.Base
                 permission.Per_Type = "";
                 permission.Per_AuditState = 0;
                 permission.Per_WriteState = 0;
+                permList.Add(permission);
             }
         }
     }

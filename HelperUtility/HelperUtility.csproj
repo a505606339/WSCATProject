@@ -53,7 +53,6 @@
     <Compile Include="BuildCode.cs" />
     <Compile Include="Encrypt\CodingHelper.cs" />
     <Compile Include="Encrypt\XYEEncoding.cs" />
-    <Compile Include="Excel\GenerateExcel.cs" />
     <Compile Include="Excel\NPOIExcelHelper.cs" />
     <Compile Include="ExUI\imageButton.cs">
       <SubType>Component</SubType>

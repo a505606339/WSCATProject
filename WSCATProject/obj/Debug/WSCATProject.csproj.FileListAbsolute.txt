@@ -54,3 +54,7 @@ F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.St
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.PermissionForm.resources
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.UserCreateForm.resources
 F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.RoleCreateForm.resources
+F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.SellForm.InSellForm.resources
+F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.EmplyeeMaster.resources
+F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.EmpolyeeMaterial.resources
+F:\项目\WSCAT\Project\WSCATProject\WSCATProject\obj\Debug\WSCATProject.Base.InsEmpolyee.resources

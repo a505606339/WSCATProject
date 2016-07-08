@@ -60,7 +60,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "编码、名称、型号";
             dgvTextBoxColumn.DataPropertyName = "inBarcode";
             dgvTextBoxColumn.Width = 150;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -68,7 +68,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "货品名称";
             dgvTextBoxColumn.DataPropertyName = "orderName";
             dgvTextBoxColumn.Width = 100;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -76,7 +76,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "规格型号";
             dgvTextBoxColumn.DataPropertyName = "inType";
             dgvTextBoxColumn.Width = 100;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -84,7 +84,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "单位";
             dgvTextBoxColumn.DataPropertyName = "inUnit";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -92,7 +92,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "数量";
             dgvTextBoxColumn.DataPropertyName = "inNumber";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -100,7 +100,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "单价";
             dgvTextBoxColumn.DataPropertyName = "inPrice";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -108,7 +108,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "金额";
             dgvTextBoxColumn.DataPropertyName = "StockMoney";
             dgvTextBoxColumn.Width = 100;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -116,7 +116,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "备注";
             dgvTextBoxColumn.DataPropertyName = "inRemark";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -124,11 +124,9 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "自定义一";
             dgvTextBoxColumn.DataPropertyName = "StockCustom";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
-            this.multiHeaderView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine;
-            this.multiHeaderView1.MergeColumnHeaderBackColor = Color.Aquamarine;
-            multiHeaderView1.AddSpanHeader(0, 3, "货品信息");
+            this.dataGridViewFujia.ColumnHeadersDefaultCellStyle.BackColor = Color.Aquamarine;
         }
     }
 }

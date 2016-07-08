@@ -37,6 +37,9 @@ namespace BLL
         /// </summary>
         public int Add(Role model)
         {
+            model.Role_Code = XYEEncoding.strCodeHex(model.Role_Code);
+            model.Role_Modules = XYEEncoding.strCodeHex(model.Role_Modules);
+            model.Role_Name = XYEEncoding.strCodeHex(model.Role_Name);
             return dal.Add(model);
         }
 

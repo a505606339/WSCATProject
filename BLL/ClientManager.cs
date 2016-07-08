@@ -13,6 +13,7 @@ namespace BLL
     public class ClientManager
     {
         private readonly ClientService dal = new ClientService();
+        CodingHelper ch = new CodingHelper();
 
         #region  BasicMethod
 
@@ -78,7 +79,6 @@ namespace BLL
         /// </summary>
         public DataSet GetList(string strWhere)
         {
-            CodingHelper ch = new CodingHelper();
             return ch.DataSetReCoding(dal.GetList(strWhere));
         }
         /// <summary>
@@ -148,7 +148,7 @@ namespace BLL
         //}
 
         #endregion  BasicMethod
-
+        
         #region  ExtensionMethod
 
         /// <summary>
@@ -223,6 +223,15 @@ namespace BLL
         public bool DeleteFake(string code)
         {
             return dal.DeleteFake(XYEEncoding.strCodeHex(code));
+        }
+
+        /// <summary>
+        /// 获取简略的客户信息,包含编号/名称/电话/手机/地址/联系人/公司名称/备注
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetListInSimple()
+        {
+            return ch.DataSetReCoding(dal.GetListInSimple());
         }
 
         #endregion  ExtensionMethod

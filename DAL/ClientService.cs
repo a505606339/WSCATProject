@@ -885,6 +885,26 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// 获取简略的客户信息,包含编号/名称/电话/手机/地址/联系人/公司名称/备注
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetListInSimple()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select Cli_Code,Cli_Name,Cli_Phone,Cli_PhoneTwo,Cli_Address,Cli_LinkMan,Cli_Company,Cli_Remark from T_Client ");
+            strSql.Append(" where Cli_Enable = 1 ");
+            DataSet ds = DbHelperSQL.Query(strSql.ToString());
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return ds;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         #endregion  ExtensionMethod
     }
 }

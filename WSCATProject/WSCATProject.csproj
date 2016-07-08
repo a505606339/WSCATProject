@@ -89,6 +89,24 @@
     <Compile Include="Base\Client\CreateClientForm.Designer.cs">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base\EmplyeeMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\EmplyeeMaster.Designer.cs">
+      <DependentUpon>EmplyeeMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Empolyee\EmpolyeeMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Empolyee\EmpolyeeMaterial.Designer.cs">
+      <DependentUpon>EmpolyeeMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Empolyee\InsEmpolyee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Empolyee\InsEmpolyee.Designer.cs">
+      <DependentUpon>InsEmpolyee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +376,15 @@
     <EmbeddedResource Include="Base\Client\CreateClientForm.resx">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Base\EmplyeeMaster.resx">
+      <DependentUpon>EmplyeeMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Empolyee\EmpolyeeMaterial.resx">
+      <DependentUpon>EmpolyeeMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
+      <DependentUpon>InsEmpolyee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReturnedSelectForm.resx">
       <DependentUpon>ReturnedSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellForm\InSellForm.resx">
+      <DependentUpon>InSellForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockSystemForm\StockOtherInvoiceForm.resx">
       <DependentUpon>StockOtherInvoiceForm.cs</DependentUpon>

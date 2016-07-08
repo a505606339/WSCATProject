@@ -2,7 +2,6 @@ F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\HelperUtility.dll
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\HelperUtility.pdb
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\DevComponents.DotNetBar2.dll
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\DevComponents.DotNetBar2.xml
-F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.csprojResolveAssemblyReference.cache
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.ExUI.imageButton.resources
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.ExUI.labtextbox.resources
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.ExUI.MultiHeaderView.resources

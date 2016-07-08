@@ -58,7 +58,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "编码、名称、型号";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageBarcode";
             dgvTextBoxColumn.Width = 150;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -66,7 +66,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "货品名称";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageOrder";
             dgvTextBoxColumn.Width = 100;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -74,7 +74,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "规格型号";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageType";
             dgvTextBoxColumn.Width = 100;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -82,7 +82,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "单位";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageUnit";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -90,7 +90,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "数量";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageNumber";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -98,7 +98,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "单价";
             dgvTextBoxColumn.DataPropertyName = "stockBreakagePrice";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -106,7 +106,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "金额";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageMoney";
             dgvTextBoxColumn.Width = 100;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -114,7 +114,7 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "备注";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageRemark";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
             dgvTextBoxColumn = new DataGridViewTextBoxColumn();
             dgvTextBoxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -122,9 +122,8 @@ namespace WSCATProject.StockSystemForm
             dgvTextBoxColumn.HeaderText = "自定义一";
             dgvTextBoxColumn.DataPropertyName = "stockBreakageCustom";
             dgvTextBoxColumn.Width = 80;
-            multiHeaderView1.Columns.Add(dgvTextBoxColumn);
+            dataGridViewFujia.Columns.Add(dgvTextBoxColumn);
 
-            multiHeaderView1.AddSpanHeader(0, 3, "货品信息");
         }
     }
 }

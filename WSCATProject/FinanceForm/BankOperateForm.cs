@@ -24,7 +24,7 @@ namespace WSCATProject.FinanceForm
 
         protected override void InitDataGridViewHeaderColumn()
         {
-            multiHeaderView1.Visible = false;
+            superGridControl1.Visible = false;
             panel7.Visible = false;
         }
     }

@@ -59,7 +59,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.删除DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.全部删除AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.新增类型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,12 +66,17 @@
             this.删除全部ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TypeID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.TypeCode = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.TypeName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.TypeRemark = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.修改类型ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.styleManager2 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.TypeRemark = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.TypeName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.TypeCode = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.TypeID = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridCell1 = new DevComponents.DotNetBar.SuperGrid.GridCell();
+            this.gridCell2 = new DevComponents.DotNetBar.SuperGrid.GridCell();
+            this.gridCell3 = new DevComponents.DotNetBar.SuperGrid.GridCell();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,7 +85,7 @@
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;
-            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(71)))), ((int)(((byte)(42))))));
             // 
             // ribbonControl1
             // 
@@ -392,27 +396,6 @@
             this.全部删除AToolStripMenuItem.Text = "全部删除(&A)";
             this.全部删除AToolStripMenuItem.Click += new System.EventHandler(this.全部删除AToolStripMenuItem_Click);
             // 
-            // superGridControl1
-            // 
-            this.superGridControl1.ContextMenuStrip = this.contextMenuStrip1;
-            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.Location = new System.Drawing.Point(0, 51);
-            this.superGridControl1.Name = "superGridControl1";
-            // 
-            // 
-            // 
-            this.superGridControl1.PrimaryGrid.AllowEdit = false;
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeID);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeCode);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeName);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeRemark);
-            this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(401, 341);
-            this.superGridControl1.TabIndex = 4;
-            this.superGridControl1.Text = "superGridControl1";
-            this.superGridControl1.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl1_CellDoubleClick);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -463,32 +446,6 @@
             this.刷新ToolStripMenuItem.Text = "刷新";
             this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click);
             // 
-            // TypeID
-            // 
-            this.TypeID.DataPropertyName = "CT_ID";
-            this.TypeID.Name = "TypeID";
-            this.TypeID.Visible = false;
-            // 
-            // TypeCode
-            // 
-            this.TypeCode.DataPropertyName = "CT_Code";
-            this.TypeCode.Name = "TypeCode";
-            this.TypeCode.Visible = false;
-            // 
-            // TypeName
-            // 
-            this.TypeName.DataPropertyName = "CT_Name";
-            this.TypeName.HeaderText = "类型";
-            this.TypeName.Name = "TypeName";
-            this.TypeName.Width = 150;
-            // 
-            // TypeRemark
-            // 
-            this.TypeRemark.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
-            this.TypeRemark.DataPropertyName = "CT_Remark";
-            this.TypeRemark.HeaderText = "备注";
-            this.TypeRemark.Name = "TypeRemark";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.superGridControl1);
@@ -500,11 +457,63 @@
             this.panel1.Size = new System.Drawing.Size(401, 392);
             this.panel1.TabIndex = 2;
             // 
+            // superGridControl1
+            // 
+            this.superGridControl1.ContextMenuStrip = this.contextMenuStrip1;
+            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl1.Location = new System.Drawing.Point(0, 51);
+            this.superGridControl1.Name = "superGridControl1";
+            // 
+            // 
+            // 
+            this.superGridControl1.PrimaryGrid.AllowEdit = false;
+            this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.superGridControl1.Size = new System.Drawing.Size(401, 341);
+            this.superGridControl1.TabIndex = 4;
+            this.superGridControl1.Text = "superGridControl1";
+            this.superGridControl1.CellDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellDoubleClickEventArgs>(this.superGridControl1_CellDoubleClick);
+            // 
             // 修改类型ToolStripMenuItem
             // 
             this.修改类型ToolStripMenuItem.Name = "修改类型ToolStripMenuItem";
             this.修改类型ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.修改类型ToolStripMenuItem.Text = "修改";
+            // 
+            // styleManager2
+            // 
+            this.styleManager2.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;
+            this.styleManager2.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(71)))), ((int)(((byte)(42))))));
+            // 
+            // TypeRemark
+            // 
+            this.TypeRemark.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
+            this.TypeRemark.DataPropertyName = "CT_Remark";
+            this.TypeRemark.HeaderText = "备注";
+            this.TypeRemark.Name = "TypeRemark";
+            // 
+            // TypeName
+            // 
+            this.TypeName.DataPropertyName = "CT_Name";
+            this.TypeName.HeaderText = "类型";
+            this.TypeName.Name = "TypeName";
+            this.TypeName.Width = 150;
+            // 
+            // TypeCode
+            // 
+            this.TypeCode.DataPropertyName = "CT_Code";
+            this.TypeCode.Name = "TypeCode";
+            this.TypeCode.Visible = false;
+            // 
+            // TypeID
+            // 
+            this.TypeID.DataPropertyName = "CT_ID";
+            this.TypeID.Name = "TypeID";
+            this.TypeID.Visible = false;
+            // 
+            // gridCell1
+            // 
+            this.gridCell1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridTextBoxXEditControl);
             // 
             // ClientTypeForm
             // 
@@ -555,9 +564,6 @@
         private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除DToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 全部删除AToolStripMenuItem;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeName;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeRemark;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 新增类型ToolStripMenuItem;
@@ -569,7 +575,14 @@
         private System.Windows.Forms.ToolStripMenuItem 修改类型ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeID;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
+        private DevComponents.DotNetBar.StyleManager styleManager2;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeRemark;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeName;
         private DevComponents.DotNetBar.SuperGrid.GridColumn TypeCode;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeID;
+        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell1;
+        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell2;
+        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell3;
     }
 }

@@ -103,5 +103,22 @@ namespace BLL
         {
             return dal.UpdateBatch(ds);
         }
+
+        /// <summary>
+        /// 批量插入权限信息到数据库中 
+        /// </summary>
+        /// <param name="pList">要新增的实体列表</param>
+        /// <returns></returns> 
+        public int AddBatch(List<Permission> pList)
+        {
+            foreach(var p in pList)
+            {
+                p.Per_Code = XYEEncoding.strCodeHex(p.Per_Code);
+                p.Per_ModuleName = XYEEncoding.strCodeHex(p.Per_ModuleName);
+                p.Per_RoleCode = XYEEncoding.strCodeHex(p.Per_RoleCode);
+                p.Per_Type = XYEEncoding.strCodeHex(p.Per_Type);
+            }
+            return dal.AddBatch(pList);
+        }
     }
 }

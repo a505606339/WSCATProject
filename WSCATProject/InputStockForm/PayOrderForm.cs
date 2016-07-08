@@ -20,7 +20,7 @@ namespace WSCATProject.StockForm
 
         protected override void InitDataGridViewHeaderColumn()
         {
-            this.multiHeaderView1.Visible = false;
+            this.dataGridViewFujia.Visible = false;
             panel7.BorderStyle = BorderStyle.None;
         }
 

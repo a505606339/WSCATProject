@@ -17,10 +17,10 @@ namespace WSCATProject.SellForm
             pictureBox1.Click += new System.EventHandler(ClickPicBox);
             pictureBox2.Click += new System.EventHandler(ClickPicBox);
         }
-
+        
         protected override void InitDataGridViewHeaderColumn()
         {
-            this.multiHeaderView1.Visible = false;
+            this.dataGridViewFujia.Visible = false;
             panel7.BorderStyle = BorderStyle.None;
         }
 
@@ -49,7 +49,7 @@ namespace WSCATProject.SellForm
             pictureBox4.Visible = false;
         }
 
-        //覆盖基类方法,改变下拉窗体出现的位置 刺客
+        //覆盖基类方法,改变下拉窗体出现的位置
         private bool _btnAdd = false;
         protected new void ClickPicBox(object sender, EventArgs e)
         {

@@ -39,7 +39,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 12F);
-            this.label1.Location = new System.Drawing.Point(29, 26);
+            this.label1.Location = new System.Drawing.Point(25, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBoxName.Location = new System.Drawing.Point(117, 21);
+            this.textBoxName.Location = new System.Drawing.Point(113, 21);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(154, 26);
             this.textBoxName.TabIndex = 1;
@@ -60,16 +60,16 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.labelX1.Location = new System.Drawing.Point(18, 58);
+            this.labelX1.Location = new System.Drawing.Point(26, 51);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(282, 49);
+            this.labelX1.Size = new System.Drawing.Size(253, 49);
             this.labelX1.TabIndex = 3;
-            this.labelX1.Text = "提示：角色创建后，会对角色分配除财务模块之外的所有模块的读取权限。若要更改请在权限分配里对该角色分配权限";
+            this.labelX1.Text = "提示：角色创建后，该角色对所有模块的权限均为不可用。请在权限分配里对该角色分配权限。";
             this.labelX1.WordWrap = true;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(96, 121);
+            this.buttonSave.Location = new System.Drawing.Point(92, 102);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(196, 121);
+            this.buttonCancel.Location = new System.Drawing.Point(192, 102);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 166);
+            this.ClientSize = new System.Drawing.Size(293, 143);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelX1);

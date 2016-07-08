@@ -9,7 +9,7 @@ namespace HelperUtility
     public class LoginInfomation
     {
         private static LoginInfomation instance = new LoginInfomation();
-        
+
         private LoginInfomation() { }
 
         public static LoginInfomation getInstance()
@@ -17,7 +17,7 @@ namespace HelperUtility
             return instance;
         }
         /// <summary>
-        /// 登录的用户名
+        /// 登录的用户名 
         /// </summary>
         public string UserName { get; set; }
         /// <summary>
@@ -34,6 +34,14 @@ namespace HelperUtility
             get { return readpermission; }
             set { readpermission = value; }
         }
+        /// <summary>
+        /// 添加具有的读取权限模块名
+        /// </summary>
+        /// <param name="moduleName"></param>
+        public void ReadpermissionAdd(string moduleName)
+        {
+            readpermission.Add(moduleName);
+        }
 
         private List<string> writepermission = new List<string>();
         /// <summary>
@@ -44,6 +52,14 @@ namespace HelperUtility
             get { return writepermission; }
             set { writepermission = value; }
         }
+        /// <summary>
+        /// 添加具有的写入权限模块名
+        /// </summary>
+        /// <param name="moduleName"></param>
+        public void WritepermissionAdd(string moduleName)
+        {
+            writepermission.Add(moduleName);
+        }
 
         private List<string> auditpermission = new List<string>();
         /// <summary>
@@ -53,6 +69,14 @@ namespace HelperUtility
         {
             get { return auditpermission; }
             set { auditpermission = value; }
+        }
+        /// <summary>
+        /// 添加具有的审核权限模块名
+        /// </summary>
+        /// <param name="moduleName"></param>
+        public void AuditPermissionAdd(string moduleName)
+        {
+            auditpermission.Add(moduleName);
         }
     }
 }

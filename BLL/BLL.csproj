@@ -43,13 +43,16 @@
     <Compile Include="CityManager.cs" />
     <Compile Include="ClientManager.cs" />
     <Compile Include="ClientTypeManager.cs" />
+    <Compile Include="DepartmentManager.cs" />
     <Compile Include="DiscountManager.cs" />
+    <Compile Include="EmpolyeeManager.cs" />
     <Compile Include="MaterialManager.cs" />
     <Compile Include="MaterialTypeManager.cs" />
     <Compile Include="PermissionManager.cs" />
     <Compile Include="ProfessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleManager.cs" />
+    <Compile Include="SellManager.cs" />
     <Compile Include="SerializationManager.cs" />
     <Compile Include="StorageManager.cs" />
     <Compile Include="UserManager.cs" />

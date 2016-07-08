@@ -51,16 +51,14 @@ namespace WSCATProject.Base
                 DataTable user = um.GetUserAndRoleModel(name, password);
                 if (user.Rows.Count > 0)
                 {
-                    
                     LoginInfomation information = LoginInfomation.getInstance();
                     information.UserName = user.Rows[0]["User_Name"].ToString();
                     information.UserRole = user.Rows[0]["Role_Name"].ToString();
-
                     //根据角色里的权限编码查询所拥有的权限信息
                     DataSet permission = pm.GetList("Per_Code = '" + 
                         XYEEncoding.strCodeHex(user.Rows[0]["Role_Modules"].ToString()) + "'");
                     getPermissionList(permission);
-                    MessageBox.Show("1");
+                    Close();
                 }
                 else
                 {
@@ -72,7 +70,7 @@ namespace WSCATProject.Base
 
         private void buttonXClose_Click(object sender, EventArgs e)
         {
-            Close();   
+            Close();
         }
 
         private void textBoxXPassword_TextChanged(object sender, EventArgs e)
@@ -81,7 +79,7 @@ namespace WSCATProject.Base
         }
 
         /// <summary>
-        /// 获取所有的权限列表并存储 
+        /// 获取所有的权限列表并存储
         /// </summary>
         /// <param name="ds"></param>
         private void getPermissionList(DataSet ds)
@@ -89,15 +87,15 @@ namespace WSCATProject.Base
             LoginInfomation information = LoginInfomation.getInstance();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if((bool)dr["Per_ReadState"])
+                if((int)dr["Per_ReadState"] == 1)
                 {
                     information.ReadPermission.Add(dr["Per_ModuleName"].ToString());
                 }
-                if((bool)dr["Per_WriteState"])
+                if((int)dr["Per_WriteState"] == 1)
                 {
                     information.WritePermission.Add(dr["Per_ModuleName"].ToString());
                 }
-                if((bool)dr["Per_AuditState"])
+                if((int)dr["Per_AuditState"] == 1)
                 {
                     information.AuditPermission.Add(dr["Per_ModuleName"].ToString());
                 }

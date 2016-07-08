@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.treeViewUser = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.新增角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -55,14 +59,10 @@
             this.gridCell2 = new DevComponents.DotNetBar.SuperGrid.GridCell();
             this.gridCell3 = new DevComponents.DotNetBar.SuperGrid.GridCell();
             this.gridCell4 = new DevComponents.DotNetBar.SuperGrid.GridCell();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.新增角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelPermission.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeViewUser
@@ -74,6 +74,37 @@
             this.treeViewUser.Name = "treeViewUser";
             this.treeViewUser.Size = new System.Drawing.Size(158, 547);
             this.treeViewUser.TabIndex = 0;
+            this.treeViewUser.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewUser_AfterSelect);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增角色ToolStripMenuItem,
+            this.修改角色ToolStripMenuItem,
+            this.删除角色ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
+            // 
+            // 新增角色ToolStripMenuItem
+            // 
+            this.新增角色ToolStripMenuItem.Name = "新增角色ToolStripMenuItem";
+            this.新增角色ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.新增角色ToolStripMenuItem.Text = "新增角色";
+            this.新增角色ToolStripMenuItem.Click += new System.EventHandler(this.新增角色ToolStripMenuItem_Click);
+            // 
+            // 修改角色ToolStripMenuItem
+            // 
+            this.修改角色ToolStripMenuItem.Name = "修改角色ToolStripMenuItem";
+            this.修改角色ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.修改角色ToolStripMenuItem.Text = "修改角色";
+            this.修改角色ToolStripMenuItem.Click += new System.EventHandler(this.修改角色ToolStripMenuItem_Click);
+            // 
+            // 删除角色ToolStripMenuItem
+            // 
+            this.删除角色ToolStripMenuItem.Name = "删除角色ToolStripMenuItem";
+            this.删除角色ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删除角色ToolStripMenuItem.Text = "删除角色";
+            this.删除角色ToolStripMenuItem.Click += new System.EventHandler(this.删除角色ToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -100,6 +131,7 @@
             this.comboBoxEx1.Size = new System.Drawing.Size(129, 21);
             this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.comboBoxEx1.TabIndex = 2;
+            this.comboBoxEx1.Visible = false;
             this.comboBoxEx1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEx1_SelectedIndexChanged);
             // 
             // labelX1
@@ -113,6 +145,7 @@
             this.labelX1.Size = new System.Drawing.Size(50, 23);
             this.labelX1.TabIndex = 3;
             this.labelX1.Text = "筛选：";
+            this.labelX1.Visible = false;
             // 
             // label1
             // 
@@ -320,36 +353,6 @@
             this.gridCell4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
             this.gridCell4.Value = true;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.新增角色ToolStripMenuItem,
-            this.修改角色ToolStripMenuItem,
-            this.删除角色ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
-            // 
-            // 新增角色ToolStripMenuItem
-            // 
-            this.新增角色ToolStripMenuItem.Name = "新增角色ToolStripMenuItem";
-            this.新增角色ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.新增角色ToolStripMenuItem.Text = "新增角色";
-            this.新增角色ToolStripMenuItem.Click += new System.EventHandler(this.新增角色ToolStripMenuItem_Click);
-            // 
-            // 修改角色ToolStripMenuItem
-            // 
-            this.修改角色ToolStripMenuItem.Name = "修改角色ToolStripMenuItem";
-            this.修改角色ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.修改角色ToolStripMenuItem.Text = "修改角色";
-            this.修改角色ToolStripMenuItem.Click += new System.EventHandler(this.修改角色ToolStripMenuItem_Click);
-            // 
-            // 删除角色ToolStripMenuItem
-            // 
-            this.删除角色ToolStripMenuItem.Name = "删除角色ToolStripMenuItem";
-            this.删除角色ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.删除角色ToolStripMenuItem.Text = "删除角色";
-            this.删除角色ToolStripMenuItem.Click += new System.EventHandler(this.删除角色ToolStripMenuItem_Click);
-            // 
             // PermissionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -360,11 +363,11 @@
             this.Controls.Add(this.treeViewUser);
             this.Name = "PermissionForm";
             this.Load += new System.EventHandler(this.PermissionForm_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelPermission.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
