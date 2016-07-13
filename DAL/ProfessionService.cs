@@ -25,7 +25,7 @@ namespace DAL
             {
                 new SqlParameter("@ST_Name",XYEEncoding.strCodeHex(profession.ST_Name)),
                 new SqlParameter("@ST_Code",XYEEncoding.strCodeHex(profession.ST_Code)),
-                new SqlParameter("@ST_ParentId",profession.ST_ParentId),
+                new SqlParameter("@ST_ParentId",XYEEncoding.strCodeHex(profession.ST_ParentId)),
                 new SqlParameter("@ST_Enable",profession.ST_Enable),
                 new SqlParameter("@ST_Clear",profession.ST_Clear)
             };
@@ -37,11 +37,11 @@ namespace DAL
         /// <summary>
         /// 假删除
         /// </summary>
-        /// <param name="ST_ID">编码</param>
+        /// <param name="ST_Code">编码</param>
         /// <returns></returns>
-        public int FalseDelClear(string ST_ID)
+        public int FalseDelClear(string ST_Code)
         {
-            string sql = string.Format("update T_Profession set ST_Clear=0 where ST_ID={0} and ST_Clear=1", ST_ID);
+            string sql = string.Format("update T_Profession set ST_Clear=0 where ST_ID={0} and ST_Clear=1", ST_Code);
             return DbHelperSQL.ExecuteSql(sql);
         }
         #endregion
@@ -50,11 +50,11 @@ namespace DAL
         /// <summary>
         /// 禁用
         /// </summary>
-        /// <param name="ST_ID">编码</param>
+        /// <param name="ST_Code">编码</param>
         /// <returns></returns>
-        public int FalseDelEnable(string ST_ID)
+        public int FalseDelEnable(string ST_Code)
         {
-            string sql = string.Format("update T_Profession set ST_Enable=0 where ST_ID={0} and ST_Clear=1 and ST_Enable=1", ST_ID);
+            string sql = string.Format("update T_Profession set ST_Enable=0 where ST_ID={0} and ST_Clear=1 and ST_Enable=1", ST_Code);
             return DbHelperSQL.ExecuteSql(sql);
         }
         #endregion
@@ -84,10 +84,10 @@ namespace DAL
         /// 根据编号查询信息
         /// </summary>
         /// <returns>List集合</returns>
-        public List<Profession> SelProfessionByCode(string Code)
+        public List<Profession> SelProfessionByCode(string ST_Code)
         {
             List<Profession> list = new List<Profession>();
-            string sql = string.Format("select * from T_Profession where ST_Code={0} and ST_Enable=1 and ST_Clear=1", XYEEncoding.strCodeHex(Code));
+            string sql = string.Format("select * from T_Profession where ST_Code={0} and ST_Enable=1 and ST_Clear=1", XYEEncoding.strCodeHex(ST_Code));
             SqlDataReader read = DbHelperSQL.ExecuteReader(sql);
             while (read.Read())
             {
@@ -134,42 +134,12 @@ namespace DAL
         }
         #endregion
 
-        #region 查询所有信息
-        /// <summary>
-        /// 查询信息
-        /// </summary>
-        /// <returns>List集合</returns>
-        //public List<Profession> SelProfession()
-        //{
-        //    List<Profession> list = new List<Profession>();
-        //    string sql = "select * from T_Profession where ST_Enable=1 and ST_Clear=1";
-        //    SqlDataReader read = DbHelperSQL.ExecuteReader(sql);
-        //    while (read.Read())
-        //    {
-        //        Profession profession = new Profession()
-        //        {
-        //            ST_ID = Convert.ToInt32(read["ST_ID"]),
-        //            ST_Name = XYEEncoding.strHexDecode(read["ST_Name"].ToString()),
-        //            ST_Code = XYEEncoding.strHexDecode(read["ST_Code"].ToString()),
-        //            ST_ParentId = Convert.ToInt32(read["ST_ParentId"].ToString()),
-        //            ST_Enable = Convert.ToInt32(read["ST_Enable"]),
-        //            ST_Clear = Convert.ToInt32(read["ST_Clear"]),
-        //        };
-        //        list.Add(profession);
-        //    }
-        //    return list;
-        //}
-        #endregion
-    }
-
-    public partial class ProfessionService
-    {
         public DataSet GetList(string strWhere)
         {
             StringBuilder strsql = new StringBuilder();
             strsql.Append("select ST_ID,ST_Code,ST_Name,ST_ParentId,ST_Enable,ST_Clear ");
             strsql.Append(" from T_Profession ");
-            if(strWhere != "")
+            if (strWhere != "")
             {
                 strsql.Append(" where " + strWhere);
             }

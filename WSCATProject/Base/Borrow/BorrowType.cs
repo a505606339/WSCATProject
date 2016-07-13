@@ -1,8 +1,6 @@
 ﻿using BLL;
 using DevComponents.DotNetBar.SuperGrid;
-using HelperUtility.Encrypt;
 using HelperUtility.Excel;
-using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,39 +11,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WSCATProject.Base;
 
 namespace WSCATProject.Base
 {
-    public partial class EmpolyeeMaterial : EmplyeeMaster
+    public partial class BorrowType : MaterialEmplyee
     {
-        EmpolyeeManager em = new EmpolyeeManager();
-        public EmpolyeeMaterial()
+        BorrowManager bm = new BorrowManager();
+        public BorrowType()
         {
             InitializeComponent();
         }
 
-        private void EmpolyeeMaterial_Load(object sender, EventArgs e)
+        private void BorrowType_Load(object sender, EventArgs e)
         {
             superGridControl1.PrimaryGrid.AutoGenerateColumns = true;
             superGridControl1.PrimaryGrid.SelectionGranularity = SelectionGranularity.Row;
             superGridControl1.PrimaryGrid.InitialSelection = RelativeSelection.None;
             superGridControl1.PrimaryGrid.FocusCuesEnabled = false;
             superGridControl1.PrimaryGrid.ActiveRowIndicatorStyle = ActiveRowIndicatorStyle.None;
+            toolStripButton4.Visible = false;
             BindDGV();
         }
 
-        private void BindDGV()
+        public void BindDGV()
         {
             try
             {
-                var query = em.SelEmpolyee(false);
-                superGridControl1.PrimaryGrid.DataSource = query;
+                superGridControl1.PrimaryGrid.DataSource = bm.SelBorrow();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("加载数据失败,请检查服务器连接并尝试刷新.错误:" + ex.Message);
             }
         }
+
         #region 增
         /// <summary>
         /// 增
@@ -54,9 +54,9 @@ namespace WSCATProject.Base
         /// <param name="e"></param>
         protected override void InsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InsEmpolyee ie = new InsEmpolyee();
+            InsBorrowNode ibn = new InsBorrowNode();
             StateType = 0;
-            ie.ShowDialog(this);
+            ibn.ShowDialog(this);
             if (base.isflag == true)
             {
                 BindDGV();
@@ -78,13 +78,13 @@ namespace WSCATProject.Base
                 MessageBox.Show("请先选择一行!");
                 return;
             }
-            if (DialogResult.Yes == MessageBox.Show("确定全部删除吗? 删除后将不可恢复!", "WACAT管家", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+            if (DialogResult.Yes == MessageBox.Show("确定删除吗? 删除后将不可恢复!", "WACAT管家", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
             {
                 GridRow row = col[0] as GridRow;
-                string code = row.Cells[0].Value.ToString();
+                string code = row.Cells["gridColumn1"].Value.ToString();
                 try
                 {
-                    int result = em.FalseDelClear(code);
+                    int result = bm.DelBorrow(code);
                     if (result > 0)
                     {
                         MessageBox.Show("删除成功!");
@@ -113,11 +113,11 @@ namespace WSCATProject.Base
         /// <param name="e"></param>
         protected override void AllDelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("确定全部删除吗? 删除后将不可恢复!", "WACAT管家", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+            if (DialogResult.Yes == MessageBox.Show("确定全部删除吗？删除后将不可恢复！", "WACAT管家", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
             {
                 try
                 {
-                    int result = em.FalseALLDelClear();
+                    int result = bm.DelAllBorrow();
                     if (result > 0)
                     {
                         MessageBox.Show("删除成功!");
@@ -153,8 +153,8 @@ namespace WSCATProject.Base
                 return;
             }
             GridRow row = col[0] as GridRow;
-            id = XYEEncoding.strCodeHex(row.Cells[0].Value.ToString());
-            InsEmpolyee ibn = new InsEmpolyee();
+            id = row.Cells["gridColumn1"].Value.ToString();
+            InsBorrowNode ibn = new InsBorrowNode();
             StateType = 1;
             ibn.ShowDialog(this);
             if (base.isflag == true)
@@ -175,33 +175,9 @@ namespace WSCATProject.Base
             BindDGV();
         }
         #endregion
-        protected override void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (isflag == false)
-                {
-                    IQueryable query = em.SelEmpolyee(true);
-                    superGridControl1.PrimaryGrid.DataSource = query;
-                    isflag = true;
-                    return;
-                }
-                if (isflag == true)
-                {
-                    IQueryable query = em.SelEmpolyee(false);
-                    superGridControl1.PrimaryGrid.DataSource = query;
-                    isflag = false;
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("加载数据失败,请检查服务器连接并尝试刷新.错误:" + ex.Message);
-            }
-        }
+
         protected override void ExportExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = @"Excel 97-2003 (*.xls)|*.xls|All files (*.*)|*.*";
@@ -231,7 +207,7 @@ namespace WSCATProject.Base
                     }
                     dt.Rows.Add(dr);
                 }
-                NPOIExcelHelper.DataTableToExcel(dt, "人员资料", saveFileDialog1.FileName);
+                NPOIExcelHelper.DataTableToExcel(dt, "借款类型", saveFileDialog1.FileName);
             }
         }
     }

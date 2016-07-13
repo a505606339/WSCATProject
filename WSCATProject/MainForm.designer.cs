@@ -41,9 +41,7 @@
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItemBank = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBarBase = new DevComponents.DotNetBar.RibbonBar();
-            this.buttonItemCity = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar6 = new DevComponents.DotNetBar.RibbonBar();
             this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
@@ -64,7 +62,6 @@
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.buttonItem57 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem22 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem52 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem53 = new DevComponents.DotNetBar.ButtonItem();
@@ -254,6 +251,7 @@
             this.buttonItem50 = new DevComponents.DotNetBar.ButtonItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.buttonItemBank = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemwanglai = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemClient = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemSupplier = new DevComponents.DotNetBar.ButtonItem();
@@ -266,6 +264,7 @@
             this.buttonItem55 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemEmpolyee = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemCarry = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItemCity = new DevComponents.DotNetBar.ButtonItem();
             this.applicationButton1 = new DevComponents.DotNetBar.ApplicationButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -467,8 +466,6 @@
             this.ribbonControl1.Location = new System.Drawing.Point(5, 1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ribbonControl1.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem1});
             this.ribbonControl1.Size = new System.Drawing.Size(994, 178);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonControl1.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
@@ -497,10 +494,10 @@
             this.ribbonPanel1.Controls.Add(this.ribbonBar1);
             this.ribbonPanel1.Controls.Add(this.ribbonBarBase);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 58);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(994, 122);
+            this.ribbonPanel1.Size = new System.Drawing.Size(994, 117);
             // 
             // 
             // 
@@ -533,7 +530,7 @@
             this.buttonItemBank});
             this.ribbonBar1.Location = new System.Drawing.Point(396, 0);
             this.ribbonBar1.Name = "ribbonBar1";
-            this.ribbonBar1.Size = new System.Drawing.Size(72, 119);
+            this.ribbonBar1.Size = new System.Drawing.Size(72, 114);
             this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar1.TabIndex = 1;
             this.ribbonBar1.Text = "资金账户";
@@ -545,16 +542,6 @@
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // buttonItemBank
-            // 
-            this.buttonItemBank.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItemBank.Image = global::WSCATProject.Properties.Resources.zijinzhanghu;
-            this.buttonItemBank.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemBank.Name = "buttonItemBank";
-            this.buttonItemBank.SubItemsExpandWidth = 14;
-            this.buttonItemBank.Text = "资金账户";
-            this.buttonItemBank.Click += new System.EventHandler(this.buttonItemBank_Click);
             // 
             // ribbonBarBase
             // 
@@ -579,7 +566,7 @@
             this.buttonItemCity});
             this.ribbonBarBase.Location = new System.Drawing.Point(3, 0);
             this.ribbonBarBase.Name = "ribbonBarBase";
-            this.ribbonBarBase.Size = new System.Drawing.Size(393, 119);
+            this.ribbonBarBase.Size = new System.Drawing.Size(393, 114);
             this.ribbonBarBase.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBarBase.TabIndex = 0;
             this.ribbonBarBase.Text = "基础资料";
@@ -591,16 +578,6 @@
             // 
             // 
             this.ribbonBarBase.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // buttonItemCity
-            // 
-            this.buttonItemCity.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItemCity.Image = global::WSCATProject.Properties.Resources.diquziliao;
-            this.buttonItemCity.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItemCity.Name = "buttonItemCity";
-            this.buttonItemCity.SubItemsExpandWidth = 14;
-            this.buttonItemCity.Text = "地区资料";
-            this.buttonItemCity.Click += new System.EventHandler(this.buttonItemCity_Click_1);
             // 
             // ribbonPanel2
             // 
@@ -899,6 +876,8 @@
             // 
             // buttonItem57
             // 
+            this.buttonItem57.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItem57.Image = global::WSCATProject.Properties.Resources.guanyu;
             this.buttonItem57.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Far;
             this.buttonItem57.Name = "buttonItem57";
             this.buttonItem57.Text = "关于";
@@ -907,11 +886,6 @@
             // 
             this.buttonItem22.Name = "buttonItem22";
             this.buttonItem22.Text = "退出系统";
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "buttonItem1";
             // 
             // styleManager1
             // 
@@ -2581,7 +2555,7 @@
             this.sideBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
             this.sideBar1.BorderStyle = DevComponents.DotNetBar.eBorderType.None;
             this.sideBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sideBar1.ExpandedPanel = this.sideBarPanelItemSys;
+            this.sideBar1.ExpandedPanel = this.sideBarPanelItemRe;
             this.sideBar1.Location = new System.Drawing.Point(0, 0);
             this.sideBar1.Name = "sideBar1";
             this.sideBar1.Panels.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2600,7 +2574,6 @@
             // sideBarPanelItemRe
             // 
             this.sideBarPanelItemRe.FontBold = true;
-            this.sideBarPanelItemRe.Image = global::WSCATProject.Properties.Resources.stockData;
             this.sideBarPanelItemRe.Name = "sideBarPanelItemRe";
             this.sideBarPanelItemRe.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonItem14,
@@ -2949,6 +2922,16 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
+            // buttonItemBank
+            // 
+            this.buttonItemBank.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItemBank.Image = global::WSCATProject.Properties.Resources.zijinzhanghu;
+            this.buttonItemBank.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemBank.Name = "buttonItemBank";
+            this.buttonItemBank.SubItemsExpandWidth = 14;
+            this.buttonItemBank.Text = "资金账户";
+            this.buttonItemBank.Click += new System.EventHandler(this.buttonItemBank_Click);
+            // 
             // buttonItemwanglai
             // 
             this.buttonItemwanglai.AutoExpandOnClick = true;
@@ -3050,6 +3033,16 @@
             this.buttonItemCarry.SubItemsExpandWidth = 14;
             this.buttonItemCarry.Text = "物流信息";
             this.buttonItemCarry.Click += new System.EventHandler(this.buttonItemCarry_Click);
+            // 
+            // buttonItemCity
+            // 
+            this.buttonItemCity.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItemCity.Image = global::WSCATProject.Properties.Resources.diquziliao;
+            this.buttonItemCity.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItemCity.Name = "buttonItemCity";
+            this.buttonItemCity.SubItemsExpandWidth = 14;
+            this.buttonItemCity.Text = "地区资料";
+            this.buttonItemCity.Click += new System.EventHandler(this.buttonItemCity_Click_1);
             // 
             // applicationButton1
             // 
@@ -3653,7 +3646,6 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem13;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItemBase;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;

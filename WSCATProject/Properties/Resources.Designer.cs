@@ -183,9 +183,39 @@ namespace WSCATProject.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap caigouxitong {
+            get {
+                object obj = ResourceManager.GetObject("caigouxitong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap caiwuxitong {
+            get {
+                object obj = ResourceManager.GetObject("caiwuxitong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap cangkuxinxi {
             get {
                 object obj = ResourceManager.GetObject("cangkuxinxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap cangkuxitong {
+            get {
+                object obj = ResourceManager.GetObject("cangkuxitong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +426,16 @@ namespace WSCATProject.Properties {
         public static System.Drawing.Bitmap goodsData {
             get {
                 object obj = ResourceManager.GetObject("goodsData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap guanyu {
+            get {
+                object obj = ResourceManager.GetObject("guanyu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -653,6 +693,16 @@ namespace WSCATProject.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap renshiguanli {
+            get {
+                object obj = ResourceManager.GetObject("renshiguanli", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap reRetuened {
             get {
                 object obj = ResourceManager.GetObject("reRetuened", resourceCulture);
@@ -686,6 +736,16 @@ namespace WSCATProject.Properties {
         public static System.Drawing.Bitmap sff {
             get {
                 object obj = ResourceManager.GetObject("sff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap souhouweihu {
+            get {
+                object obj = ResourceManager.GetObject("souhouweihu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -956,6 +1016,16 @@ namespace WSCATProject.Properties {
         public static System.Drawing.Bitmap wuliuxinxi {
             get {
                 object obj = ResourceManager.GetObject("wuliuxinxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap xitongweihu {
+            get {
+                object obj = ResourceManager.GetObject("xitongweihu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

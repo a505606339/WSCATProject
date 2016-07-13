@@ -26,8 +26,8 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=XIYUANER-PC\\SQLEXPRESS;Initial Catalog=WSCAT_DB;Persist Security Info" +
-            "=True;User ID=sa;Password=a123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=WSCAT_DB;Persist Security Info=True;User ID=sa;Pass" +
+            "word=123456")]
         public string WSCAT_DBConnectionString1 {
             get {
                 return ((string)(this["WSCAT_DBConnectionString1"]));

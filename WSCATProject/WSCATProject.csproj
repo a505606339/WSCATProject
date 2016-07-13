@@ -59,6 +59,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BankAccount\BankAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\BankAccount\BankAccountForm.Designer.cs">
+      <DependentUpon>BankAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\BankAccount\InsBankAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\BankAccount\InsBankAccount.Designer.cs">
+      <DependentUpon>InsBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Borrow\BorrowType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Borrow\BorrowType.Designer.cs">
+      <DependentUpon>BorrowType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Borrow\InsBorrowNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Borrow\InsBorrowNode.Designer.cs">
+      <DependentUpon>InsBorrowNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\City\CityNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\City\CityNode.Designer.cs">
+      <DependentUpon>CityNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\City\CityType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\City\CityType.Designer.cs">
+      <DependentUpon>CityType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\Client\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,17 +125,17 @@
     <Compile Include="Base\Client\CreateClientForm.Designer.cs">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\EmplyeeMaster.cs">
+    <Compile Include="Base\Material\MaterialEmplyee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\EmplyeeMaster.Designer.cs">
-      <DependentUpon>EmplyeeMaster.cs</DependentUpon>
+    <Compile Include="Base\Material\MaterialEmplyee.Designer.cs">
+      <DependentUpon>MaterialEmplyee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\Empolyee\EmpolyeeMaterial.cs">
+    <Compile Include="Base\Empolyee\EmplyeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\Empolyee\EmpolyeeMaterial.Designer.cs">
-      <DependentUpon>EmpolyeeMaterial.cs</DependentUpon>
+    <Compile Include="Base\Empolyee\EmplyeeForm.Designer.cs">
+      <DependentUpon>EmplyeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\Empolyee\InsEmpolyee.cs">
       <SubType>Form</SubType>
@@ -131,6 +167,12 @@
     <Compile Include="Base\Material\MaterialForm.Designer.cs">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base\Material\MaterialNodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Material\MaterialNodes.Designer.cs">
+      <DependentUpon>MaterialNodes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\Material\MaterialTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +184,48 @@
     </Compile>
     <Compile Include="Base\Material\MaterialTypeInsNodes.Designer.cs">
       <DependentUpon>MaterialTypeInsNodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Material\MaterialNodeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Material\MaterialNodeType.Designer.cs">
+      <DependentUpon>MaterialNodeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\OrderType\InsOrderTypeNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\OrderType\InsOrderTypeNode.Designer.cs">
+      <DependentUpon>InsOrderTypeNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\OrderType\OrderTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\OrderType\OrderTypeForm.Designer.cs">
+      <DependentUpon>OrderTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ProjectCost\ProjectCostNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\ProjectCost\ProjectCostNode.Designer.cs">
+      <DependentUpon>ProjectCostNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ProjectCost\ProjectCostType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\ProjectCost\ProjectCostType.Designer.cs">
+      <DependentUpon>ProjectCostType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ProjectInCost\ProjectInCostNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\ProjectInCost\ProjectInCostNode.Designer.cs">
+      <DependentUpon>ProjectInCostNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ProjectInCost\ProjectInCostType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\ProjectInCost\ProjectInCostType.Designer.cs">
+      <DependentUpon>ProjectInCostType.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\RoleCreateForm.cs">
       <SubType>Form</SubType>
@@ -166,6 +250,18 @@
     </Compile>
     <Compile Include="Base\Storage\StorageForm.Designer.cs">
       <DependentUpon>StorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Supplier\InsSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Supplier\InsSupplier.Designer.cs">
+      <DependentUpon>InsSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Supplier\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Supplier\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\UserCreateForm.cs">
       <SubType>Form</SubType>
@@ -361,6 +457,24 @@
     <Compile Include="WarehouseForm.Designer.cs">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Base\BankAccount\BankAccountForm.resx">
+      <DependentUpon>BankAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\BankAccount\InsBankAccount.resx">
+      <DependentUpon>InsBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Borrow\BorrowType.resx">
+      <DependentUpon>BorrowType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Borrow\InsBorrowNode.resx">
+      <DependentUpon>InsBorrowNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\City\CityNode.resx">
+      <DependentUpon>CityNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\City\CityType.resx">
+      <DependentUpon>CityType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\Client\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,11 +490,11 @@
     <EmbeddedResource Include="Base\Client\CreateClientForm.resx">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\EmplyeeMaster.resx">
-      <DependentUpon>EmplyeeMaster.cs</DependentUpon>
+    <EmbeddedResource Include="Base\Material\MaterialEmplyee.resx">
+      <DependentUpon>MaterialEmplyee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\Empolyee\EmpolyeeMaterial.resx">
-      <DependentUpon>EmpolyeeMaterial.cs</DependentUpon>
+    <EmbeddedResource Include="Base\Empolyee\EmplyeeForm.resx">
+      <DependentUpon>EmplyeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
@@ -397,11 +511,35 @@
     <EmbeddedResource Include="Base\Material\MaterialForm.resx">
       <DependentUpon>MaterialForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Base\Material\MaterialNodes.resx">
+      <DependentUpon>MaterialNodes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\Material\MaterialTypeForm.resx">
       <DependentUpon>MaterialTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Material\MaterialTypeInsNodes.resx">
       <DependentUpon>MaterialTypeInsNodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Material\MaterialNodeType.resx">
+      <DependentUpon>MaterialNodeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\OrderType\InsOrderTypeNode.resx">
+      <DependentUpon>InsOrderTypeNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\OrderType\OrderTypeForm.resx">
+      <DependentUpon>OrderTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\ProjectCost\ProjectCostNode.resx">
+      <DependentUpon>ProjectCostNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\ProjectCost\ProjectCostType.resx">
+      <DependentUpon>ProjectCostType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\ProjectInCost\ProjectInCostNode.resx">
+      <DependentUpon>ProjectInCostNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\ProjectInCost\ProjectInCostType.resx">
+      <DependentUpon>ProjectInCostType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\RoleCreateForm.resx">
       <DependentUpon>RoleCreateForm.cs</DependentUpon>
@@ -414,6 +552,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Storage\StorageForm.resx">
       <DependentUpon>StorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Supplier\InsSupplier.resx">
+      <DependentUpon>InsSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Supplier\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\UserCreateForm.resx">
       <DependentUpon>UserCreateForm.cs</DependentUpon>
@@ -795,6 +939,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\diquziliao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caigouxitong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caiwuxitong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cangkuxitong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guanyu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renshiguanli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\souhouweihu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xitongweihu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

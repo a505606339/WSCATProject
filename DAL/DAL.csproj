@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankAccountService.cs" />
+    <Compile Include="BorrowService.cs" />
     <Compile Include="BuyProcessService.cs" />
     <Compile Include="CityService.cs" />
     <Compile Include="ClientService.cs" />
@@ -61,8 +62,11 @@
     <Compile Include="EmpolyeeService.cs" />
     <Compile Include="MaterialService.cs" />
     <Compile Include="MaterialTypeService.cs" />
+    <Compile Include="OrderTypeService.cs" />
     <Compile Include="PermissionService.cs" />
     <Compile Include="ProfessionService.cs" />
+    <Compile Include="ProjectCostService.cs" />
+    <Compile Include="ProjectInCostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,6 +78,7 @@
     <Compile Include="SerializationService.cs" />
     <Compile Include="SQLHelper.cs" />
     <Compile Include="StorageService.cs" />
+    <Compile Include="SupplierService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>

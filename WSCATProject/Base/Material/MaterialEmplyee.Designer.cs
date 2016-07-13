@@ -1,6 +1,6 @@
 ﻿namespace WSCATProject.Base
 {
-    partial class EmplyeeMaster
+    partial class MaterialEmplyee
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmplyeeMaster));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmplyeeForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.InsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -231,14 +231,14 @@
             this.刷新ToolStripMenuItem.Text = "刷新";
             this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click);
             // 
-            // EmplyeeMaster
+            // EmplyeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 398);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "EmplyeeMaster";
+            this.Name = "EmplyeeForm";
             this.Text = "EmplyeeMaster";
             this.Load += new System.EventHandler(this.EmplyeeMaster_Load);
             this.toolStrip1.ResumeLayout(false);

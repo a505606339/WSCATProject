@@ -650,7 +650,7 @@ namespace WSCATProject
         //~-员工按钮
         private void buttonItemEmpolyee_Click(object sender, EventArgs e)
         {
-            EmpolyeeMaterial em = new EmpolyeeMaterial();
+            EmplyeeForm em = new EmplyeeForm();
             em.ShowDialog();
         }
         //~-地区按钮

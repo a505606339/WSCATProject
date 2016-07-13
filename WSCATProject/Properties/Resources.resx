@@ -406,4 +406,25 @@
   <data name="diquziliao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diquziliao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="caigouxitong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caigouxitong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caiwuxitong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caiwuxitong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cangkuxitong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cangkuxitong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guanyu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guanyu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="renshiguanli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\renshiguanli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="souhouweihu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\souhouweihu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xitongweihu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xitongweihu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
