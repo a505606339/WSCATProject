@@ -183,6 +183,16 @@ namespace WSCATProject.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap cangkuxinxi {
+            get {
+                object obj = ResourceManager.GetObject("cangkuxinxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap changePassword {
             get {
                 object obj = ResourceManager.GetObject("changePassword", resourceCulture);
@@ -266,6 +276,16 @@ namespace WSCATProject.Properties {
         public static System.Drawing.Bitmap deliverManager {
             get {
                 object obj = ResourceManager.GetObject("deliverManager", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap diquziliao {
+            get {
+                object obj = ResourceManager.GetObject("diquziliao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +406,16 @@ namespace WSCATProject.Properties {
         public static System.Drawing.Bitmap home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap huopinziliao {
+            get {
+                object obj = ResourceManager.GetObject("huopinziliao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -843,6 +873,16 @@ namespace WSCATProject.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap wanglaidanwei {
+            get {
+                object obj = ResourceManager.GetObject("wanglaidanwei", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap warehomeAdjust {
             get {
                 object obj = ResourceManager.GetObject("warehomeAdjust", resourceCulture);
@@ -906,6 +946,36 @@ namespace WSCATProject.Properties {
         public static System.Drawing.Bitmap warehomeShift {
             get {
                 object obj = ResourceManager.GetObject("warehomeShift", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap wuliuxinxi {
+            get {
+                object obj = ResourceManager.GetObject("wuliuxinxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap yuangongyonghu {
+            get {
+                object obj = ResourceManager.GetObject("yuangongyonghu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap zijinzhanghu {
+            get {
+                object obj = ResourceManager.GetObject("zijinzhanghu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
