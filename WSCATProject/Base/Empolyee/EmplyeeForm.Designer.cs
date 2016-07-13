@@ -1,6 +1,6 @@
 ﻿namespace WSCATProject.Base
 {
-    partial class EmpolyeeMaterial
+    partial class EmplyeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,12 +42,12 @@
             this.superGridControl1.PrimaryGrid.InitialSelection = DevComponents.DotNetBar.SuperGrid.RelativeSelection.None;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             // 
-            // EmpolyeeMaterial
+            // EmplyeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 398);
-            this.Name = "EmpolyeeMaterial";
+            this.Name = "EmplyeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmpolyeeMaterial";
             this.Load += new System.EventHandler(this.EmpolyeeMaterial_Load);

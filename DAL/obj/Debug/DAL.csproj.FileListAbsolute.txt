@@ -9,3 +9,14 @@ F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.dll
 F:\项目\WSCAT\Project\WSCATProject\DAL\obj\Debug\DAL.pdb
 F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\NPOI.dll
 F:\项目\WSCAT\Project\WSCATProject\DAL\bin\Debug\DAL.dll.config
+D:\项目\2016年7月13日144316\DAL\bin\Debug\DAL.dll.config
+D:\项目\2016年7月13日144316\DAL\bin\Debug\DAL.dll
+D:\项目\2016年7月13日144316\DAL\bin\Debug\DAL.pdb
+D:\项目\2016年7月13日144316\DAL\bin\Debug\HelperUtility.dll
+D:\项目\2016年7月13日144316\DAL\bin\Debug\Model.dll
+D:\项目\2016年7月13日144316\DAL\bin\Debug\NPOI.dll
+D:\项目\2016年7月13日144316\DAL\bin\Debug\HelperUtility.pdb
+D:\项目\2016年7月13日144316\DAL\bin\Debug\Model.pdb
+D:\项目\2016年7月13日144316\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\项目\2016年7月13日144316\DAL\obj\Debug\DAL.dll
+D:\项目\2016年7月13日144316\DAL\obj\Debug\DAL.pdb

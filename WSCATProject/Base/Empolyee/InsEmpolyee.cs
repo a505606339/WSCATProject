@@ -31,7 +31,7 @@ namespace WSCATProject.Base
             comboBox1.DataSource = dm.SelDepartment();
             comboBox1.DisplayMember = "Dt_Name";
             comboBox1.ValueMember = "Dt_Code";
-            EmpolyeeMaterial empM = (EmpolyeeMaterial)Owner;
+            EmplyeeForm empM = (EmplyeeForm)Owner;
             try
             {
                 switch (empM.StateType)
@@ -80,7 +80,7 @@ namespace WSCATProject.Base
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            EmpolyeeMaterial empM = (EmpolyeeMaterial)Owner;
+            EmplyeeForm empM = (EmplyeeForm)Owner;
             if (InsTextIsNull() == false)
             {
                 return;

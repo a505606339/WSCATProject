@@ -89,17 +89,17 @@
     <Compile Include="Base\Client\CreateClientForm.Designer.cs">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\EmplyeeMaster.cs">
+    <Compile Include="Base\MaterialEmplyee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\EmplyeeMaster.Designer.cs">
-      <DependentUpon>EmplyeeMaster.cs</DependentUpon>
+    <Compile Include="Base\MaterialEmplyee.Designer.cs">
+      <DependentUpon>MaterialEmplyee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\Empolyee\EmpolyeeMaterial.cs">
+    <Compile Include="Base\Empolyee\EmplyeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\Empolyee\EmpolyeeMaterial.Designer.cs">
-      <DependentUpon>EmpolyeeMaterial.cs</DependentUpon>
+    <Compile Include="Base\Empolyee\EmplyeeForm.Designer.cs">
+      <DependentUpon>EmplyeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\Empolyee\InsEmpolyee.cs">
       <SubType>Form</SubType>
@@ -376,11 +376,11 @@
     <EmbeddedResource Include="Base\Client\CreateClientForm.resx">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\EmplyeeMaster.resx">
-      <DependentUpon>EmplyeeMaster.cs</DependentUpon>
+    <EmbeddedResource Include="Base\MaterialEmplyee.resx">
+      <DependentUpon>MaterialEmplyee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\Empolyee\EmpolyeeMaterial.resx">
-      <DependentUpon>EmpolyeeMaterial.cs</DependentUpon>
+    <EmbeddedResource Include="Base\Empolyee\EmplyeeForm.resx">
+      <DependentUpon>EmplyeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>

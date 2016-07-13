@@ -16,10 +16,10 @@ using System.Windows.Forms;
 
 namespace WSCATProject.Base
 {
-    public partial class EmpolyeeMaterial : EmplyeeMaster
+    public partial class EmplyeeForm : MaterialEmplyee
     {
         EmpolyeeManager em = new EmpolyeeManager();
-        public EmpolyeeMaterial()
+        public EmplyeeForm()
         {
             InitializeComponent();
         }

@@ -11,12 +11,12 @@ using DevComponents.DotNetBar.SuperGrid;
 
 namespace WSCATProject.Base
 {
-    public partial class EmplyeeMaster : Form
+    public partial class MaterialEmplyee : Form
     {
         public bool isflag;
         public int StateType;
         public string id;
-        public EmplyeeMaster()
+        public MaterialEmplyee()
         {
             InitializeComponent();
         }
