@@ -370,7 +370,7 @@ namespace DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("delete from T_City ");
+            strSql.Append("update T_City set City_Clear=0");
             strSql.Append(" where City_Code=@City_Code");
             SqlParameter[] parameters = {
                     new SqlParameter("@City_Code", SqlDbType.NVarChar,512)

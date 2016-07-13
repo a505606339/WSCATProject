@@ -155,16 +155,16 @@
     <Compile Include="Base\PermissionForm.Designer.cs">
       <DependentUpon>PermissionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\StorageCreateForm.cs">
+    <Compile Include="Base\Storage\StorageCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\StorageCreateForm.Designer.cs">
+    <Compile Include="Base\Storage\StorageCreateForm.Designer.cs">
       <DependentUpon>StorageCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\StorageForm.cs">
+    <Compile Include="Base\Storage\StorageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\StorageForm.Designer.cs">
+    <Compile Include="Base\Storage\StorageForm.Designer.cs">
       <DependentUpon>StorageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\UserCreateForm.cs">
@@ -409,10 +409,10 @@
     <EmbeddedResource Include="Base\PermissionForm.resx">
       <DependentUpon>PermissionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\StorageCreateForm.resx">
+    <EmbeddedResource Include="Base\Storage\StorageCreateForm.resx">
       <DependentUpon>StorageCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\StorageForm.resx">
+    <EmbeddedResource Include="Base\Storage\StorageForm.resx">
       <DependentUpon>StorageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\UserCreateForm.resx">

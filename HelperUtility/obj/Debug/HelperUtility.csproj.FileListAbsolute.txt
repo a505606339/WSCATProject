@@ -13,3 +13,4 @@ F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\DevComponents.DotNe
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\DevComponents.Instrumentation.dll
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
 F:\项目\WSCAT\Project\WSCATProject\HelperUtility\bin\Debug\DevComponents.Instrumentation.xml
+F:\项目\WSCAT\Project\WSCATProject\HelperUtility\obj\Debug\HelperUtility.csprojResolveAssemblyReference.cache

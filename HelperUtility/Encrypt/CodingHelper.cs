@@ -40,6 +40,11 @@ namespace HelperUtility.Encrypt
             return TempDT;
         }
 
+        /// <summary>
+        /// 将dataSet里加密的数据解密后返回新的dataSet
+        /// </summary>
+        /// <param name="ds">数据加密的dataset</param>
+        /// <returns>解密的datatable</returns>
         public DataSet DataSetReCoding(DataSet ds)
         {
             DataSet TempDS = ds.Clone();

@@ -16,6 +16,7 @@ using WSCATProject.SellForm;
 using WSCATProject.StockForm;
 using WSCATProject.StockSystemForm;
 using DevComponents.DotNetBar;
+using WSCATProject.Base;
 using HelperUtility.ExUI;
 
 namespace WSCATProject
@@ -622,5 +623,56 @@ namespace WSCATProject
             f.Show();
         }
         #endregion
+
+        //基础按钮-客户按钮
+        private void buttonItemClient_Click(object sender, EventArgs e)
+        {
+            ClientForm cf = new ClientForm();
+            cf.ShowDialog();
+        }
+        //~-货品按钮
+        private void buttonItemMate_Click(object sender, EventArgs e)
+        {
+            MaterialForm mf = new MaterialForm();
+            mf.ShowDialog();
+        }
+        //~-供应商按钮
+        private void buttonItemSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
+        //~-货品分类按钮
+        private void buttonItemType_Click(object sender, EventArgs e)
+        {
+            MaterialTypeForm mtf = new MaterialTypeForm();
+            mtf.ShowDialog();
+        }
+        //~-员工按钮
+        private void buttonItemEmpolyee_Click(object sender, EventArgs e)
+        {
+            EmpolyeeMaterial em = new EmpolyeeMaterial();
+            em.ShowDialog();
+        }
+        //~-地区按钮
+        private void buttonItemCity_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        //~-仓库资料按钮
+        private void buttonItemStock_Click(object sender, EventArgs e)
+        {
+            StorageForm sf = new StorageForm();
+            sf.ShowDialog();
+        }
+        //~-物流信息
+        private void buttonItemCarry_Click(object sender, EventArgs e)
+        {
+
+        }
+        //~-资金账户
+        private void buttonItemBank_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

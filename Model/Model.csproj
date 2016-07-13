@@ -52,6 +52,7 @@
     <Compile Include="BuyCancelDetail.cs" />
     <Compile Include="BuyDetail.cs" />
     <Compile Include="BuyPayment.cs" />
+    <Compile Include="BuyProcess.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="CheckDetail.cs" />
     <Compile Include="City.cs" />

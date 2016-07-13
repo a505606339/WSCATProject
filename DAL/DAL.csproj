@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankAccountService.cs" />
+    <Compile Include="BuyProcessService.cs" />
     <Compile Include="CityService.cs" />
     <Compile Include="ClientService.cs" />
     <Compile Include="ClientTypeService.cs" />
