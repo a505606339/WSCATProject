@@ -26,6 +26,7 @@ namespace WSCATProject.Base
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            StartPosition = FormStartPosition.CenterParent;
             Text = "地区资料";
             BindTreeViewList();
         }

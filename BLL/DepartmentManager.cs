@@ -1,6 +1,8 @@
 ﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +12,13 @@ namespace BLL
     public class DepartmentManager
     {
         DepartmentService ds = new DepartmentService();
-
         #region 添加信息
         /// <summary>
         /// 添加信息
         /// </summary>
         /// <param name="department">参数实体类</param>
         /// <returns></returns>
-        public int InsDepartment(T_Department department)
+        public int InsDepartment(Department department)
         {
             return ds.InsDepartment(department);
         }
@@ -51,7 +52,7 @@ namespace BLL
         /// 查询
         /// </summary>
         /// <returns></returns>
-        public IQueryable SelDepartment()
+        public DataTable SelDepartment()
         {
             return ds.SelDepartment();
         }
@@ -61,9 +62,9 @@ namespace BLL
         /// <summary>
         /// 根据编号查询信息
         /// </summary>
-        /// <param name="Dt_Code">工号</param>
+        /// <param name="Dt_Code">编号</param>
         /// <returns></returns>
-        public T_Department SelDepartmentByCode(string Dt_Code)
+        public Department SelDepartmentByCode(string Dt_Code)
         {
             return ds.SelDepartmentByCode(Dt_Code);
         }

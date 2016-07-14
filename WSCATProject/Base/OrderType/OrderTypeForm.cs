@@ -15,7 +15,7 @@ using WSCATProject.Base;
 
 namespace WSCATProject.Base
 {
-    public partial class OrderTypeForm : MaterialEmplyee
+    public partial class OrderTypeForm : MaterialEmpolyee
     {
         OrderTypeManager otm = new OrderTypeManager();
         public OrderTypeForm()
@@ -178,7 +178,8 @@ namespace WSCATProject.Base
         protected override void ExportExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
+            string defaultName = DateTime.Now.ToString("yyyyMMddHHmm") + "供应商资料";
+            saveFileDialog1.FileName = defaultName + ".xls";
             saveFileDialog1.Filter = @"Excel 97-2003 (*.xls)|*.xls|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 1;
             saveFileDialog1.RestoreDirectory = true;
@@ -206,7 +207,15 @@ namespace WSCATProject.Base
                     }
                     dt.Rows.Add(dr);
                 }
-                NPOIExcelHelper.DataTableToExcel(dt, "单据类型", saveFileDialog1.FileName);
+                try
+                {
+                    NPOIExcelHelper.DataTableToExcel(dt, "单据类型", saveFileDialog1.FileName);
+                    MessageBox.Show("Excel文件已成功导出，请到保存目录下查看。");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("保存失败,请检查异常情况:" + ex.Message);
+                }
             }
         }
     }

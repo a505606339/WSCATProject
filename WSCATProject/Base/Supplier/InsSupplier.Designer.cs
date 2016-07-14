@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.comboTree2 = new DevComponents.DotNetBar.Controls.ComboTree();
             this.comboTree1 = new DevComponents.DotNetBar.Controls.ComboTree();
             this.su_credit = new DevComponents.DotNetBar.Controls.RatingStar();
             this.su_enable = new System.Windows.Forms.CheckBox();
@@ -47,14 +46,11 @@
             this.su_address = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.su_fax = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.su_Reckoning = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.su_bank = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label5 = new System.Windows.Forms.Label();
             this.su_email = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.su_phone = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -159,9 +155,9 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.ColorScheme.TabBackground = System.Drawing.Color.Azure;
-            this.tabControl1.ColorScheme.TabBackground2 = System.Drawing.Color.Azure;
-            this.tabControl1.ColorScheme.TabItemBackground = System.Drawing.Color.PowderBlue;
+            this.tabControl1.ColorScheme.TabBackground = System.Drawing.SystemColors.Control;
+            this.tabControl1.ColorScheme.TabBackground2 = System.Drawing.SystemColors.Control;
+            this.tabControl1.ColorScheme.TabItemBackground = System.Drawing.SystemColors.Control;
             this.tabControl1.ColorScheme.TabItemBackground2 = System.Drawing.Color.White;
             this.tabControl1.ColorScheme.TabItemBackgroundColorBlend.AddRange(new DevComponents.DotNetBar.BackgroundColorBlend[] {
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(230)))), ((int)(((byte)(249))))), 0F),
@@ -180,7 +176,7 @@
             this.tabControl1.ColorScheme.TabItemHotBorder = System.Drawing.Color.Empty;
             this.tabControl1.ColorScheme.TabItemHotBorderDark = System.Drawing.Color.Empty;
             this.tabControl1.ColorScheme.TabItemHotBorderLight = System.Drawing.Color.Empty;
-            this.tabControl1.ColorScheme.TabItemSelectedBackground = System.Drawing.Color.PowderBlue;
+            this.tabControl1.ColorScheme.TabItemSelectedBackground = System.Drawing.SystemColors.Control;
             this.tabControl1.ColorScheme.TabItemSelectedBackground2 = System.Drawing.Color.Empty;
             this.tabControl1.ColorScheme.TabItemSelectedBackgroundColorBlend.AddRange(new DevComponents.DotNetBar.BackgroundColorBlend[] {
             new DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.White, 0F),
@@ -206,7 +202,6 @@
             // 
             // tabControlPanel1
             // 
-            this.tabControlPanel1.Controls.Add(this.comboTree2);
             this.tabControlPanel1.Controls.Add(this.comboTree1);
             this.tabControlPanel1.Controls.Add(this.su_credit);
             this.tabControlPanel1.Controls.Add(this.su_enable);
@@ -216,14 +211,11 @@
             this.tabControlPanel1.Controls.Add(this.su_address);
             this.tabControlPanel1.Controls.Add(this.label18);
             this.tabControlPanel1.Controls.Add(this.label17);
-            this.tabControlPanel1.Controls.Add(this.label21);
-            this.tabControlPanel1.Controls.Add(this.label12);
             this.tabControlPanel1.Controls.Add(this.label20);
             this.tabControlPanel1.Controls.Add(this.label7);
             this.tabControlPanel1.Controls.Add(this.su_fax);
             this.tabControlPanel1.Controls.Add(this.su_Reckoning);
             this.tabControlPanel1.Controls.Add(this.su_bank);
-            this.tabControlPanel1.Controls.Add(this.textBoxX1);
             this.tabControlPanel1.Controls.Add(this.label5);
             this.tabControlPanel1.Controls.Add(this.su_email);
             this.tabControlPanel1.Controls.Add(this.su_phone);
@@ -249,25 +241,6 @@
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 0;
             this.tabControlPanel1.TabItem = this.tabItem1;
-            // 
-            // comboTree2
-            // 
-            this.comboTree2.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.comboTree2.BackgroundStyle.Class = "TextBoxBorder";
-            this.comboTree2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.comboTree2.ButtonDropDown.Checked = true;
-            this.comboTree2.ButtonDropDown.SymbolColor = System.Drawing.Color.Red;
-            this.comboTree2.ButtonDropDown.Visible = true;
-            this.comboTree2.Location = new System.Drawing.Point(367, 126);
-            this.comboTree2.Name = "comboTree2";
-            this.comboTree2.SelectionBoxStyle = DevComponents.AdvTree.eSelectionStyle.FullRowSelect;
-            this.comboTree2.SelectionClosesPopup = false;
-            this.comboTree2.Size = new System.Drawing.Size(185, 23);
-            this.comboTree2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboTree2.TabIndex = 8;
             // 
             // comboTree1
             // 
@@ -381,26 +354,6 @@
             this.label17.TabIndex = 23;
             this.label17.Text = "开 户 行：";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Location = new System.Drawing.Point(299, 131);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(65, 12);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "往来类型：";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(299, 164);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 12);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "所属行业：";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -471,23 +424,6 @@
             this.su_bank.PreventEnterBeep = true;
             this.su_bank.Size = new System.Drawing.Size(185, 16);
             this.su_bank.TabIndex = 11;
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.SystemColors.Control;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.textBoxX1.Border.BorderBottomColor = System.Drawing.Color.Black;
-            this.textBoxX1.Border.BorderBottomWidth = 1;
-            this.textBoxX1.Border.Class = "SideNavStrip";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(367, 163);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(184, 16);
-            this.textBoxX1.TabIndex = 10;
             // 
             // label5
             // 
@@ -809,11 +745,7 @@
         private DevComponents.DotNetBar.Controls.RatingStar su_credit;
         private System.Windows.Forms.Label label20;
         private DevComponents.DotNetBar.Controls.TextBoxX su_email;
-        private System.Windows.Forms.Label label12;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private DevComponents.DotNetBar.Controls.ComboTree comboTree1;
-        private DevComponents.DotNetBar.Controls.ComboTree comboTree2;
     }
 }

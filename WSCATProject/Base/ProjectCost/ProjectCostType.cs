@@ -31,6 +31,7 @@ namespace WSCATProject.Base
 
         private void ProjectCostType_Load(object sender, EventArgs e)
         {
+            StartPosition = FormStartPosition.CenterParent;
             Text = "其他支出项目";
             BindTreeViewList();
         }

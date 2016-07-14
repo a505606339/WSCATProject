@@ -17,6 +17,7 @@ namespace WSCATProject.Base
 
         private void StorageForm_Load(object sender, EventArgs e)
         {
+            StartPosition = FormStartPosition.CenterParent;
             loadData();
         }
 

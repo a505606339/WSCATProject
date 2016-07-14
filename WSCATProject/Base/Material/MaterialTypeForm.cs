@@ -42,6 +42,7 @@ namespace WSCATProject.Base
 
         private void MaterialTypeForm_Load(object sender, EventArgs e)
         {
+            StartPosition = FormStartPosition.CenterParent;
             try
             {
                 loadData();

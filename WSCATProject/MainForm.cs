@@ -48,11 +48,49 @@ namespace WSCATProject
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             getIPAddress();
+            superTabItemRe.Click += SuperTabItemRe_Click;
+            superTabItemIn.Click += SuperTabItemRe_Click;
+            superTabItemOut.Click += SuperTabItemRe_Click;
+            superTabItemStock.Click += SuperTabItemRe_Click;
+            superTabItemFin.Click += SuperTabItemRe_Click;
+            superTabItemSta.Click += SuperTabItemRe_Click;
+            superTabItemSys.Click += SuperTabItemRe_Click;
+        }
+
+        private void SuperTabItemRe_Click(object sender, EventArgs e)
+        {
+            //    string selectName = superTabControl1.SelectedTab.Name;
+            //    switch (selectName)
+            //    {
+            //        case "superTabItemRe":
+            //            break;
+            //        case "superTabItemIn":
+            //            break;
+            //        case "superTabItemOut":
+
+            //            break;
+            //        case "superTabItemStock":
+
+            //            break;
+            //        case "superTabItemFin":
+
+            //            break;
+            //        case "superTabItemSta":
+
+            //            break;
+            //        case "superTabItemSys":
+
+            //            break;
+            //        default:
+            //            break;
+            //    }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            superTabControl1.SelectedTab = superTabItemRe;
+            //LoginForm lf = new LoginForm();
+            //lf.ShowDialog();
             //var off = new officeTool();
             //off.initConnString();
             //clickbtn = imgbtn_maintain;
@@ -639,7 +677,8 @@ namespace WSCATProject
         //~-供应商按钮
         private void buttonItemSupplier_Click(object sender, EventArgs e)
         {
-
+            SupplierForm su = new SupplierForm();
+            su.ShowDialog();
         }
         //~-货品分类按钮
         private void buttonItemType_Click(object sender, EventArgs e)
@@ -650,13 +689,14 @@ namespace WSCATProject
         //~-员工按钮
         private void buttonItemEmpolyee_Click(object sender, EventArgs e)
         {
-            EmplyeeForm em = new EmplyeeForm();
+            EmpolyeeForm em = new EmpolyeeForm();
             em.ShowDialog();
         }
         //~-地区按钮
         private void buttonItemCity_Click_1(object sender, EventArgs e)
         {
-
+            CityType ct = new CityType();
+            ct.ShowDialog();
         }
         //~-仓库资料按钮
         private void buttonItemStock_Click(object sender, EventArgs e)
@@ -672,7 +712,85 @@ namespace WSCATProject
         //~-资金账户
         private void buttonItemBank_Click(object sender, EventArgs e)
         {
+            BankAccountForm baf = new BankAccountForm();
+            baf.ShowDialog();
+        }
 
+        private void superTabItemOut_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemRe;
+        }
+
+        private void sideBarPanelItemIn_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemIn;
+        }
+
+        private void sideBarPanelItemOut_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemOut;
+        }
+
+        private void sideBarPanelItemSto_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemStock;
+        }
+
+        private void sideBarPanelItemFin_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemFin;
+        }
+
+        private void sideBarPanelItemSta_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemSta;
+        }
+
+        private void sideBarPanelItemSys_Click(object sender, EventArgs e)
+        {
+            superTabControl1.SelectedTab = superTabItemSys;
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            buttonItemEmpolyee_Click(sender, e);
+        }
+
+        private void pbFinanceOtherIn_Click(object sender, EventArgs e)
+        {
+            ProjectInCostType pict = new ProjectInCostType();
+            pict.ShowDialog();
+        }
+
+        private void pbFinanceOtherOut_Click(object sender, EventArgs e)
+        {
+            ProjectCostType pct = new ProjectCostType();
+            pct.ShowDialog();
+        }
+
+        private void btnFinanceOtherIn_Click(object sender, EventArgs e)
+        {
+            pbFinanceOtherIn_Click(sender, e);
+        }
+
+        private void btnFinanceAccount_Click(object sender, EventArgs e)
+        {
+            buttonItemBank_Click(sender, e);
+        }
+
+        private void buttonItem36_Click(object sender, EventArgs e)
+        {
+            pbFinanceOtherIn_Click(sender, e);
+        }
+
+        private void buttonItem37_Click(object sender, EventArgs e)
+        {
+            pbFinanceOtherOut_Click(sender, e);
+        }
+
+        private void buttonItem22_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

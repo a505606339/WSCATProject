@@ -1,15 +1,11 @@
 ﻿using BLL;
-using HelperUtility.ExUI;
 using HelperUtility.Encrypt;
 using Model;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using DevComponents.DotNetBar.SuperGrid;
-using System.IO;
-using WSCATProject;
 using HelperUtility.Excel;
 
 namespace WSCATProject.Base
@@ -73,7 +69,8 @@ namespace WSCATProject.Base
         /// <param name="e"></param>
         private void SupplierMaterial_Load(object sender, EventArgs e)
         {
-            superGridControl1.PrimaryGrid.AutoGenerateColumns = true;
+            StartPosition = FormStartPosition.CenterParent;
+            superGridControl1.PrimaryGrid.AutoGenerateColumns = false;
             superGridControl1.PrimaryGrid.SelectionGranularity = SelectionGranularity.Row;
             superGridControl1.PrimaryGrid.InitialSelection = RelativeSelection.None;
             superGridControl1.PrimaryGrid.FocusCuesEnabled = false;
@@ -99,7 +96,7 @@ namespace WSCATProject.Base
                 GridPanel panel = superGridControl1.PrimaryGrid;
                 GridColumnCollection columns = panel.Columns;
 
-                panel.ColumnHeader.GroupHeaders.Add(GetSlCompanyInfoHeader(columns, "CodeAndName", "编码及单位名称", "gridColumn1", "gridColumn3"));
+                panel.ColumnHeader.GroupHeaders.Add(GetSlCompanyInfoHeader(columns,"CodeAndName", "编码及单位名称", "gridColumn1", "gridColumn3"));
                 panel.ColumnHeader.GroupHeaders.Add(GetSlCompanyInfoHeader(columns, "Contact", "联系方式", "gridColumn4", "gridColumn10"));
             }
             catch (Exception ex)
@@ -115,7 +112,9 @@ namespace WSCATProject.Base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        private void contextMenuStrip1_Opening(object sender,
+
+System.ComponentModel.CancelEventArgs e)
         {
             ///判断集合中有数据才进入后面的if  否则直接跳出
             if (treeView1.GetNodeCount(true) > 0)
@@ -155,7 +154,9 @@ namespace WSCATProject.Base
                 {
                     return;
                 }
-                SQLWhere += string.Format("Su_CityName like '%{0}%'", XYEEncoding.strCodeHex(treeName));   //模糊查询城市名
+                SQLWhere += string.Format("Su_Area like '%{0}%'", XYEEncoding.strCodeHex(treeName));
+
+                //模糊查询城市名
                 switch (searchType) //搜索框内容加密后
                 {
                     case "单位名称":
@@ -313,7 +314,6 @@ namespace WSCATProject.Base
         {
             string cityName = treeView1.SelectedNode.Text.ToString();
             superGridControl1.PrimaryGrid.DataSource = sm.SelSupplierByCityCode(cityName);
-
         }
         #endregion
 
@@ -337,7 +337,9 @@ namespace WSCATProject.Base
         /// 合并列方法
         /// </summary>
         /// <returns></returns>
-        private ColumnGroupHeader GetSlCompanyInfoHeader(GridColumnCollection columns, string name, string headerText, string startName, string endName)
+        private ColumnGroupHeader GetSlCompanyInfoHeader(GridColumnCollection columns, string
+
+name, string headerText, string startName, string endName)
         {
             ColumnGroupHeader cgh = new ColumnGroupHeader();
 
@@ -428,7 +430,7 @@ namespace WSCATProject.Base
                         string SQLWhere = "";
                         if (treeView1.SelectedNode != null)
                         {
-                            SQLWhere += string.Format("Su_CityName like '%{0}%'", XYEEncoding.strCodeHex(treeName));
+                            SQLWhere += string.Format("Su_Area like '%{0}%'", XYEEncoding.strCodeHex(treeName));
                         }
                         if (!string.IsNullOrWhiteSpace(toolStripSelTxt.Text.Trim()))
                         {
@@ -558,7 +560,8 @@ namespace WSCATProject.Base
         private void ExportExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
+            string defaultName = DateTime.Now.ToString("yyyyMMddHHmm") + "供应商资料";
+            saveFileDialog1.FileName = defaultName + ".xls";
             saveFileDialog1.Filter = @"Excel 97-2003 (*.xls)|*.xls|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 1;
             saveFileDialog1.RestoreDirectory = true;
@@ -573,8 +576,8 @@ namespace WSCATProject.Base
                 DataColumn dc = null;
                 for (int i = 0; i < row.Cells.Count; i++)
                 {
-                    dc = new DataColumn(superGridControl1.PrimaryGrid.Columns[i].Name);
-                    dt.Columns.Add(dc);   //添加表头   当第二行的时候还会添加一次  由于table中的columns必须是唯一的  所以会导致冲突
+                    dc = new DataColumn(superGridControl1.PrimaryGrid.Columns[i].HeaderText);
+                    dt.Columns.Add(dc);   //添加表头   当第二行的时候还会添加一次  由于table中的columns必须是唯一的 所以会导致冲突
                 }
                 for (int i = 0; i < col.Count; i++)
                 {
@@ -586,7 +589,15 @@ namespace WSCATProject.Base
                     }
                     dt.Rows.Add(dr);
                 }
-                NPOIExcelHelper.DataTableToExcel(dt, "供应商资料", saveFileDialog1.FileName);
+                try
+                {
+                    NPOIExcelHelper.DataTableToExcel(dt, "供应商资料", saveFileDialog1.FileName);
+                    MessageBox.Show("Excel文件已成功导出，请到保存目录下查看。");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("保存失败,请检查异常情况:" + ex.Message);
+                }
             }
         }
         #endregion

@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(938, 398);
             this.Name = "BankAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BankAccountForm";
+            this.Text = "资金账户";
             this.Load += new System.EventHandler(this.BankAccountMaterial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

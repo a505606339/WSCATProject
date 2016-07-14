@@ -16,7 +16,7 @@ using WSCATProject.Base;
 
 namespace WSCATProject.Base
 {
-    public partial class BankAccountForm : MaterialEmplyee
+    public partial class BankAccountForm : MaterialEmpolyee
     {
         CodingHelper ch = new CodingHelper();
         BankAccountManager bam = new BankAccountManager();
@@ -27,6 +27,7 @@ namespace WSCATProject.Base
 
         private void BankAccountMaterial_Load(object sender, EventArgs e)
         {
+            StartPosition = FormStartPosition.CenterParent;
             superGridControl1.PrimaryGrid.AutoGenerateColumns = true;
             superGridControl1.PrimaryGrid.SelectionGranularity = SelectionGranularity.Row;
             superGridControl1.PrimaryGrid.InitialSelection = RelativeSelection.None;
@@ -42,7 +43,7 @@ namespace WSCATProject.Base
         {
             try
             {
-                superGridControl1.PrimaryGrid.DataSource = ch.DataTableReCoding(bam.SelBankAccount(isDisplayEnable));
+                superGridControl1.PrimaryGrid.DataSource = bam.SelBankAccount(isDisplayEnable);
             }
             catch (Exception ex)
             {
@@ -218,7 +219,8 @@ namespace WSCATProject.Base
         protected override void ExportExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
+            string defaultName = DateTime.Now.ToString("yyyyMMddHHmm") + "供应商资料";
+            saveFileDialog1.FileName = defaultName + ".xls";
             saveFileDialog1.Filter = @"Excel 97-2003 (*.xls)|*.xls|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 1;
             saveFileDialog1.RestoreDirectory = true;
@@ -247,7 +249,15 @@ namespace WSCATProject.Base
                     }
                     dt.Rows.Add(dr);
                 }
-                NPOIExcelHelper.DataTableToExcel(dt, "账户资料", saveFileDialog1.FileName);
+                try
+                {
+                    NPOIExcelHelper.DataTableToExcel(dt, "账户资料", saveFileDialog1.FileName);
+                    MessageBox.Show("Excel文件已成功导出，请到保存目录下查看。");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("保存失败,请检查异常情况:" + ex.Message);
+                }
             }
         }
     }

@@ -125,23 +125,23 @@
     <Compile Include="Base\Client\CreateClientForm.Designer.cs">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\Material\MaterialEmplyee.cs">
+    <Compile Include="Base\Empolyee\EmpolyeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\Material\MaterialEmplyee.Designer.cs">
-      <DependentUpon>MaterialEmplyee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Base\Empolyee\EmplyeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Base\Empolyee\EmplyeeForm.Designer.cs">
-      <DependentUpon>EmplyeeForm.cs</DependentUpon>
+    <Compile Include="Base\Empolyee\EmpolyeeForm.Designer.cs">
+      <DependentUpon>EmpolyeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\Empolyee\InsEmpolyee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Base\Empolyee\InsEmpolyee.Designer.cs">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Material\MaterialEmpolyee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Material\MaterialEmpolyee.Designer.cs">
+      <DependentUpon>MaterialEmpolyee.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\LoginForm.cs">
       <SubType>Form</SubType>
@@ -490,14 +490,14 @@
     <EmbeddedResource Include="Base\Client\CreateClientForm.resx">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\Material\MaterialEmplyee.resx">
-      <DependentUpon>MaterialEmplyee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Base\Empolyee\EmplyeeForm.resx">
-      <DependentUpon>EmplyeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Base\Empolyee\EmpolyeeForm.resx">
+      <DependentUpon>EmpolyeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Material\MaterialEmpolyee.resx">
+      <DependentUpon>MaterialEmpolyee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -620,6 +620,7 @@
     <EmbeddedResource Include="WarehouseForm.resx">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

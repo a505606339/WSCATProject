@@ -70,7 +70,7 @@ namespace WSCATProject.Base
 
         private void buttonXClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void textBoxXPassword_TextChanged(object sender, EventArgs e)

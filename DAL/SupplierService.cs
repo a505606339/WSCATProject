@@ -39,7 +39,7 @@ namespace DAL
                            , Su_Enable
                            , Su_Clear
                            , Su_Code
-                           , Su_CityName) 
+                           , Su_Area) 
 VALUES(@Su_Name
                            , @Su_Phone
                            , @Su_Address
@@ -59,7 +59,7 @@ VALUES(@Su_Name
                            , @Su_Enable
                            , @Su_Clear
                            , @Su_Code
-                           , @Su_CityName)";
+                           , @Su_Area)";
             SqlParameter[] sps =
             {
                     new SqlParameter("@Su_Name",XYEEncoding.strCodeHex(supplier.Su_Name)),
@@ -81,7 +81,7 @@ VALUES(@Su_Name
                     new SqlParameter("@Su_Enable",supplier.Su_Enable),
                     new SqlParameter("@Su_Clear",supplier.Su_Clear),
                     new SqlParameter("@Su_Code",XYEEncoding.strCodeHex(supplier.Su_Code)),
-                    new SqlParameter("@Su_CityName",XYEEncoding.strCodeHex(supplier.Su_Area))
+                    new SqlParameter("@Su_Area",XYEEncoding.strCodeHex(supplier.Su_Area))
                 };
             return DbHelperSQL.ExecuteSql(sql, sps);
         }
@@ -139,6 +139,7 @@ VALUES(@Su_Name
                                   ,Su_Remark = @Su_Remark
                                   ,Su_Enable = @Su_Enable
                                   ,Su_Clear = @Su_Clear
+                                  ,Su_Area=@Su_Area
                                  WHERE Su_Code=@Su_Code");
             SqlParameter[] sps =
             {
@@ -161,7 +162,7 @@ VALUES(@Su_Name
                     new SqlParameter("@Su_Enable",supplier.Su_Enable),
                     new SqlParameter("@Su_Clear",supplier.Su_Clear),
                     new SqlParameter("@Su_Code",XYEEncoding.strCodeHex(supplier.Su_Code)),
-                    new SqlParameter("@Su_CityName",XYEEncoding.strCodeHex(supplier.Su_Area))
+                    new SqlParameter("@Su_Area",XYEEncoding.strCodeHex(supplier.Su_Area))
             };
             return DbHelperSQL.ExecuteSql(sql, sps);
         }
@@ -201,7 +202,8 @@ VALUES(@Su_Name
                     Su_Enable = Convert.ToInt32(read["Su_Enable"].ToString()),
                     Su_Clear = Convert.ToInt32(read["Su_Clear"].ToString()),
                     Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString()),
-                    Su_Area = XYEEncoding.strHexDecode(read["Su_CityName"].ToString())
+                    Su_Area = XYEEncoding.strHexDecode(read["Su_Area"].ToString()),
+                    Su_EnableStr = Convert.ToInt32(read["Su_Enable"].ToString()) == 1 ? "未禁用" : "已禁用"
                 };
                 list.Add(supplier);
             }
@@ -242,7 +244,8 @@ VALUES(@Su_Name
                     Su_Enable = Convert.ToInt32(read["Su_Enable"].ToString()),
                     Su_Clear = Convert.ToInt32(read["Su_Clear"].ToString()),
                     Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString()),
-                    Su_Area = XYEEncoding.strHexDecode(read["Su_CityName"].ToString())
+                    Su_Area = XYEEncoding.strHexDecode(read["Su_Area"].ToString()),
+                    Su_EnableStr = Convert.ToInt32(read["Su_Enable"].ToString()) == 1 ? "未禁用" : "已禁用"
                 };
                 return supplier;
             }
@@ -258,36 +261,35 @@ VALUES(@Su_Name
         public List<Supplier> SelSupplierByCityCode(string Su_CityName)
         {
             List<Supplier> list = new List<Supplier>();
-            string sql = string.Format("select * from T_Supplier where Su_CityName like '%{0}%' and Su_Enable=1 and Su_Clear=1", XYEEncoding.strCodeHex(Su_CityName));
+            string sql = string.Format("select * from T_Supplier where Su_Area like '%{0}%' and Su_Enable=1 and Su_Clear=1", XYEEncoding.strCodeHex(Su_CityName));
             SqlDataReader read = DbHelperSQL.ExecuteReader(sql);
             while (read.Read())
             {
-                Supplier supplier = new Supplier()
-                {
-                    Su_ID = Convert.ToInt32(read["Su_ID"]),
-                    Su_Name = XYEEncoding.strHexDecode(read["Su_Name"].ToString()),
-                    Su_Phone = XYEEncoding.strHexDecode(read["Su_Phone"].ToString()),
-                    Su_Address = XYEEncoding.strHexDecode(read["Su_Address"].ToString()),
-                    Su_fax = XYEEncoding.strHexDecode(read["Su_fax"].ToString()),
-                    Su_Email = XYEEncoding.strHexDecode(read["Su_email"].ToString()),
-                    Su_Bankaccounts = XYEEncoding.strHexDecode(read["Su_Bankaccounts"].ToString()),
-                    Su_Bank = XYEEncoding.strHexDecode(read["Su_Bank"].ToString()),
-                    Su_Profession = XYEEncoding.strHexDecode(read["Su_Profession"].ToString()),
-                    Su_ProCode = XYEEncoding.strHexDecode(read["Su_ProCode"].ToString()),
-                    Su_Credit = XYEEncoding.strHexDecode(read["Su_Credit"].ToString()),
-                    Su_Money = XYEEncoding.strHexDecode(read["Su_Money"].ToString()),
-                    Su_Surplus = XYEEncoding.strHexDecode(read["Su_Surplus"].ToString()),
-                    Su_Reckoning = XYEEncoding.strHexDecode(read["Su_Reckoning"].ToString()),
-                    Su_Empname = XYEEncoding.strHexDecode(read["Su_Empname"].ToString()),
-                    Su_EmpPhone = XYEEncoding.strHexDecode(read["Su_EmpPhone"].ToString()),
-                    Su_Remark = XYEEncoding.strHexDecode(read["Su_Remark"].ToString()),
-                    Su_Enable = Convert.ToInt32(read["Su_Enable"].ToString()),
-                    Su_Clear = Convert.ToInt32(read["Su_Clear"].ToString()),
-                    Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString()),
-                    Su_Area = XYEEncoding.strHexDecode(read["Su_CityName"].ToString())
-                };
+                Supplier supplier = new Supplier();
+                supplier.Su_ID = Convert.ToInt32(read["Su_ID"]);
+                supplier.Su_Name = XYEEncoding.strHexDecode(read["Su_Name"].ToString());
+                supplier.Su_Phone = XYEEncoding.strHexDecode(read["Su_Phone"].ToString());
+                supplier.Su_Address = XYEEncoding.strHexDecode(read["Su_Address"].ToString());
+                supplier.Su_fax = XYEEncoding.strHexDecode(read["Su_fax"].ToString());
+                supplier.Su_Email = XYEEncoding.strHexDecode(read["Su_email"].ToString());
+                supplier.Su_Bankaccounts = XYEEncoding.strHexDecode(read["Su_Bankaccounts"].ToString());
+                supplier.Su_Bank = XYEEncoding.strHexDecode(read["Su_Bank"].ToString());
+                supplier.Su_Profession = XYEEncoding.strHexDecode(read["Su_Profession"].ToString());
+                supplier.Su_ProCode = XYEEncoding.strHexDecode(read["Su_ProCode"].ToString());
+                supplier.Su_Credit = XYEEncoding.strHexDecode(read["Su_Credit"].ToString());
+                supplier.Su_Money = XYEEncoding.strHexDecode(read["Su_Money"].ToString());
+                supplier.Su_Surplus = XYEEncoding.strHexDecode(read["Su_Surplus"].ToString());
+                supplier.Su_Reckoning = XYEEncoding.strHexDecode(read["Su_Reckoning"].ToString());
+                supplier.Su_Empname = XYEEncoding.strHexDecode(read["Su_Empname"].ToString());
+                supplier.Su_EmpPhone = XYEEncoding.strHexDecode(read["Su_EmpPhone"].ToString());
+                supplier.Su_Remark = XYEEncoding.strHexDecode(read["Su_Remark"].ToString());
+                supplier.Su_Enable = Convert.ToInt32(read["Su_Enable"].ToString());
+                supplier.Su_Clear = Convert.ToInt32(read["Su_Clear"].ToString());
+                supplier.Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString());
+                supplier.Su_Area = XYEEncoding.strHexDecode(read["Su_Area"].ToString());
+                supplier.Su_EnableStr = Convert.ToInt32(read["Su_Enable"].ToString()) == 1 ? "未禁用" : "已禁用";
                 list.Add(supplier);
-            }
+            };
             return list;
         }
         #endregion
@@ -333,7 +335,8 @@ VALUES(@Su_Name
                     Su_Remark = XYEEncoding.strHexDecode(read["Su_Remark"].ToString()),
                     Su_Enable = Convert.ToInt32(read["Su_Enable"].ToString()),
                     Su_Clear = Convert.ToInt32(read["Su_Clear"].ToString()),
-                    Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString())
+                    Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString()),
+                    Su_EnableStr = Convert.ToInt32(read["Su_Enable"].ToString()) == 1 ? "未禁用" : "已禁用"
                 };
                 list.Add(supplier);
             }
@@ -385,8 +388,8 @@ VALUES(@Su_Name
                     Su_Enable = Convert.ToInt32(read["Su_Enable"].ToString()),
                     Su_Clear = Convert.ToInt32(read["Su_Clear"].ToString()),
                     Su_Code = XYEEncoding.strHexDecode(read["Su_Code"].ToString()),
-                    Su_Area = XYEEncoding.strHexDecode(read["Su_CityName"].ToString())
-                    //Su_CityCode = new CityService().SelCityByCode(XYEEncoding.strHexDecode(read["Su_CityCode"].ToString()))
+                    Su_Area = XYEEncoding.strHexDecode(read["Su_Area"].ToString()),
+                    Su_EnableStr = Convert.ToInt32(read["Su_Enable"].ToString()) == 1 ? "未禁用" : "已禁用"
                 };
                 list.Add(supplier);
             }
@@ -413,7 +416,7 @@ Su_Credit as 信用等级,
 Su_Money as 账款额度,
 Su_Surplus as 剩余额度,
 Su_Reckoning as 月结日,
-Su_CityName as 城市,
+Su_Area as 城市,
 Su_Remark as 备注,
 (case 
 when Su_Enable=1 then '2A50591F3727' 

@@ -225,6 +225,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(64, 32);
             this.toolStripButton3.Text = "打印";
+            this.toolStripButton3.Visible = false;
             // 
             // 打印预览ToolStripMenuItem
             // 
@@ -476,8 +477,7 @@
             // 
             // gridColumn15
             // 
-            this.gridColumn15.DataPropertyName = "Su_Enable";
-            this.gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            this.gridColumn15.DataPropertyName = "Su_EnableStr";
             this.gridColumn15.HeaderText = "是否禁用";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.NullString = "";

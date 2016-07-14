@@ -36,9 +36,7 @@ namespace WSCATProject
         private void InsSupplier_Load(object sender, EventArgs e)
         {
             AddTree("", null, "", comboTree1);
-            AddTree("", null, "P", comboTree2);
             comboTree1.AdvTree.NodeDoubleClick += AdvTree_NodeDoubleClick;
-            comboTree2.AdvTree.NodeDoubleClick += AdvTree_NodeDoubleClick;
             SupplierForm supplierMaterial = (SupplierForm)this.Owner;
             switch (supplierMaterial.stats)
             {
@@ -146,7 +144,6 @@ namespace WSCATProject
             supplier.Su_Enable = su_enable.Checked ? 0 : 1;
             supplier.Su_Area = comboTree1.SelectedNode == null ? "所有地区" : comboTree1.SelectedNode.FullPath.Replace(";", "/");
             supplier.Su_ProCode = "0";
-            supplier.Su_Profession = comboTree2.SelectedNode == null ? "所有地区" : comboTree2.SelectedNode.FullPath.Replace(";", "/");
             if (state == 0)
             {
                 return sm.InsSupplier(supplier);
@@ -277,7 +274,6 @@ namespace WSCATProject
         private void AdvTree_NodeDoubleClick(object sender, TreeNodeMouseEventArgs e)
         {
             comboTree1.IsPopupOpen = false;
-            comboTree2.IsPopupOpen = false;
         }
         #endregion
     }

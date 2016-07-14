@@ -389,6 +389,7 @@ namespace DAL
             }
         }
         #endregion
+
         #region 新增信息
         /// <summary>
         /// 新增信息

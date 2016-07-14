@@ -1,16 +1,8 @@
 ﻿using BLL;
-using DAL;
 using HelperUtility;
 using HelperUtility.Encrypt;
-using Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WSCATProject.Base
@@ -19,19 +11,30 @@ namespace WSCATProject.Base
     {
         EmpolyeeManager em = new EmpolyeeManager();
         DepartmentManager dm = new DepartmentManager();
+        RoleManager role = new RoleManager();
+        public string area;
         public InsEmpolyee()
         {
             InitializeComponent();
         }
+
         private void InsEmpolyee_Load(object sender, EventArgs e)
         {
+
             textBox2.Enabled = false;
             comboBox1.SelectedIndex = 0;
             textBox11.Text = DateTime.Now.ToString();
             comboBox1.DataSource = dm.SelDepartment();
             comboBox1.DisplayMember = "Dt_Name";
             comboBox1.ValueMember = "Dt_Code";
-            EmplyeeForm empM = (EmplyeeForm)Owner;
+            //绑定角色下拉框
+            DataTable dt = role.GetAllList().Tables[0];
+            cbe_juese.DataSource = dt;
+            cbe_juese.DisplayMember = "Role_Name";
+            cbe_juese.ValueMember = "Role_Code";
+            cbe_juese.SelectedIndex = 0;
+
+            EmpolyeeForm empM = (EmpolyeeForm)Owner;
             try
             {
                 switch (empM.StateType)
@@ -40,20 +43,32 @@ namespace WSCATProject.Base
                         textBox2.Text = BuildCode.ModuleCode("EMP");
                         break;
                     case 1:
-                        T_Empolyee empolyee = em.SelEmpolyeeByCode(empM.id);
-                        textBox1.Text = XYEEncoding.strHexDecode(empolyee.Emp_Name);
-                        textBox2.Text = XYEEncoding.strHexDecode(empolyee.Emp_Code);
-                        textBox3.Text = XYEEncoding.strHexDecode(empolyee.Emp_CardCode);
-                        textBox4.Text = XYEEncoding.strHexDecode(empolyee.Emp_Phone);
-                        textBox5.Text = XYEEncoding.strHexDecode(empolyee.Emp_Card);
+                        Model.Empolyee empolyee = em.SelEmpolyeeByCode(empM.id);
+
+                        textBox1.Text = empolyee.Emp_Name;
+                        textBox2.Text = empolyee.Emp_Code;
+                        //获取选中的地址，绑定在地址的三个控件上面
+                        string str = empolyee.Emp_Area;
+                        string[] sArray = str.Split(new char[] { '/' });
+                        tb_sheng.Text = sArray[0].ToString();
+                        tb_shi.Text = sArray[1].ToString();
+                        tb_qu.Text = sArray[2].ToString();
+                        //
+                        tb_pws.Text = empolyee.Emp_Password;
+                        textBox3.Text = empolyee.Emp_CardCode;
+                        textBox4.Text = empolyee.Emp_Phone;
+                        textBox5.Text = empolyee.Emp_Card;
                         textBox6.Text = empolyee.Emp_Birthday.ToString();
-                        textBox7.Text = XYEEncoding.strHexDecode(empolyee.Emp_Email);
-                        textBox8.Text = XYEEncoding.strHexDecode(empolyee.Emp_School);
-                        textBox9.Text = XYEEncoding.strHexDecode(empolyee.Emp_Bank);
-                        textBox10.Text = XYEEncoding.strHexDecode(empolyee.Emp_OpenBank);
+                        textBox7.Text = empolyee.Emp_Email;
+                        textBox8.Text = empolyee.Emp_School;
+                        textBox9.Text = empolyee.Emp_Bank;
+                        textBox10.Text = empolyee.Emp_OpenBank;
                         textBox11.Text = empolyee.Emp_Entry.ToString();
-                        comboBox1.Text = dm.SelDepartmentByCode(XYEEncoding.strHexDecode(empolyee.Emp_Depid)).Dt_Name;
-                        comboBox2.Text = XYEEncoding.strHexDecode(empolyee.Emp_Education);
+                        comboBox1.Text = XYEEncoding.strHexDecode(dm.SelDepartmentByCode(XYEEncoding.strCodeHex(empolyee.Emp_Depid)).Dt_Name);
+                        //
+                        cbe_juese.Text = XYEEncoding.strHexDecode(role.GetModel(XYEEncoding.strCodeHex(empolyee.Emp_UserRole)).Role_Name);
+                        //
+                        comboBox2.Text = empolyee.Emp_Education;
                         if (empolyee.Emp_Sex == "男")
                             radioButton1.Checked = true;
                         else
@@ -76,11 +91,12 @@ namespace WSCATProject.Base
             catch (Exception ex)
             {
                 MessageBox.Show("加载数据失败,请检查服务器连接并尝试刷新.错误:" + ex.Message);
+
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            EmplyeeForm empM = (EmplyeeForm)Owner;
+            EmpolyeeForm empM = (EmpolyeeForm)Owner;
             if (InsTextIsNull() == false)
             {
                 return;
@@ -104,26 +120,36 @@ namespace WSCATProject.Base
             catch (Exception ex)
             {
                 MessageBox.Show("保存数据失败,请检查服务器连接并尝试重新保存.错误:" + ex.Message);
+
             }
         }
 
         private int InsEmpolyeeFun(int state)
         {
-            T_Empolyee emp = new T_Empolyee();
-            emp.Emp_Name = XYEEncoding.strCodeHex(textBox1.Text.Trim());
-            emp.Emp_Code = XYEEncoding.strCodeHex(textBox2.Text.Trim());
-            emp.Emp_CardCode = XYEEncoding.strCodeHex(textBox3.Text.Trim());
-            emp.Emp_Phone = XYEEncoding.strCodeHex(textBox4.Text.Trim());
-            emp.Emp_Card = XYEEncoding.strCodeHex(textBox5.Text.Trim());
+            Model.Empolyee emp = new Model.Empolyee();
+            area = tb_sheng.Text + "/" + tb_shi.Text + "/" + tb_qu.Text;//保存地区
+            emp.Emp_Name = textBox1.Text.Trim();
+            emp.Emp_Code = textBox2.Text.Trim();
+
+            emp.Emp_Password = tb_pws.Text.Trim();
+
+            emp.Emp_Area = area;
+
+            emp.Emp_CardCode = textBox3.Text.Trim();
+            emp.Emp_Phone = textBox4.Text.Trim();
+            emp.Emp_Card = textBox5.Text.Trim();
             emp.Emp_Birthday = Convert.ToDateTime(textBox6.Text);//textBox6
-            emp.Emp_Email = XYEEncoding.strCodeHex(textBox7.Text.Trim());
-            emp.Emp_School = XYEEncoding.strCodeHex(textBox8.Text.Trim());
-            emp.Emp_Bank = XYEEncoding.strCodeHex(textBox9.Text.Trim());
-            emp.Emp_OpenBank = XYEEncoding.strCodeHex(textBox10.Text.Trim());
+            emp.Emp_Email = textBox7.Text.Trim();
+            emp.Emp_School = textBox8.Text.Trim();
+            emp.Emp_Bank = textBox9.Text.Trim();
+            emp.Emp_OpenBank = textBox10.Text.Trim();
             emp.Emp_Entry = Convert.ToDateTime(textBox11.Text); //textBox11
-            emp.Emp_Depid = XYEEncoding.strCodeHex(comboBox1.SelectedValue.ToString());
-            emp.Emp_Education = XYEEncoding.strCodeHex(comboBox2.Text);
-            emp.Emp_Sex = XYEEncoding.strCodeHex(radioButton1.Checked == true ? "男" : "女");
+            emp.Emp_Depid = comboBox1.SelectedValue == null ? "" : comboBox1.SelectedValue.ToString();
+
+            emp.Emp_UserRole = cbe_juese.SelectedValue == null ? "" : cbe_juese.SelectedValue.ToString();
+
+            emp.Emp_Education = comboBox2.Text;
+            emp.Emp_Sex = radioButton1.Checked == true ? "男" : "女";
             emp.Emp_Enable = checkBox1.Checked == true ? 0 : 1;
             emp.Emp_State = checkBox2.Checked == true ? 0 : 1;
             emp.Emp_Clear = 1;
@@ -174,11 +200,13 @@ namespace WSCATProject.Base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();
         }
         #endregion
+
+
     }
 }

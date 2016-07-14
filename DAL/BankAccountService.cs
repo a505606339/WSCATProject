@@ -13,6 +13,7 @@ namespace DAL
     public class BankAccountService
     {
         CodingHelper ch = new CodingHelper();
+
         #region 添加信息
         /// <summary>
         /// 添加信息
@@ -62,7 +63,7 @@ namespace DAL
         /// <returns></returns>
         public int FalseDelClear(string Ba_Code)
         {
-            string sql = string.Format("update T_BankAccount set Ba_Clear=0 where Ba_Code={0}", Ba_Code);
+            string sql = string.Format("update T_BankAccount set Ba_Clear=0 where Ba_Code='{0}'", Ba_Code);
             return DbHelperSQL.ExecuteSql(sql);
         }
         #endregion
