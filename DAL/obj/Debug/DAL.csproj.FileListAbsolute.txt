@@ -31,3 +31,13 @@ D:\项目\2016年7月14日092342\DAL\bin\Debug\Model.pdb
 D:\项目\2016年7月14日092342\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\项目\2016年7月14日092342\DAL\obj\Debug\DAL.dll
 D:\项目\2016年7月14日092342\DAL\obj\Debug\DAL.pdb
+D:\项目\2016年7月18日092518\DAL\bin\Debug\DAL.dll
+D:\项目\2016年7月18日092518\DAL\bin\Debug\DAL.pdb
+D:\项目\2016年7月18日092518\DAL\bin\Debug\HelperUtility.dll
+D:\项目\2016年7月18日092518\DAL\bin\Debug\Model.dll
+D:\项目\2016年7月18日092518\DAL\bin\Debug\NPOI.dll
+D:\项目\2016年7月18日092518\DAL\bin\Debug\HelperUtility.pdb
+D:\项目\2016年7月18日092518\DAL\bin\Debug\Model.pdb
+D:\项目\2016年7月18日092518\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\项目\2016年7月18日092518\DAL\obj\Debug\DAL.dll
+D:\项目\2016年7月18日092518\DAL\obj\Debug\DAL.pdb

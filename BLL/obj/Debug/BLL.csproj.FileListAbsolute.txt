@@ -34,3 +34,15 @@ D:\项目\2016年7月14日092342\BLL\bin\Debug\Model.pdb
 D:\项目\2016年7月14日092342\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\项目\2016年7月14日092342\BLL\obj\Debug\BLL.dll
 D:\项目\2016年7月14日092342\BLL\obj\Debug\BLL.pdb
+D:\项目\2016年7月18日092518\BLL\bin\Debug\BLL.dll
+D:\项目\2016年7月18日092518\BLL\bin\Debug\BLL.pdb
+D:\项目\2016年7月18日092518\BLL\bin\Debug\DAL.dll
+D:\项目\2016年7月18日092518\BLL\bin\Debug\HelperUtility.dll
+D:\项目\2016年7月18日092518\BLL\bin\Debug\Model.dll
+D:\项目\2016年7月18日092518\BLL\bin\Debug\NPOI.dll
+D:\项目\2016年7月18日092518\BLL\bin\Debug\DAL.pdb
+D:\项目\2016年7月18日092518\BLL\bin\Debug\HelperUtility.pdb
+D:\项目\2016年7月18日092518\BLL\bin\Debug\Model.pdb
+D:\项目\2016年7月18日092518\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\项目\2016年7月18日092518\BLL\obj\Debug\BLL.dll
+D:\项目\2016年7月18日092518\BLL\obj\Debug\BLL.pdb

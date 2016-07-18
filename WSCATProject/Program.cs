@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WSCATProject.Base;
-using WSCATProject.Base.Empolyee;
 
 namespace WSCATProject
 {
@@ -18,7 +17,7 @@ namespace WSCATProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new test());
+            Application.Run(new MainForm());
         }
     }
 }
