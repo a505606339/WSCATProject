@@ -83,6 +83,12 @@
     <Compile Include="Base\Borrow\InsBorrowNode.Designer.cs">
       <DependentUpon>InsBorrowNode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base\Buys\BuyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Buys\BuyDetail.Designer.cs">
+      <DependentUpon>BuyDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\City\CityNode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,12 @@
     <Compile Include="Base\Empolyee\InsEmpolyee.Designer.cs">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base\Material\MaterialBuyAndSellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Material\MaterialBuyAndSellForm.Designer.cs">
+      <DependentUpon>MaterialBuyAndSellForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\Material\MaterialEmpolyee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,11 +167,11 @@
     <Compile Include="Base\Material\MaterialCreateForm.Designer.cs">
       <DependentUpon>MaterialCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\Material\MateCreateTypeForm.cs">
+    <Compile Include="Base\Material\MaterialCreateTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\Material\MateCreateTypeForm.Designer.cs">
-      <DependentUpon>MateCreateTypeForm.cs</DependentUpon>
+    <Compile Include="Base\Material\MaterialCreateTypeForm.Designer.cs">
+      <DependentUpon>MaterialCreateTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\Material\MaterialForm.cs">
       <SubType>Form</SubType>
@@ -469,6 +481,9 @@
     <EmbeddedResource Include="Base\Borrow\InsBorrowNode.resx">
       <DependentUpon>InsBorrowNode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Base\Buys\BuyDetail.resx">
+      <DependentUpon>BuyDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\City\CityNode.resx">
       <DependentUpon>CityNode.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,6 +511,9 @@
     <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Base\Material\MaterialBuyAndSellForm.resx">
+      <DependentUpon>MaterialBuyAndSellForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\Material\MaterialEmpolyee.resx">
       <DependentUpon>MaterialEmpolyee.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,8 +523,8 @@
     <EmbeddedResource Include="Base\Material\MaterialCreateForm.resx">
       <DependentUpon>MaterialCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\Material\MateCreateTypeForm.resx">
-      <DependentUpon>MateCreateTypeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Base\Material\MaterialCreateTypeForm.resx">
+      <DependentUpon>MaterialCreateTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Material\MaterialForm.resx">
       <DependentUpon>MaterialForm.cs</DependentUpon>

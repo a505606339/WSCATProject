@@ -23,9 +23,9 @@ namespace WSCATProject.Base
             InitializeComponent();
         }
 
-        private Material material = null;
+        private Model.Material material = null;
 
-        public Material Material
+        public Model.Material Material
         {
             get
             {
@@ -55,7 +55,7 @@ namespace WSCATProject.Base
             {
                 if (!string.IsNullOrWhiteSpace(textBoxXName.Text))
                 {
-                    Material material = new Material();
+                    Model.Material material = new Model.Material();
                     material.Ma_Barcode = XYEEncoding.strCodeHex(textBoxXBarcode.Text.Trim());
                     material.Ma_Clear = 1;
                     material.Ma_Code = XYEEncoding.strCodeHex(BuildCode.ModuleCode("MA"));

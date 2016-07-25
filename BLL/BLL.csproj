@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BankAccountManager.cs" />
     <Compile Include="BorrowManager.cs" />
+    <Compile Include="BuyManager.cs" />
     <Compile Include="CityManager.cs" />
     <Compile Include="ClientManager.cs" />
     <Compile Include="ClientTypeManager.cs" />

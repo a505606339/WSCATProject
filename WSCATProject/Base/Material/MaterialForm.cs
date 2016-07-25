@@ -64,7 +64,7 @@ namespace WSCATProject.Base
         {
             if (superGridControlMaterial.GetSelectedRows().Count > 0)
             {
-                Material material = new Material();
+                Model.Material material = new Model.Material();
                 SelectedElementCollection col = superGridControlMaterial.GetSelectedRows();
                 if (col.Count > 0)
                 {

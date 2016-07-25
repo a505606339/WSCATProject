@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WSCATProject.Base;
+using WSCATProject.Base.Buys;
+using WSCATProject.Base.Material;
 
 namespace WSCATProject
 {
@@ -17,7 +19,7 @@ namespace WSCATProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MaterialBuyAndSellForm());
         }
     }
 }

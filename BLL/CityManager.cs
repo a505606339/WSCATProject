@@ -315,7 +315,8 @@ namespace BLL
         /// <returns>所有数据以DataTable的形式返回</returns>
         public DataTable SelCityTable()
         {
-            string sql = "select * from T_City where City_Clear=1 and City_Enable=1";
+            //string sql = "select * from T_City where City_Clear=1 and City_Enable=1";
+            string sql = "select * from T_City";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, DbHelperSQL.connectionString);
             DataSet ds1 = new DataSet();
             adapter.Fill(ds1, "T_City");

@@ -60,3 +60,4 @@ D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.ExUI.Mult
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.csproj.GenerateResource.Cache
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.dll
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.pdb
+D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.csprojResolveAssemblyReference.cache

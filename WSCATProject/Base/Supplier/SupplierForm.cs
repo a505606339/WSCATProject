@@ -337,8 +337,7 @@ System.ComponentModel.CancelEventArgs e)
         /// 合并列方法
         /// </summary>
         /// <returns></returns>
-        private ColumnGroupHeader GetSlCompanyInfoHeader(GridColumnCollection columns, string
-
+        private ColumnGroupHeader GetSlCompanyInfoHeader(GridColumnCollection columns, string 
 name, string headerText, string startName, string endName)
         {
             ColumnGroupHeader cgh = new ColumnGroupHeader();

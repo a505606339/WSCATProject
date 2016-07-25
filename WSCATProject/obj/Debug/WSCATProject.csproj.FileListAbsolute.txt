@@ -300,3 +300,5 @@ D:\项目\2016年7月18日092518\WSCATProject\bin\Debug\DevComponents.DotNetBar2
 D:\项目\2016年7月18日092518\WSCATProject\bin\Debug\DevComponents.Instrumentation.xml
 D:\项目\2016年7月18日092518\WSCATProject\obj\Debug\WSCATProject.exe
 D:\项目\2016年7月18日092518\WSCATProject\obj\Debug\WSCATProject.pdb
+D:\项目\2016年7月18日092518\WSCATProject\obj\Debug\WSCATProject.Base.Material.MaterialBuyAndSellForm.resources
+D:\项目\2016年7月18日092518\WSCATProject\obj\Debug\WSCATProject.Base.Buys.BuyDetail.resources
