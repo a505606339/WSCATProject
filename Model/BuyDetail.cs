@@ -16,11 +16,11 @@ namespace Model
 		private string _buy_maname;
 		private string _buy_model;
 		private string _buy_unit;
-		private string _buy_curnumber;
-		private string _buy_discountaprice;
-		private string _buy_discount;
-		private string _buy_discountbprice;
-		private string _buy_amountmoney;
+		private decimal? _buy_curnumber;
+		private decimal? _buy_discountaprice;
+		private decimal? _buy_discount;
+		private decimal? _buy_discountbprice;
+		private decimal? _buy_amountmoney;
 		private int? _buy_clear;
 		private string _buy_safetyone;
 		private string _buy_safetytwo;
@@ -76,7 +76,7 @@ namespace Model
 		/// <summary>
 		/// 数量
 		/// </summary>
-		public string Buy_CurNumber
+		public decimal? Buy_CurNumber
 		{
 			set{ _buy_curnumber=value;}
 			get{return _buy_curnumber;}
@@ -84,7 +84,7 @@ namespace Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Buy_DiscountAPrice
+		public decimal? Buy_DiscountAPrice
 		{
 			set{ _buy_discountaprice=value;}
 			get{return _buy_discountaprice;}
@@ -92,7 +92,7 @@ namespace Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Buy_Discount
+		public decimal? Buy_Discount
 		{
 			set{ _buy_discount=value;}
 			get{return _buy_discount;}
@@ -100,7 +100,7 @@ namespace Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Buy_DiscountBPrice
+		public decimal? Buy_DiscountBPrice
 		{
 			set{ _buy_discountbprice=value;}
 			get{return _buy_discountbprice;}
@@ -108,7 +108,7 @@ namespace Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string Buy_AmountMoney
+		public decimal? Buy_AmountMoney
 		{
 			set{ _buy_amountmoney=value;}
 			get{return _buy_amountmoney;}

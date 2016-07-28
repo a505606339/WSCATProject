@@ -719,7 +719,7 @@
             this.labTop4.Name = "labTop4";
             this.labTop4.Size = new System.Drawing.Size(65, 12);
             this.labTop4.TabIndex = 6;
-            this.labTop4.Text = "收款账户：";
+            this.labTop4.Text = "付款账户：";
             // 
             // labTop3
             // 
@@ -728,7 +728,7 @@
             this.labTop3.Name = "labTop3";
             this.labTop3.Size = new System.Drawing.Size(65, 12);
             this.labTop3.TabIndex = 4;
-            this.labTop3.Text = "本次收款：";
+            this.labTop3.Text = "本次付款：";
             // 
             // labTop2
             // 
@@ -737,7 +737,7 @@
             this.labTop2.Name = "labTop2";
             this.labTop2.Size = new System.Drawing.Size(65, 12);
             this.labTop2.TabIndex = 2;
-            this.labTop2.Text = "客    户：";
+            this.labTop2.Text = "供 应 商：";
             // 
             // labTop1
             // 
@@ -792,6 +792,7 @@
             this.dataGridViewFujia.AllowUserToResizeColumns = false;
             this.dataGridViewFujia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewFujia.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewFujia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -807,8 +808,10 @@
             this.dataGridViewFujia.Name = "dataGridViewFujia";
             this.dataGridViewFujia.RowHeadersVisible = false;
             this.dataGridViewFujia.RowTemplate.Height = 23;
+            this.dataGridViewFujia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewFujia.Size = new System.Drawing.Size(248, 132);
             this.dataGridViewFujia.TabIndex = 0;
+            this.dataGridViewFujia.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFujia_CellDoubleClick);
             this.dataGridViewFujia.VisibleChanged += new System.EventHandler(this.dataGridViewFujia_VisibleChanged);
             // 
             // label1
@@ -905,15 +908,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         protected System.Windows.Forms.ToolStrip toolStrip1;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label labelTitle;
@@ -960,22 +954,30 @@
         protected DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
         protected HelperUtility.ExUI.ResizablePanel resizablePanel1;
         protected System.Windows.Forms.DataGridView dataGridViewFujia;
-        private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Panel panelDataView;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell1;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell2;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell3;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell4;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell5;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell6;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell7;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell8;
-        private HelperUtility.ExUI.ResizablePanel resizablePanelData;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell9;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell10;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell11;
-        private DevComponents.DotNetBar.SuperGrid.GridCell gridCell12;
+        protected HelperUtility.ExUI.ResizablePanel resizablePanelData;
+        protected System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.ToolStripButton toolStripButton1;
+        protected System.Windows.Forms.ToolStripButton toolStripButton2;
+        protected System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        protected System.Windows.Forms.ToolStripButton toolStripButton3;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Panel panel3;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Panel panel5;
+        protected System.Windows.Forms.Label label1;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell1;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell2;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell3;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell4;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell5;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell6;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell7;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell8;
+        protected System.Windows.Forms.Label label2;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell9;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell10;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell11;
+        protected DevComponents.DotNetBar.SuperGrid.GridCell gridCell12;
     }
 }

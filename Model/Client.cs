@@ -18,14 +18,14 @@ namespace Model
 		private string _cli_phone;
 		private string _cli_phonetwo;
 		private string _cli_faxes;
-        private string _cli_Citycode;
+		private string _cli_citycode;
 		private string _cli_area;
 		private string _cli_address;
 		private string _cli_linkman;
-        private string _cli_company;
+		private string _cli_company;
 		private string _cli_typecode;
-        private string _cli_typename;
-        private string _cli_discountcode;
+		private string _cli_typename;
+		private string _cli_discountcode;
 		private string _cli_bankaccounts;
 		private string _cli_openbank;
 		private DateTime? _cli_olddata;
@@ -68,7 +68,7 @@ namespace Model
 			get{return _cli_zhiwen;}
 		}
 		/// <summary>
-		/// 客户名
+		/// 
 		/// </summary>
 		public string Cli_Name
 		{
@@ -108,6 +108,14 @@ namespace Model
 			get{return _cli_faxes;}
 		}
 		/// <summary>
+		/// 地区编号
+		/// </summary>
+		public string Cli_CityCode
+		{
+			set{ _cli_citycode=value;}
+			get{return _cli_citycode;}
+		}
+		/// <summary>
 		/// 地区，用/划分级
 		/// </summary>
 		public string Cli_area
@@ -132,12 +140,28 @@ namespace Model
 			get{return _cli_linkman;}
 		}
 		/// <summary>
+		/// 单位名
+		/// </summary>
+		public string Cli_Company
+		{
+			set{ _cli_company=value;}
+			get{return _cli_company;}
+		}
+		/// <summary>
 		/// 
 		/// </summary>
 		public string Cli_TypeCode
 		{
 			set{ _cli_typecode=value;}
 			get{return _cli_typecode;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Cli_TypeName
+		{
+			set{ _cli_typename=value;}
+			get{return _cli_typename;}
 		}
 		/// <summary>
 		/// 折扣ID
@@ -283,53 +307,8 @@ namespace Model
 			set{ _cli_enable=value;}
 			get{return _cli_enable;}
 		}
-        /// <summary>
-        /// 单位名
-        /// </summary>
-        public string Cli_Company
-        {
-            get
-            {
-                return _cli_company;
-            }
+		#endregion Model
 
-            set
-            {
-                _cli_company = value;
-            }
-        }
-        /// <summary>
-        /// 地区编号
-        /// </summary>
-        public string Cli_Citycode
-        {
-            get
-            {
-                return _cli_Citycode;
-            }
-
-            set
-            {
-                _cli_Citycode = value;
-            }
-        }
-        /// <summary>
-        /// 客户类别名称
-        /// </summary>
-        public string Cli_typename
-        {
-            get
-            {
-                return _cli_typename;
-            }
-
-            set
-            {
-                _cli_typename = value;
-            }
-        }
-        #endregion Model
-
-    }
+	}
 }
 

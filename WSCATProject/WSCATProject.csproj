@@ -83,11 +83,17 @@
     <Compile Include="Base\Borrow\InsBorrowNode.Designer.cs">
       <DependentUpon>InsBorrowNode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Base\Buys\BuyDetail.cs">
+    <Compile Include="Base\Buys\BuyCheckDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Base\Buys\BuyDetail.Designer.cs">
-      <DependentUpon>BuyDetail.cs</DependentUpon>
+    <Compile Include="Base\Buys\BuyCheckDetailForm.Designer.cs">
+      <DependentUpon>BuyCheckDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Buys\BuyCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Buys\BuyCheckForm.Designer.cs">
+      <DependentUpon>BuyCheckForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\City\CityNode.cs">
       <SubType>Form</SubType>
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="Base\Empolyee\InsEmpolyee.Designer.cs">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Material\MaterialBuyAndSellDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Material\MaterialBuyAndSellDetailForm.Designer.cs">
+      <DependentUpon>MaterialBuyAndSellDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Base\Material\MaterialBuyAndSellForm.cs">
       <SubType>Form</SubType>
@@ -481,8 +493,8 @@
     <EmbeddedResource Include="Base\Borrow\InsBorrowNode.resx">
       <DependentUpon>InsBorrowNode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Base\Buys\BuyDetail.resx">
-      <DependentUpon>BuyDetail.cs</DependentUpon>
+    <EmbeddedResource Include="Base\Buys\BuyCheckDetailForm.resx">
+      <DependentUpon>BuyCheckDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\City\CityNode.resx">
       <DependentUpon>CityNode.cs</DependentUpon>
@@ -510,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\Material\MaterialBuyAndSellDetailForm.resx">
+      <DependentUpon>MaterialBuyAndSellDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base\Material\MaterialBuyAndSellForm.resx">
       <DependentUpon>MaterialBuyAndSellForm.cs</DependentUpon>
@@ -638,7 +653,6 @@
     <EmbeddedResource Include="WarehouseForm.resx">
       <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -665,10 +679,6 @@
     <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">
       <Project>{f600b9d0-f52a-4740-b3c9-4ddf382600cc}</Project>
       <Name>HelperUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{a4d8ab56-7d72-4adc-9c8f-99f8dc56f55c}</Project>
-      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

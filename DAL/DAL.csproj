@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="BankAccountService.cs" />
     <Compile Include="BorrowService.cs" />
+    <Compile Include="BuyCancelDetail.cs" />
+    <Compile Include="BuyDetailService.cs" />
     <Compile Include="BuyProcessService.cs" />
     <Compile Include="BuyService.cs" />
     <Compile Include="CityService.cs" />
@@ -81,10 +83,6 @@
     <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">
       <Project>{f600b9d0-f52a-4740-b3c9-4ddf382600cc}</Project>
       <Name>HelperUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{a4d8ab56-7d72-4adc-9c8f-99f8dc56f55c}</Project>
-      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ namespace DAL
 {
     public class SupplierService
     {
+        CodingHelper ch = new CodingHelper();
         #region 新增信息
         /// <summary>
         /// 新增信息
@@ -426,7 +427,7 @@ from T_Supplier where Su_Clear=1 and Su_Enable=1";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, DbHelperSQL.connectionString);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "T_Supplier");
-            return ds.Tables[0];
+            return ch.DataTableReCoding(ds.Tables[0]);
         }
         #endregion
     }

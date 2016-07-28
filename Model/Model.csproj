@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4D8AB56-7D72-4ADC-9C8F-99F8DC56F55C}</ProjectGuid>
+    <ProjectGuid>{2A43F97B-9C1A-462A-9586-F4412E26AEC6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
     <AssemblyName>Model</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -43,6 +43,7 @@
     <Compile Include="AdjPriceDetail.cs" />
     <Compile Include="AdjustPrice.cs" />
     <Compile Include="Areas.cs" />
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="Borrow.cs" />
     <Compile Include="Breakage.cs" />

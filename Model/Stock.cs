@@ -14,14 +14,14 @@ namespace Model
 		private string _sto_maid;
 		private string _sto_stname;
 		private string _sto_stid;
-		private string _sto_ininumber;
-		private string _sto_iniprice;
-		private string _sto_currentnumber;
-		private string _sto_currentprice;
-		private string _sto_allnumber;
-		private string _sto_allprice;
-		private string _sto_enanumber;
-		private string _sto_floornumber;
+		private decimal? _sto_ininumber;
+		private decimal? _sto_iniprice;
+		private decimal? _sto_currentnumber;
+		private decimal? _sto_currentprice;
+		private decimal? _sto_allnumber;
+		private decimal? _sto_allprice;
+		private decimal? _sto_enanumber;
+		private decimal? _sto_floornumber;
 		private int? _sto_clear;
 		private string _sto_remark;
 		private string _sto_safetyone;
@@ -61,7 +61,7 @@ namespace Model
 		/// <summary>
 		/// 期初数量
 		/// </summary>
-		public string Sto_IniNumber
+		public decimal? Sto_IniNumber
 		{
 			set{ _sto_ininumber=value;}
 			get{return _sto_ininumber;}
@@ -69,7 +69,7 @@ namespace Model
 		/// <summary>
 		/// 期初总值
 		/// </summary>
-		public string Sto_IniPrice
+		public decimal? Sto_IniPrice
 		{
 			set{ _sto_iniprice=value;}
 			get{return _sto_iniprice;}
@@ -77,7 +77,7 @@ namespace Model
 		/// <summary>
 		/// 本期收入数量
 		/// </summary>
-		public string Sto_CurrentNumber
+		public decimal? Sto_CurrentNumber
 		{
 			set{ _sto_currentnumber=value;}
 			get{return _sto_currentnumber;}
@@ -85,7 +85,7 @@ namespace Model
 		/// <summary>
 		/// 本期收入总值
 		/// </summary>
-		public string Sto_CurrentPrice
+		public decimal? Sto_CurrentPrice
 		{
 			set{ _sto_currentprice=value;}
 			get{return _sto_currentprice;}
@@ -93,7 +93,7 @@ namespace Model
 		/// <summary>
 		/// 现有总数量
 		/// </summary>
-		public string Sto_AllNumber
+		public decimal? Sto_AllNumber
 		{
 			set{ _sto_allnumber=value;}
 			get{return _sto_allnumber;}
@@ -101,7 +101,7 @@ namespace Model
 		/// <summary>
 		/// 现有总价值
 		/// </summary>
-		public string Sto_AllPrice
+		public decimal? Sto_AllPrice
 		{
 			set{ _sto_allprice=value;}
 			get{return _sto_allprice;}
@@ -109,7 +109,7 @@ namespace Model
 		/// <summary>
 		/// 可用总量
 		/// </summary>
-		public string Sto_EnaNumber
+		public decimal? Sto_EnaNumber
 		{
 			set{ _sto_enanumber=value;}
 			get{return _sto_enanumber;}
@@ -117,7 +117,7 @@ namespace Model
 		/// <summary>
 		/// 安全数量
 		/// </summary>
-		public string Sto_FloorNumber
+		public decimal? Sto_FloorNumber
 		{
 			set{ _sto_floornumber=value;}
 			get{return _sto_floornumber;}

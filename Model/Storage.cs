@@ -11,6 +11,7 @@ namespace Model
 		{}
 		#region Model
 		private int _st_id;
+		private string _st_code;
 		private string _st_name;
 		private string _st_empname;
 		private string _st_phone;
@@ -20,7 +21,6 @@ namespace Model
 		private string _st_remark;
 		private string _st_safetyone;
 		private string _st_safetytwo;
-		private string _st_code;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -28,6 +28,14 @@ namespace Model
 		{
 			set{ _st_id=value;}
 			get{return _st_id;}
+		}
+		/// <summary>
+		/// 仓库编号
+		/// </summary>
+		public string St_Code
+		{
+			set{ _st_code=value;}
+			get{return _st_code;}
 		}
 		/// <summary>
 		/// 仓库名称
@@ -100,14 +108,6 @@ namespace Model
 		{
 			set{ _st_safetytwo=value;}
 			get{return _st_safetytwo;}
-		}
-		/// <summary>
-		/// 仓库编号
-		/// </summary>
-		public string St_Code
-		{
-			set{ _st_code=value;}
-			get{return _st_code;}
 		}
 		#endregion Model
 

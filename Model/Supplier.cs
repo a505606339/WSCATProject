@@ -33,7 +33,6 @@ namespace Model
 		private string _su_safettwo;
 		private string _su_code;
 		private string _su_area;
-        private string _su_enableStr;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -218,21 +217,8 @@ namespace Model
 			set{ _su_area=value;}
 			get{return _su_area;}
 		}
+		#endregion Model
 
-        public string Su_EnableStr
-        {
-            get
-            {
-                return _su_enableStr;
-            }
-
-            set
-            {
-                _su_enableStr = value;
-            }
-        }
-        #endregion Model
-
-    }
+	}
 }
 

@@ -54,10 +54,10 @@ D:\项目\2016年7月18日092518\HelperUtility\bin\Debug\DevComponents.Instrumen
 D:\项目\2016年7月18日092518\HelperUtility\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
 D:\项目\2016年7月18日092518\HelperUtility\bin\Debug\DevComponents.DotNetBar2.xml
 D:\项目\2016年7月18日092518\HelperUtility\bin\Debug\DevComponents.Instrumentation.xml
+D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.csprojResolveAssemblyReference.cache
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.ExUI.imageButton.resources
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.ExUI.labtextbox.resources
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.ExUI.MultiHeaderView.resources
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.csproj.GenerateResource.Cache
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.dll
 D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.pdb
-D:\项目\2016年7月18日092518\HelperUtility\obj\Debug\HelperUtility.csprojResolveAssemblyReference.cache

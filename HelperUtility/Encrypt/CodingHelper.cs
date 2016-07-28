@@ -26,9 +26,9 @@ namespace HelperUtility.Encrypt
                     {
                         object temp = null;
 
-                        //时间和int不加密 需排除
+                        //时间和int、decimal不加密 需排除
                         temp = (dt.Columns[j].DataType == typeof(int) ||
-                            dt.Columns[j].DataType == typeof(DateTime)) ?
+                            dt.Columns[j].DataType == typeof(DateTime) || dt.Columns[j].DataType==typeof(decimal)) ?
                             dt.Rows[i][j] :
                             XYEEncoding.strHexDecode(dt.Rows[i][j].ToString());
 

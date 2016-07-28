@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WSCATProject.Base.Buys;
 
 namespace WSCATProject.Base.Material
 {
@@ -18,13 +19,14 @@ namespace WSCATProject.Base.Material
     {
         BuyManager bm = new BuyManager();
         DataTable dt = null;
+        public string whereField;
+        public string orderField;
         public MaterialBuyAndSellForm()
         {
             InitializeComponent();
             //添加的位置
             this.toolStrip1.Items.Insert(6, new ToolStripControlHost(dateTimePicker1));
             this.toolStrip1.Items.Insert(8, new ToolStripControlHost(dateTimePicker2));
-            //this.今天ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuDateTimeItem_Click);
             今天ToolStripMenuItem.Click += ToolStripMenuDateTimeItem_Click;
             本周ToolStripMenuItem.Click += ToolStripMenuDateTimeItem_Click;
             上周ToolStripMenuItem.Click += ToolStripMenuDateTimeItem_Click;
@@ -48,17 +50,22 @@ namespace WSCATProject.Base.Material
         }
 
         #region 窗体加载方法
-        /// <summary>
-        /// 窗体加载方法
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        // <summary>
+        // 窗体加载方法
+        // </summary>
+        // <param name="sender"><//aram>
+        // < param name="e"></param>
         private void MaterialBuyAndSellForm_Load(object sender, EventArgs e)
         {
+            superGridControl1.PrimaryGrid.AutoGenerateColumns = true;
+            superGridControl1.PrimaryGrid.SelectionGranularity = SelectionGranularity.Row;
+            superGridControl1.PrimaryGrid.InitialSelection = RelativeSelection.None;
+            superGridControl1.PrimaryGrid.FocusCuesEnabled = false;
+            superGridControl1.PrimaryGrid.ActiveRowIndicatorStyle = ActiveRowIndicatorStyle.None;
+            superGridControl1.PrimaryGrid.AllowEdit = false;
+
             toolStripComboBox1.SelectedIndex = 0;
             toolStripComboBox2.SelectedIndex = 0;
-            toolStripComboBox3.SelectedIndex = 0;
-            dt = bm.SelBuyDataTable();
         }
         #endregion
 
@@ -66,7 +73,7 @@ namespace WSCATProject.Base.Material
         {
             string startDate = dateTimePicker1.Value.ToString();
             string stopDate = dateTimePicker2.Value.ToString();
-            superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, startDate, stopDate);
+            superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, startDate, stopDate, orderField);
         }
 
         #region 日期范围筛选公用事件
@@ -84,42 +91,41 @@ namespace WSCATProject.Base.Material
             switch (tsmi.Text)
             {
                 case "今天":
-                    DataView dv = dt.DefaultView;
-                    dv.RowFilter = string.Format("SUBSTRING(Convert(Buy_Date, 'System.String'), 1 ,10)='{0}'", DateTime.Now.ToShortDateString());
-                    dt = dv.ToTable();
-                    superGridControl1.PrimaryGrid.DataSource = dt;
+                    stratWeek = DateTime.Now.AddDays(dayofweek - 2).ToShortDateString();
+                    stopWeek = DateTime.Now.AddDays(dayofweek).ToShortDateString();
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "本周":
                     //本周开始日期
                     stratWeek = DateTime.Now.AddDays(1 - dayofweek).ToShortDateString();
                     //结束日期
                     stopWeek = DateTime.Now.AddDays(6 - dayofweek + 1).ToShortDateString();
-                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek); ;
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "上周":
                     stratWeek = DateTime.Now.AddDays(1 - dayofweek - 7).ToShortDateString();
                     stopWeek = DateTime.Now.AddDays(1 - dayofweek - 7).AddDays(6).ToShortDateString();
-                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek);
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "本月":
                     stratWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(0).ToShortDateString();
                     stopWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(1).AddDays(-1).ToShortDateString();
-                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek);
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "上月":
                     stratWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddMonths(-1).ToShortDateString();
                     stopWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-01")).AddDays(-1).ToShortDateString();
-                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek);
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "本年":
                     stratWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).ToShortDateString();
                     stopWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(1).AddDays(-1).ToShortDateString();
-                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek);
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "上年":
                     stratWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(-1).ToShortDateString();
                     stopWeek = DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddDays(-1).ToShortDateString();
-                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek);
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, whereField, stratWeek, stopWeek, orderField);
                     break;
                 case "全部":
                     superGridControl1.PrimaryGrid.DataSource = dt;
@@ -139,15 +145,22 @@ namespace WSCATProject.Base.Material
         /// <param name="stratWeek">开始日期</param>
         /// <param name="stopWeek">结束日期</param>
         /// <returns></returns>
-        private static DataTable WhereDateBetween(DataTable dt, string stratWeek, string stopWeek)
+        private static DataTable WhereDateBetween(DataTable dt, string whereField, string stratWeek, string stopWeek, string orderField)
         {
-            DataRow[] dr = dt.Select(string.Format("Buy_Date>'{0}' and Buy_Date<'{1}'", stratWeek, stopWeek), "Buy_ID");
-            DataTable dtNew = dt.Clone();
-            foreach (DataRow item in dr)
+            if (dt == null)
             {
-                dtNew.ImportRow(item);
+                MessageBox.Show("列表为空!");
             }
-            dt = dtNew;
+            else
+            {
+                DataRow[] dr = dt.Select(string.Format("{0}>'{1}' and {0}<'{2}'", whereField, stratWeek, stopWeek), orderField);
+                DataTable dtNew = dt.Clone();
+                foreach (DataRow item in dr)
+                {
+                    dtNew.ImportRow(item);
+                }
+                dt = dtNew;
+            }
             return dt;
         }
         #endregion
@@ -227,6 +240,7 @@ namespace WSCATProject.Base.Material
         /// <param name="e"></param>
         private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            BuyCheckDetailForm bcdf = new BuyCheckDetailForm();
             string cb2 = toolStripComboBox2.Text;
 
             #region 固定列名，考虑用table查询的as
@@ -271,8 +285,10 @@ namespace WSCATProject.Base.Material
             switch (cb2)
             {
                 case "采购开单":
-                    DataTable dt = bm.SelBuyDataTable();
+                    dt = bm.SelBuyDataTableToCheck();
                     superGridControl1.PrimaryGrid.DataSource = dt;
+                    whereField = "单据日期";
+                    orderField = "ID";
                     break;
                 case "销售开单":
                     for (int i = 0; i < ColumnsHeaderText[0].Length; i++)
@@ -316,6 +332,13 @@ namespace WSCATProject.Base.Material
         {
             superGridControl1.PrimaryGrid.ClearAll();
             superGridControl1.PrimaryGrid.DataSource = dt;
+        }
+
+        private void superGridControl1_RowDoubleClick(object sender, GridRowDoubleClickEventArgs e)
+        {
+            BuyCheckDetailForm bcdf = new BuyCheckDetailForm();
+            bcdf.code = superGridControl1.PrimaryGrid.GetSelectedRows().GetCells()[1].Value.ToString();  //主窗体   获取选中行的code
+            bcdf.ShowDialog();
         }
     }
 }

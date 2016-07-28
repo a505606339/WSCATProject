@@ -1,161 +1,98 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Model
 {
-    public class Permission
-    {
-        #region model
-
-        private int per_ID;
-        private string per_Code;
-        private string per_ModuleName;
-        private int per_ReadState = 0;
-        private int per_WriteState = 0;
-        private int per_AuditState = 0;
-        private int per_Clear = 1;
-        private string per_Type;
-        private string per_RoleCode;
-
-        public int Per_ID
-        {
-            get
-            {
-                return per_ID;
-            }
-
-            set
-            {
-                per_ID = value;
-            }
-        }
-        /// <summary>
+	/// <summary>
+	/// 单据类型表
+	/// </summary>
+	[Serializable]
+	public partial class Permission
+	{
+		public Permission()
+		{}
+		#region Model
+		private int _per_id;
+		private string _per_code;
+		private string _per_modulename;
+		private int? _per_readstate;
+		private int? _per_writestate;
+		private int? _per_auditstate;
+		private int? _per_clear;
+		private string _per_type;
+		private string _per_rolecode;
+		/// <summary>
+		/// 
+		/// </summary>
+		public int Per_ID
+		{
+			set{ _per_id=value;}
+			get{return _per_id;}
+		}
+		/// <summary>
 		/// 编号
 		/// </summary>
-        public string Per_Code
-        {
-            get
-            {
-                return per_Code;
-            }
-
-            set
-            {
-                per_Code = value;
-            }
-        }
-        /// <summary>
+		public string Per_Code
+		{
+			set{ _per_code=value;}
+			get{return _per_code;}
+		}
+		/// <summary>
 		/// 模块名称
 		/// </summary>
-        public string Per_ModuleName
-        {
-            get
-            {
-                return per_ModuleName;
-            }
-
-            set
-            {
-                per_ModuleName = value;
-            }
-        }
-        /// <summary>
-		/// 读入权限
+		public string Per_ModuleName
+		{
+			set{ _per_modulename=value;}
+			get{return _per_modulename;}
+		}
+		/// <summary>
+		/// 读取权限状态
 		/// </summary>
-        public int Per_ReadState
-        {
-            get
-            {
-                return per_ReadState;
-            }
-
-            set
-            {
-                per_ReadState = value;
-            }
-        }
-        /// <summary>
-		/// 写入权限
+		public int? Per_ReadState
+		{
+			set{ _per_readstate=value;}
+			get{return _per_readstate;}
+		}
+		/// <summary>
+		/// 写入权限状态
 		/// </summary>
-        public int Per_WriteState
-        {
-            get
-            {
-                return per_WriteState;
-            }
-
-            set
-            {
-                per_WriteState = value;
-            }
-        }
-        /// <summary>
-		/// 审核权限
+		public int? Per_WriteState
+		{
+			set{ _per_writestate=value;}
+			get{return _per_writestate;}
+		}
+		/// <summary>
+		/// 审核权限状态
 		/// </summary>
-        public int Per_AuditState
-        {
-            get
-            {
-                return per_AuditState;
-            }
-
-            set
-            {
-                per_AuditState = value;
-            }
-        }
-        /// <summary>
-		/// 是否清除
+		public int? Per_AuditState
+		{
+			set{ _per_auditstate=value;}
+			get{return _per_auditstate;}
+		}
+		/// <summary>
+		/// 是否删除
 		/// </summary>
-        public int Per_Clear
-        {
-            get
-            {
-                return per_Clear;
-            }
+		public int? Per_Clear
+		{
+			set{ _per_clear=value;}
+			get{return _per_clear;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Per_Type
+		{
+			set{ _per_type=value;}
+			get{return _per_type;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Per_RoleCode
+		{
+			set{ _per_rolecode=value;}
+			get{return _per_rolecode;}
+		}
+		#endregion Model
 
-            set
-            {
-                per_Clear = value;
-            }
-        }
-
-        /// <summary>
-        /// 所属的分类
-        /// </summary>
-        public string Per_Type
-        {
-            get
-            {
-                return per_Type;
-            }
-
-            set
-            {
-                per_Type = value;
-            }
-        }
-
-        /// <summary>
-        /// 角色code
-        /// </summary>
-        public string Per_RoleCode
-        {
-            get
-            {
-                return per_RoleCode;
-            }
-
-            set
-            {
-                per_RoleCode = value;
-            }
-        }
-
-
-        #endregion
-    }
+	}
 }
+

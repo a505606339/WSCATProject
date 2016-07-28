@@ -356,69 +356,69 @@ namespace WSCATProject.Base.Material
             // 今天ToolStripMenuItem1
             // 
             this.今天ToolStripMenuItem1.Name = "今天ToolStripMenuItem1";
-            this.今天ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.今天ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.今天ToolStripMenuItem1.Text = "今天";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(97, 6);
             // 
             // 本周ToolStripMenuItem1
             // 
             this.本周ToolStripMenuItem1.Name = "本周ToolStripMenuItem1";
-            this.本周ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.本周ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.本周ToolStripMenuItem1.Text = "本周";
             // 
             // 上周ToolStripMenuItem1
             // 
             this.上周ToolStripMenuItem1.Name = "上周ToolStripMenuItem1";
-            this.上周ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.上周ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.上周ToolStripMenuItem1.Text = "上周";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(97, 6);
             // 
             // 本月ToolStripMenuItem1
             // 
             this.本月ToolStripMenuItem1.Name = "本月ToolStripMenuItem1";
-            this.本月ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.本月ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.本月ToolStripMenuItem1.Text = "本月";
             // 
             // 上月ToolStripMenuItem1
             // 
             this.上月ToolStripMenuItem1.Name = "上月ToolStripMenuItem1";
-            this.上月ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.上月ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.上月ToolStripMenuItem1.Text = "上月";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(97, 6);
             // 
             // 本年ToolStripMenuItem1
             // 
             this.本年ToolStripMenuItem1.Name = "本年ToolStripMenuItem1";
-            this.本年ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.本年ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.本年ToolStripMenuItem1.Text = "本年";
             // 
             // 上年ToolStripMenuItem1
             // 
             this.上年ToolStripMenuItem1.Name = "上年ToolStripMenuItem1";
-            this.上年ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.上年ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.上年ToolStripMenuItem1.Text = "上年";
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(97, 6);
             // 
             // 全部ToolStripMenuItem1
             // 
             this.全部ToolStripMenuItem1.Name = "全部ToolStripMenuItem1";
-            this.全部ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.全部ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.全部ToolStripMenuItem1.Text = "全部";
             // 
             // toolStripSeparator9
@@ -533,6 +533,7 @@ namespace WSCATProject.Base.Material
             this.superGridControl1.Size = new System.Drawing.Size(1183, 560);
             this.superGridControl1.TabIndex = 0;
             this.superGridControl1.Text = "superGridControl1";
+            this.superGridControl1.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.superGridControl1_RowDoubleClick);
             // 
             // MaterialBuyAndSellForm
             // 
@@ -542,6 +543,7 @@ namespace WSCATProject.Base.Material
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MaterialBuyAndSellForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuyAndSellForm";
             this.Load += new System.EventHandler(this.MaterialBuyAndSellForm_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -585,7 +587,6 @@ namespace WSCATProject.Base.Material
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         protected System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         protected System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
@@ -612,5 +613,6 @@ namespace WSCATProject.Base.Material
         private ToolStripMenuItem 上周ToolStripMenuItem;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
+        protected ToolStripButton toolStripButton1;
     }
 }

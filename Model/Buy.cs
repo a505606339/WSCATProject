@@ -25,6 +25,16 @@ namespace Model
 		private string _buy_satetyone;
 		private string _buy_satetytwo;
 		private int? _buy_clear=1;
+		private string _buy_suppliercode;
+		private string _buy_suppliername;
+		private string _buy_class;
+		private int? _buy_ispay=0;
+		private int? _buy_paymethod=0;
+		private int? _buy_isputsto=0;
+		private DateTime? _buy_getdate;
+		private string _buy_logistics;
+		private string _buy_logphone;
+		private string _buy_logcode;
 		/// <summary>
 		/// 自增ID
 		/// </summary>
@@ -50,7 +60,7 @@ namespace Model
 			get{return _buy_date;}
 		}
 		/// <summary>
-		/// 供应商ID
+		/// 仓库编码
 		/// </summary>
 		public string Buy_StockCode
 		{
@@ -144,6 +154,86 @@ namespace Model
 		{
 			set{ _buy_clear=value;}
 			get{return _buy_clear;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Buy_SupplierCode
+		{
+			set{ _buy_suppliercode=value;}
+			get{return _buy_suppliercode;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Buy_SupplierName
+		{
+			set{ _buy_suppliername=value;}
+			get{return _buy_suppliername;}
+		}
+		/// <summary>
+		/// 单据类型
+		/// </summary>
+		public string Buy_Class
+		{
+			set{ _buy_class=value;}
+			get{return _buy_class;}
+		}
+		/// <summary>
+		/// 是否已付款(0为未完成,1为已完成)
+		/// </summary>
+		public int? Buy_IsPay
+		{
+			set{ _buy_ispay=value;}
+			get{return _buy_ispay;}
+		}
+		/// <summary>
+		/// 付款方式(0~100，对应实际的数值为百分数。如：50等于付了50%)
+		/// </summary>
+		public int? Buy_PayMethod
+		{
+			set{ _buy_paymethod=value;}
+			get{return _buy_paymethod;}
+		}
+		/// <summary>
+		/// 入库状态(0未入库,1已入库)
+		/// </summary>
+		public int? Buy_IsPutSto
+		{
+			set{ _buy_isputsto=value;}
+			get{return _buy_isputsto;}
+		}
+		/// <summary>
+		/// 到货日期
+		/// </summary>
+		public DateTime? Buy_GetDate
+		{
+			set{ _buy_getdate=value;}
+			get{return _buy_getdate;}
+		}
+		/// <summary>
+		/// 物流
+		/// </summary>
+		public string Buy_Logistics
+		{
+			set{ _buy_logistics=value;}
+			get{return _buy_logistics;}
+		}
+		/// <summary>
+		/// 快递电话
+		/// </summary>
+		public string Buy_LogPhone
+		{
+			set{ _buy_logphone=value;}
+			get{return _buy_logphone;}
+		}
+		/// <summary>
+		/// 物流单号
+		/// </summary>
+		public string Buy_LogCode
+		{
+			set{ _buy_logcode=value;}
+			get{return _buy_logcode;}
 		}
 		#endregion Model
 

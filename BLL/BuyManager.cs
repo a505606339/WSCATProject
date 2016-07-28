@@ -16,6 +16,10 @@ namespace BLL
         {
             return bs.SelBuyDataTable();
         }
+        public DataTable SelBuyDataTableToCheck()
+        {
+            return bs.SelBuyDataTableToCheck();
+        }
         public DataTable SelBuyByCodeDataTable(string code)
         {
             return bs.SelBuyByCodeDataTable(code);
