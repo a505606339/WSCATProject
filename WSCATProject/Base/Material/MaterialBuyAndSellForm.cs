@@ -57,7 +57,6 @@ namespace WSCATProject.Base.Material
         {
             toolStripComboBox1.SelectedIndex = 0;
             toolStripComboBox2.SelectedIndex = 0;
-            toolStripComboBox3.SelectedIndex = 0;
             dt = bm.SelBuyDataTable();
         }
         #endregion
@@ -84,10 +83,9 @@ namespace WSCATProject.Base.Material
             switch (tsmi.Text)
             {
                 case "今天":
-                    DataView dv = dt.DefaultView;
-                    dv.RowFilter = string.Format("SUBSTRING(Convert(Buy_Date, 'System.String'), 1 ,10)='{0}'", DateTime.Now.ToShortDateString());
-                    dt = dv.ToTable();
-                    superGridControl1.PrimaryGrid.DataSource = dt;
+                    stratWeek = DateTime.Now.AddDays(dayofweek - 2).ToShortDateString();
+                    stopWeek = DateTime.Now.AddDays(dayofweek).ToShortDateString();
+                    superGridControl1.PrimaryGrid.DataSource = WhereDateBetween(dt, stratWeek, stopWeek);
                     break;
                 case "本周":
                     //本周开始日期

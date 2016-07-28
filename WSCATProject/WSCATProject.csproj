@@ -143,6 +143,12 @@
     <Compile Include="Base\Empolyee\InsEmpolyee.Designer.cs">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base\Material\GoodsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\Material\GoodsListForm.Designer.cs">
+      <DependentUpon>GoodsListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\Material\MaterialBuyAndSellForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,12 @@
     </Compile>
     <Compile Include="Base\UserCreateForm.Designer.cs">
       <DependentUpon>UserCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuyInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuyInForm.Designer.cs">
+      <DependentUpon>BuyInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientNameForm.cs">
       <SubType>Form</SubType>
@@ -511,6 +523,9 @@
     <EmbeddedResource Include="Base\Empolyee\InsEmpolyee.resx">
       <DependentUpon>InsEmpolyee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Base\Material\GoodsListForm.resx">
+      <DependentUpon>GoodsListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Base\Material\MaterialBuyAndSellForm.resx">
       <DependentUpon>MaterialBuyAndSellForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Base\UserCreateForm.resx">
       <DependentUpon>UserCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuyInForm.resx">
+      <DependentUpon>BuyInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientNameForm.resx">
       <DependentUpon>ClientNameForm.cs</DependentUpon>

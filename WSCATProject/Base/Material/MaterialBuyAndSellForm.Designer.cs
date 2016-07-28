@@ -356,69 +356,69 @@ namespace WSCATProject.Base.Material
             // 今天ToolStripMenuItem1
             // 
             this.今天ToolStripMenuItem1.Name = "今天ToolStripMenuItem1";
-            this.今天ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.今天ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.今天ToolStripMenuItem1.Text = "今天";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(97, 6);
             // 
             // 本周ToolStripMenuItem1
             // 
             this.本周ToolStripMenuItem1.Name = "本周ToolStripMenuItem1";
-            this.本周ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.本周ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.本周ToolStripMenuItem1.Text = "本周";
             // 
             // 上周ToolStripMenuItem1
             // 
             this.上周ToolStripMenuItem1.Name = "上周ToolStripMenuItem1";
-            this.上周ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.上周ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.上周ToolStripMenuItem1.Text = "上周";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(97, 6);
             // 
             // 本月ToolStripMenuItem1
             // 
             this.本月ToolStripMenuItem1.Name = "本月ToolStripMenuItem1";
-            this.本月ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.本月ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.本月ToolStripMenuItem1.Text = "本月";
             // 
             // 上月ToolStripMenuItem1
             // 
             this.上月ToolStripMenuItem1.Name = "上月ToolStripMenuItem1";
-            this.上月ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.上月ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.上月ToolStripMenuItem1.Text = "上月";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(97, 6);
             // 
             // 本年ToolStripMenuItem1
             // 
             this.本年ToolStripMenuItem1.Name = "本年ToolStripMenuItem1";
-            this.本年ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.本年ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.本年ToolStripMenuItem1.Text = "本年";
             // 
             // 上年ToolStripMenuItem1
             // 
             this.上年ToolStripMenuItem1.Name = "上年ToolStripMenuItem1";
-            this.上年ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.上年ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.上年ToolStripMenuItem1.Text = "上年";
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(97, 6);
             // 
             // 全部ToolStripMenuItem1
             // 
             this.全部ToolStripMenuItem1.Name = "全部ToolStripMenuItem1";
-            this.全部ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.全部ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.全部ToolStripMenuItem1.Text = "全部";
             // 
             // toolStripSeparator9

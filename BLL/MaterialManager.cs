@@ -199,6 +199,11 @@ namespace BLL
             }
         }
 
+        //public DataTable searchMaterialAndStock()
+        //{
+        //    dal.GetList("")
+        //}
+
         #endregion  ExtensionMethod
     }
 }

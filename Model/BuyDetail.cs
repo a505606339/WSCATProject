@@ -10,9 +10,12 @@ namespace Model
 		public BuyDetail()
 		{}
 		#region Model
-		private string _buy_id;
+		private string _buy_code;
 		private int _buy_lineno;
-		private string _buy_maid;
+        private string _buy_linecode;
+        private string _buy_stockcode;
+        private string _buy_stockname;
+        private string _buy_maid;
 		private string _buy_maname;
 		private string _buy_model;
 		private string _buy_unit;
@@ -28,10 +31,10 @@ namespace Model
 		/// <summary>
 		/// 物料ID
 		/// </summary>
-		public string Buy_ID
+		public string Buy_Code
 		{
-			set{ _buy_id=value;}
-			get{return _buy_id;}
+			set{ _buy_code = value;}
+			get{return _buy_code; }
 		}
 		/// <summary>
 		/// 栏号自增
@@ -41,10 +44,26 @@ namespace Model
 			set{ _buy_lineno=value;}
 			get{return _buy_lineno;}
 		}
-		/// <summary>
-		/// 物料编号
+        /// <summary>
+		/// 仓库code
 		/// </summary>
-		public string Buy_MaID
+		public string Buy_StockCode
+        {
+            set { _buy_stockcode = value; }
+            get { return _buy_stockcode; }
+        }
+        /// <summary>
+        /// 仓库名称
+        /// </summary>
+        public string Buy_StockName
+        {
+            set { _buy_stockname = value; }
+            get { return _buy_stockname; }
+        }
+        /// <summary>
+        /// 物料编号
+        /// </summary>
+        public string Buy_MaID
 		{
 			set{ _buy_maid=value;}
 			get{return _buy_maid;}
@@ -145,8 +164,21 @@ namespace Model
 			set{ _buy_remark=value;}
 			get{return _buy_remark;}
 		}
-		#endregion Model
 
-	}
+        public string Buy_LineCode
+        {
+            get
+            {
+                return _buy_linecode;
+            }
+
+            set
+            {
+                _buy_linecode = value;
+            }
+        }
+        #endregion Model
+
+    }
 }
 

@@ -17,6 +17,22 @@ namespace WSCATProject
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// 当前被点击的行位置
+        /// </summary>
+        protected int ClickRowIndex
+        {
+            get;set;
+        }
+
+        private bool _clickStorage = false;
+        protected bool ClickStorage
+        {
+            get { return _clickStorage; }
+            set { _clickStorage = value; }
+        }
+
         private void InputGoodsForm_Load(object sender, EventArgs e)
         {
             InitDataGridViewHeaderColumn();
@@ -142,15 +158,20 @@ namespace WSCATProject
         {
             if(e.GridCell.GridColumn.Name == "material")
             {
+                ClickRowIndex = e.GridCell.RowIndex;
                 resizablePanelData.Visible = true;
                 resizablePanelData.Location = new Point(e.GridCell.UnMergedBounds.X ,
                     e.GridCell.UnMergedBounds.Bottom + panel7.Location.Y + 65);
             }
-        }
-
-        private void superGridControl1_CloseEdit(object sender, GridCloseEditEventArgs e)
-        {
-            resizablePanelData.Visible = false;
+            if (e.GridCell.GridColumn.Name == "gridColumnStock")
+            {
+                ClickRowIndex = e.GridCell.RowIndex;
+                ClickStorage = true;
+                resizablePanel1.Visible = true;
+                resizablePanel1.Size = new Size(190, 120);
+                resizablePanel1.Location = new Point(e.GridCell.UnMergedBounds.X,
+                    e.GridCell.UnMergedBounds.Bottom + panel7.Location.Y + 65);
+            }
         }
     }
 }

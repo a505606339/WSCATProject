@@ -539,7 +539,6 @@ namespace DAL
         /// </summary>
         public bool DeleteFake(string Ma_Code)
         {
-
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update T_Material set");
             strSql.Append(" Ma_Clear = 0");
@@ -559,6 +558,16 @@ namespace DAL
                 return false;
             }
         }
+
+        /// <summary>
+        /// 查询所有商品列表以及商品的库存总量
+        /// </summary>
+        /// <returns></returns>
+        //public DataSet searchMaterialAndStock()
+        //{
+        //    StringBuilder strSql = new StringBuilder();
+            
+        //}
 
         #endregion  ExtensionMethod
     }

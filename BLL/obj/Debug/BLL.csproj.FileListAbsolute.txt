@@ -46,3 +46,15 @@ D:\项目\2016年7月18日092518\BLL\bin\Debug\Model.pdb
 D:\项目\2016年7月18日092518\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\项目\2016年7月18日092518\BLL\obj\Debug\BLL.dll
 D:\项目\2016年7月18日092518\BLL\obj\Debug\BLL.pdb
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\BLL.dll
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\BLL.pdb
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\DAL.dll
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\HelperUtility.dll
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\Model.dll
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\NPOI.dll
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\DAL.pdb
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\HelperUtility.pdb
+F:\项目\WSCAT\Project\WSCAT\BLL\bin\Debug\Model.pdb
+F:\项目\WSCAT\Project\WSCAT\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+F:\项目\WSCAT\Project\WSCAT\BLL\obj\Debug\BLL.dll
+F:\项目\WSCAT\Project\WSCAT\BLL\obj\Debug\BLL.pdb

@@ -240,7 +240,7 @@
             this.panel5.Controls.Add(this.labBotton2);
             this.panel5.Controls.Add(this.labBotton3);
             this.panel5.Controls.Add(this.labBotton1);
-            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
@@ -426,7 +426,6 @@
             this.superGridControl1.TabIndex = 0;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.BeginEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEditEventArgs>(this.superGridControl1_BeginEdit);
-            this.superGridControl1.CloseEdit += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCloseEditEventArgs>(this.superGridControl1_CloseEdit);
             // 
             // panel6
             // 
@@ -807,6 +806,7 @@
             this.dataGridViewFujia.Name = "dataGridViewFujia";
             this.dataGridViewFujia.RowHeadersVisible = false;
             this.dataGridViewFujia.RowTemplate.Height = 23;
+            this.dataGridViewFujia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewFujia.Size = new System.Drawing.Size(248, 132);
             this.dataGridViewFujia.TabIndex = 0;
             this.dataGridViewFujia.VisibleChanged += new System.EventHandler(this.dataGridViewFujia_VisibleChanged);
@@ -842,12 +842,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(389, 172);
             this.dataGridView1.TabIndex = 4;
             // 
@@ -970,12 +974,12 @@
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell6;
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell7;
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell8;
-        private HelperUtility.ExUI.ResizablePanel resizablePanelData;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell9;
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell10;
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell11;
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell12;
+        protected System.Windows.Forms.DataGridView dataGridView1;
+        protected HelperUtility.ExUI.ResizablePanel resizablePanelData;
     }
 }

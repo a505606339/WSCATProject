@@ -44,5 +44,23 @@ namespace DAL
             }
             return list;
         }
+
+        /// <summary>
+        /// 批量增加多条数据 
+        /// </summary>
+        /// <param name="sqlList">要增加的sql</param>
+        /// <returns>影响行数</returns>
+        public int AddBatch(List<string> sqlList)
+        {
+            if (sqlList.Count > 0)
+            {
+                int influence = DbHelperSQL.ExecuteSqlTran(sqlList);
+                return influence;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace HelperUtility
         {
             string code = "";
             string datetime = DateTime.Now.ToString("yyyyMMddHHmmssff");
-            code = module + "-" + datetime;
+            code = module + datetime;
             return code;
         }
 
@@ -31,7 +31,7 @@ namespace HelperUtility
             string code = "";
             string userid = "";
             string datetime = DateTime.Now.ToString("yyyyMMddHHmmssff");
-            code = module + "-" + userid + "-" + datetime;
+            code = module + userid + datetime;
             return code;
         }
 

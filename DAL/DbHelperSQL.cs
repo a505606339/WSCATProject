@@ -200,10 +200,15 @@ namespace DAL
                     tx.Commit();
                     return count;
                 }
-                catch
+                catch (SqlException e)
                 {
                     tx.Rollback();
-                    return 0;
+                    throw e;
+                }
+                finally
+                {
+                    cmd.Dispose();
+                    conn.Close();
                 }
             }
         }

@@ -406,7 +406,7 @@ VALUES(@Su_Name
         {
             string sql = @"select 
 Su_Code as 编码,
-Su_Name as 单位名称,
+Su_Name as 供应商名称,
 Su_Address as 通讯地址,
 Su_EmpName as 联系人,
 Su_EmpPhone as 联系手机,

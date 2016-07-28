@@ -18,3 +18,8 @@ D:\项目\2016年7月18日092518\Model\bin\Debug\Model.pdb
 D:\项目\2016年7月18日092518\Model\obj\Debug\Model.dll
 D:\项目\2016年7月18日092518\Model\obj\Debug\Model.pdb
 D:\项目\2016年7月18日092518\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\项目\WSCAT\Project\WSCAT\Model\bin\Debug\Model.dll
+F:\项目\WSCAT\Project\WSCAT\Model\bin\Debug\Model.pdb
+F:\项目\WSCAT\Project\WSCAT\Model\obj\Debug\Model.dll
+F:\项目\WSCAT\Project\WSCAT\Model\obj\Debug\Model.pdb
+F:\项目\WSCAT\Project\WSCAT\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
