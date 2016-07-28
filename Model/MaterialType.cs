@@ -11,14 +11,13 @@ namespace Model
 		{}
 		#region Model
 		private int _mt_id;
-        private string _mt_code;
-        private string _mt_name;
-        private string _mt_parentid;
-        private int? _mt_enable=1;
+		private string _mt_code;
+		private string _mt_name;
+		private string _mt_parentid;
+		private int? _mt_enable=1;
 		private int? _mt_clear=1;
-		
 		/// <summary>
-		/// 自增
+		/// 
 		/// </summary>
 		public int MT_ID
 		{
@@ -26,33 +25,33 @@ namespace Model
 			get{return _mt_id;}
 		}
 		/// <summary>
-		/// 编号
+		/// 类别编号
 		/// </summary>
 		public string MT_Code
 		{
-			set{ _mt_code = value;}
-			get{return _mt_code; }
+			set{ _mt_code=value;}
+			get{return _mt_code;}
 		}
-        /// <summary>
-		/// 类别名称
+		/// <summary>
+		/// 类别名
 		/// </summary>
 		public string MT_Name
-        {
-            set { _mt_name = value; }
-            get { return _mt_name; }
-        }
-        /// <summary>
-		/// 类别名称
+		{
+			set{ _mt_name=value;}
+			get{return _mt_name;}
+		}
+		/// <summary>
+		/// 父级编号
 		/// </summary>
 		public string MT_ParentID
-        {
-            set { _mt_parentid = value; }
-            get { return _mt_parentid; }
-        }
-        /// <summary>
-        /// 是否启用
-        /// </summary>
-        public int? MT_Enable
+		{
+			set{ _mt_parentid=value;}
+			get{return _mt_parentid;}
+		}
+		/// <summary>
+		/// 是否启用
+		/// </summary>
+		public int? MT_Enable
 		{
 			set{ _mt_enable=value;}
 			get{return _mt_enable;}
@@ -65,7 +64,6 @@ namespace Model
 			set{ _mt_clear=value;}
 			get{return _mt_clear;}
 		}
-		
 		#endregion Model
 
 	}

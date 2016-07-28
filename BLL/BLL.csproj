@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BankAccountManager.cs" />
     <Compile Include="BorrowManager.cs" />
+    <Compile Include="BuyDetailManager.cs" />
     <Compile Include="BuyManager.cs" />
     <Compile Include="CityManager.cs" />
     <Compile Include="ClientManager.cs" />
@@ -72,10 +73,6 @@
     <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">
       <Project>{f600b9d0-f52a-4740-b3c9-4ddf382600cc}</Project>
       <Name>HelperUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{a4d8ab56-7d72-4adc-9c8f-99f8dc56f55c}</Project>
-      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

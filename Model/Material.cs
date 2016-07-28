@@ -70,7 +70,7 @@ namespace Model
 			get{return _ma_model;}
 		}
 		/// <summary>
-		/// RFID
+		/// 
 		/// </summary>
 		public string Ma_RFID
 		{
@@ -78,7 +78,7 @@ namespace Model
 			get{return _ma_rfid;}
 		}
 		/// <summary>
-		/// 条码
+		/// 
 		/// </summary>
 		public string Ma_Barcode
 		{
@@ -182,12 +182,12 @@ namespace Model
 			get{return _ma_supid;}
 		}
 		/// <summary>
-		/// 助记码
+		/// 数量
 		/// </summary>
 		public string Ma_zhujima
 		{
-			set{ _ma_zhujima = value;}
-			get{return _ma_zhujima; }
+			set{ _ma_zhujima=value;}
+			get{return _ma_zhujima;}
 		}
 		/// <summary>
 		/// 单位

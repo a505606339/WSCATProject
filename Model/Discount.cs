@@ -15,7 +15,7 @@ namespace Model
 		private string _dis_clientcode;
 		private DateTime? _dis_createdate= DateTime.Now;
 		private DateTime? _dis_cleardate;
-		private string _dis_discount;
+		private string _dis_discount="D5D4";
 		private int? _dis_enable=1;
 		private int? _dis_clear=1;
 		private string _dis_remark;

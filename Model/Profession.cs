@@ -11,12 +11,11 @@ namespace Model
 		{}
 		#region Model
 		private int _st_id;
-        private string _st_code;
-        private string _st_name;
-		private string _st_parentID;
+		private string _st_code;
+		private string _st_name;
+		private string _st_parentid;
 		private int? _st_enable=1;
 		private int? _st_clear=1;
-		
 		/// <summary>
 		/// 
 		/// </summary>
@@ -24,6 +23,14 @@ namespace Model
 		{
 			set{ _st_id=value;}
 			get{return _st_id;}
+		}
+		/// <summary>
+		/// 类别编号
+		/// </summary>
+		public string ST_Code
+		{
+			set{ _st_code=value;}
+			get{return _st_code;}
 		}
 		/// <summary>
 		/// 类别名称
@@ -34,12 +41,12 @@ namespace Model
 			get{return _st_name;}
 		}
 		/// <summary>
-		/// 备注
+		/// 保留字段1
 		/// </summary>
-		public string ST_Code
+		public string ST_ParentId
 		{
-			set{ _st_code = value;}
-			get{return _st_code; }
+			set{ _st_parentid=value;}
+			get{return _st_parentid;}
 		}
 		/// <summary>
 		/// 是否启用
@@ -56,14 +63,6 @@ namespace Model
 		{
 			set{ _st_clear=value;}
 			get{return _st_clear;}
-		}
-		/// <summary>
-		/// 类别编号
-		/// </summary>
-		public string ST_ParentId
-		{
-			set{ _st_parentID = value;}
-			get{return _st_parentID; }
 		}
 		#endregion Model
 

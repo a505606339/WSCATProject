@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar.SuperGrid;
+using BLL;
 
 namespace WSCATProject
 {
@@ -145,7 +146,7 @@ namespace WSCATProject
 
         protected virtual void dataGridViewFujia_VisibleChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -156,11 +157,11 @@ namespace WSCATProject
 
         private void superGridControl1_BeginEdit(object sender, GridEditEventArgs e)
         {
-            if(e.GridCell.GridColumn.Name == "material")
+            if (e.GridCell.GridColumn.Name == "material")
             {
                 ClickRowIndex = e.GridCell.RowIndex;
                 resizablePanelData.Visible = true;
-                resizablePanelData.Location = new Point(e.GridCell.UnMergedBounds.X ,
+                resizablePanelData.Location = new Point(e.GridCell.UnMergedBounds.X,
                     e.GridCell.UnMergedBounds.Bottom + panel7.Location.Y + 65);
             }
             if (e.GridCell.GridColumn.Name == "gridColumnStock")
@@ -172,6 +173,10 @@ namespace WSCATProject
                 resizablePanel1.Location = new Point(e.GridCell.UnMergedBounds.X,
                     e.GridCell.UnMergedBounds.Bottom + panel7.Location.Y + 65);
             }
+        }
+
+        protected virtual void dataGridViewFujia_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

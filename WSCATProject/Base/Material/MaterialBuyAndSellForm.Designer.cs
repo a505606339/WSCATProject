@@ -533,6 +533,7 @@ namespace WSCATProject.Base.Material
             this.superGridControl1.Size = new System.Drawing.Size(1183, 560);
             this.superGridControl1.TabIndex = 0;
             this.superGridControl1.Text = "superGridControl1";
+            this.superGridControl1.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.superGridControl1_RowDoubleClick);
             // 
             // MaterialBuyAndSellForm
             // 
@@ -542,6 +543,7 @@ namespace WSCATProject.Base.Material
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MaterialBuyAndSellForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BuyAndSellForm";
             this.Load += new System.EventHandler(this.MaterialBuyAndSellForm_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -585,7 +587,6 @@ namespace WSCATProject.Base.Material
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         protected System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         protected System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
@@ -612,5 +613,6 @@ namespace WSCATProject.Base.Material
         private ToolStripMenuItem 上周ToolStripMenuItem;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
+        protected ToolStripButton toolStripButton1;
     }
 }

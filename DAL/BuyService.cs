@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using HelperUtility.Encrypt;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,6 +12,7 @@ namespace DAL
 {
     public class BuyService
     {
+        CodingHelper ch = new CodingHelper();
         public DataTable SelBuyDataTable()
         {
             string sql = "select * from T_Buy where Buy_Clear=1";
@@ -18,6 +20,30 @@ namespace DAL
             DataSet ds = new DataSet();
             dapter.Fill(ds, "T_Buy");
             return ds.Tables[0];
+        }
+        public DataTable SelBuyDataTableToCheck()
+        {
+            string sql = @"select 
+buy.Buy_ID as ID,
+Buy_Code as 编号,
+Buy_Date as 单据日期,
+(case 
+when Buy_PurchaseStatus=1 then '36352D175E2F'
+else '2A502D175E2F' end
+) as 单据状态,
+Buy_SupplierName as 供应商,
+su.Su_Bank as 结算账户,
+--结算账户，本次付款，总金额
+tbd.Buy_AmountMoney as 总金额,
+Buy_SalesMan as 业务员,
+buy.Buy_Remark as 备注
+from T_Buy buy
+left join T_BuyDetail tbd on buy.Buy_Code=tbd.Buy_ID
+left join T_Supplier su on buy.Buy_SupplierCode=su.Su_Code";
+            SqlDataAdapter dapter = new SqlDataAdapter(sql, DbHelperSQL.connectionString);
+            DataSet ds = new DataSet();
+            dapter.Fill(ds, "T_Buy");
+            return ch.DataTableReCoding(ds.Tables[0]);
         }
         public DataTable SelBuyByCodeDataTable(string code)
         {
