@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DAL">
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="HelperUtility">
+      <HintPath>..\HelperUtility\bin\Debug\HelperUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,13 +72,9 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{e390ff72-cd4e-42b5-bdbd-51ce1a8dce62}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">
-      <Project>{f600b9d0-f52a-4740-b3c9-4ddf382600cc}</Project>
-      <Name>HelperUtility</Name>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{2a43f97b-9c1a-462a-9586-f4412e26aec6}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

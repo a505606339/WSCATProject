@@ -533,7 +533,7 @@ namespace WSCATProject.Base.Material
             this.superGridControl1.Size = new System.Drawing.Size(1183, 560);
             this.superGridControl1.TabIndex = 0;
             this.superGridControl1.Text = "superGridControl1";
-            this.superGridControl1.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.superGridControl1_RowDoubleClick);
+            //this.superGridControl1.RowDoubleClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowDoubleClickEventArgs>(this.superGridControl1_RowDoubleClick);
             // 
             // MaterialBuyAndSellForm
             // 

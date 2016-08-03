@@ -272,11 +272,11 @@ namespace WSCATProject.Base
                     client.Cli_Phone = gridRow.Cells["gridColumnPho"].Value.ToString();
                     client.Cli_PhoneTwo = gridRow.Cells["gridColumnPho2"].Value.ToString();
                     client.Cli_faxes = gridRow.Cells["gridColumnFax"].Value.ToString();
-                    client.Cli_Citycode = gridRow.Cells["gridColumnCiCode"].Value.ToString();
+                    client.Cli_CityCode = gridRow.Cells["gridColumnCiCode"].Value.ToString();
                     client.Cli_area = gridRow.Cells["gridColumnArea"].Value.ToString();
                     client.Cli_Address = gridRow.Cells["gridColumnAd"].Value.ToString();
                     client.Cli_TypeCode = gridRow.Cells["gridColumnTy"].Value.ToString();
-                    client.Cli_typename = gridRow.Cells["gridColumnTyName"].Value.ToString();
+                    client.Cli_TypeName = gridRow.Cells["gridColumnTyName"].Value.ToString();
                     client.Cli_DiscountCode = gridRow.Cells["gridColumnDiCode"].Value.ToString();
                     client.Cli_Bankaccounts = gridRow.Cells["gridColumnBa"].Value.ToString();
                     client.Cli_OpenBank = gridRow.Cells["gridColumnOpB"].Value.ToString();

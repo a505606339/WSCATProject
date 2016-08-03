@@ -1,0 +1,4 @@
+F:\项目\WSCAT\Project\WSCAT\Model\bin\Release\Model.dll
+F:\项目\WSCAT\Project\WSCAT\Model\bin\Release\Model.pdb
+F:\项目\WSCAT\Project\WSCAT\Model\obj\Release\Model.dll
+F:\项目\WSCAT\Project\WSCAT\Model\obj\Release\Model.pdb

@@ -914,10 +914,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         protected System.Windows.Forms.ToolStrip toolStrip1;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label labelTitle;
@@ -981,5 +977,9 @@
         private DevComponents.DotNetBar.SuperGrid.GridCell gridCell12;
         protected System.Windows.Forms.DataGridView dataGridView1;
         protected HelperUtility.ExUI.ResizablePanel resizablePanelData;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Panel panel3;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Panel panel5;
     }
 }

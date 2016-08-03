@@ -34,10 +34,13 @@ namespace Model
 		private string _emp_userrole;
 		private string _emp_password;
 		private string _emp_area;
-		/// <summary>
-		/// 
-		/// </summary>
-		public int Emp_ID
+        private Role _roles;
+        private Department _departments;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Emp_ID
 		{
 			set{ _emp_id=value;}
 			get{return _emp_id;}
@@ -226,8 +229,35 @@ namespace Model
 			set{ _emp_area=value;}
 			get{return _emp_area;}
 		}
-		#endregion Model
 
-	}
+        public Role Roles
+        {
+            get
+            {
+                return _roles;
+            }
+
+            set
+            {
+                _roles = value;
+            }
+        }
+
+        public Department Departments
+        {
+            get
+            {
+                return _departments;
+            }
+
+            set
+            {
+                _departments = value;
+            }
+        }
+
+        #endregion Model
+
+    }
 }
 

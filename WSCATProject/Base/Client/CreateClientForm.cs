@@ -275,7 +275,7 @@ namespace WSCATProject.Base
                 newClient.Cli_Address = XYEEncoding.strCodeHex(textBoxXAddress.Text.Trim());
                 newClient.Cli_Company = XYEEncoding.strCodeHex(textBoxXCompany.Text);
 
-                newClient.Cli_Citycode = XYEEncoding.strCodeHex(comboTreeCity.SelectedNode == null ?
+                newClient.Cli_CityCode = XYEEncoding.strCodeHex(comboTreeCity.SelectedNode == null ?
                     "" : comboTreeCity.SelectedNode.Tag.ToString());
 
                 newClient.Cli_area = XYEEncoding.strCodeHex(comboTreeCity.SelectedNode == null ?
@@ -284,7 +284,7 @@ namespace WSCATProject.Base
                 newClient.Cli_TypeCode = XYEEncoding.strCodeHex(comboTreeType.SelectedNode == null ?
                     "" : comboTreeType.SelectedNode.Tag.ToString());
 
-                newClient.Cli_typename = XYEEncoding.strCodeHex(comboTreeType.SelectedNode == null ?
+                newClient.Cli_TypeName = XYEEncoding.strCodeHex(comboTreeType.SelectedNode == null ?
                     "" : comboTreeType.SelectedNode.FullPath.Replace(";", "/"));
 
                 newClient.Cli_Bankaccounts = XYEEncoding.strCodeHex(textBoxXBankCode.Text.Trim());
@@ -393,7 +393,7 @@ namespace WSCATProject.Base
                     c.Cli_faxes = XYEEncoding.strCodeHex(textBoxXFax.Text.Trim());
                     c.Cli_Address = XYEEncoding.strCodeHex(textBoxXAddress.Text.Trim());
 
-                    c.Cli_Citycode = XYEEncoding.strCodeHex(comboTreeCity.SelectedNode == null ?
+                    c.Cli_CityCode = XYEEncoding.strCodeHex(comboTreeCity.SelectedNode == null ?
                         "" : comboTreeCity.SelectedNode.Tag.ToString());
 
                     c.Cli_area = XYEEncoding.strCodeHex(comboTreeCity.SelectedNode == null ?
@@ -404,7 +404,7 @@ namespace WSCATProject.Base
                     c.Cli_TypeCode = XYEEncoding.strCodeHex(comboTreeType.SelectedNode == null ?
                         "" : comboTreeType.SelectedNode.Tag.ToString());
 
-                    c.Cli_typename = XYEEncoding.strCodeHex(comboTreeType.SelectedNode == null ?
+                    c.Cli_TypeName = XYEEncoding.strCodeHex(comboTreeType.SelectedNode == null ?
                         "" : comboTreeType.SelectedNode.FullPath.Replace(";", "/"));
 
                     c.Cli_DiscountCode = XYEEncoding.strCodeHex(clcode);

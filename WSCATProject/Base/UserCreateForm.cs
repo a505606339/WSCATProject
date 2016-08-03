@@ -54,7 +54,7 @@ namespace WSCATProject.Base
 
             //实体赋值,创建用户
             User u = new User();
-            u.User_code = BuildCode.ModuleCode("US");
+            u.User_Code = BuildCode.ModuleCode("US");
             u.User_CardCode = "";
             u.User_Manager = 0;
             u.User_Name = userName;

@@ -11,9 +11,9 @@ namespace BLL
     public class BuyDetailManager
     {
         BuyDetailService bds = new BuyDetailService();
-        public DataTable SelBuyCancelDetailByCode(string code)
+        public DataTable SelBuyDetailByCodeToTable(string code)
         {
-            return bds.SelBuyCancelDetailByCode(code);
+            return bds.SelBuyDetailByCodeToTable(code);
         }
     }
 }

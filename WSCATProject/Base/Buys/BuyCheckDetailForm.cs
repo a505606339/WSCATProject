@@ -28,7 +28,7 @@ namespace WSCATProject.Base.Buys
             MaterialBuyAndSellDetailForm mbasdf = new MaterialBuyAndSellDetailForm();
             Text = "审核申请单";
             textBoxOddNumbers.Text = code;
-            superGridControl1.PrimaryGrid.DataSource = bdm.SelBuyCancelDetailByCode(code);
+            superGridControl1.PrimaryGrid.DataSource = bdm.SelBuyDetailByCodeToTable(code);
         }
         public void InitDetailData()
         {

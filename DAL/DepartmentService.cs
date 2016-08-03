@@ -1,8 +1,8 @@
-﻿using HelperUtility.Encrypt;
-using Model;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using HelperUtility.Encrypt;
+using Model;
 
 namespace DAL
 {

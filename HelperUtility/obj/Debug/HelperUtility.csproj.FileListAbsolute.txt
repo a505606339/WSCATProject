@@ -70,7 +70,6 @@ F:\项目\WSCAT\Project\WSCAT\HelperUtility\bin\Debug\DevComponents.Instrumentat
 F:\项目\WSCAT\Project\WSCAT\HelperUtility\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
 F:\项目\WSCAT\Project\WSCAT\HelperUtility\bin\Debug\DevComponents.DotNetBar2.xml
 F:\项目\WSCAT\Project\WSCAT\HelperUtility\bin\Debug\DevComponents.Instrumentation.xml
-F:\项目\WSCAT\Project\WSCAT\HelperUtility\obj\Debug\HelperUtility.csprojResolveAssemblyReference.cache
 F:\项目\WSCAT\Project\WSCAT\HelperUtility\obj\Debug\HelperUtility.ExUI.imageButton.resources
 F:\项目\WSCAT\Project\WSCAT\HelperUtility\obj\Debug\HelperUtility.ExUI.labtextbox.resources
 F:\项目\WSCAT\Project\WSCAT\HelperUtility\obj\Debug\HelperUtility.ExUI.MultiHeaderView.resources

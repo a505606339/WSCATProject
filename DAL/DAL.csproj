@@ -31,6 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=12.5.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="HelperUtility">
+      <HintPath>..\HelperUtility\bin\Debug\HelperUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Model">
+      <HintPath>..\Model\bin\Debug\Model.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -78,12 +84,6 @@
     <Compile Include="StorageService.cs" />
     <Compile Include="SupplierService.cs" />
     <Compile Include="UserService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HelperUtility\HelperUtility.csproj">
-      <Project>{f600b9d0-f52a-4740-b3c9-4ddf382600cc}</Project>
-      <Name>HelperUtility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">

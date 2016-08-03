@@ -3,4 +3,3 @@ F:\项目\WSCAT\Project\WSCAT\Model\bin\Debug\Model.dll
 F:\项目\WSCAT\Project\WSCAT\Model\bin\Debug\Model.pdb
 F:\项目\WSCAT\Project\WSCAT\Model\obj\Debug\Model.dll
 F:\项目\WSCAT\Project\WSCAT\Model\obj\Debug\Model.pdb
-F:\项目\WSCAT\Project\WSCAT\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

@@ -49,9 +49,9 @@ F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\DevComponents.DotNetBar2.dll
 F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\HelperUtility.dll
 F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\Model.dll
 F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\NPOI.dll
+F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\DevComponents.DotNetBar2.xml
 F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\HelperUtility.pdb
 F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\Model.pdb
-F:\项目\WSCAT\Project\WSCAT\DAL\bin\Debug\DevComponents.DotNetBar2.xml
 F:\项目\WSCAT\Project\WSCAT\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\项目\WSCAT\Project\WSCAT\DAL\obj\Debug\DAL.dll
 F:\项目\WSCAT\Project\WSCAT\DAL\obj\Debug\DAL.pdb

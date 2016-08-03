@@ -57,7 +57,7 @@ namespace DAL
                     new SqlParameter("@User_Password", SqlDbType.NVarChar,512),
                     new SqlParameter("@User_Role", SqlDbType.NVarChar,512),
                     new SqlParameter("@User_Manager", SqlDbType.Int,4)};
-            parameters[0].Value = model.User_code;
+            parameters[0].Value = model.User_Code;
             parameters[1].Value = model.User_zhiwen;
             parameters[2].Value = model.User_Name;
             parameters[3].Value = model.User_CardCode;
@@ -99,7 +99,7 @@ namespace DAL
                     new SqlParameter("@User_Role", SqlDbType.NVarChar,512),
                     new SqlParameter("@User_Manager", SqlDbType.Int,4),
                     new SqlParameter("@User_ID", SqlDbType.Int,4)};
-            parameters[0].Value = model.User_code;
+            parameters[0].Value = model.User_Code;
             parameters[1].Value = model.User_zhiwen;
             parameters[2].Value = model.User_Name;
             parameters[3].Value = model.User_CardCode;
@@ -204,7 +204,7 @@ namespace DAL
                 }
                 if (row["User_Code"] != null)
                 {
-                    model.User_code = row["User_Code"].ToString();
+                    model.User_Code = row["User_Code"].ToString();
                 }
                 if (row["User_zhiwen"] != null)
                 {
@@ -390,7 +390,7 @@ namespace DAL
             parameters[3].Value = model.User_Password;
             parameters[4].Value = model.User_Role;
             parameters[5].Value = model.User_Manager;
-            parameters[6].Value = model.User_code;
+            parameters[6].Value = model.User_Code;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)

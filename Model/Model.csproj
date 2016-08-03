@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
     <AssemblyName>Model</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +44,6 @@
     <Compile Include="AdjPriceDetail.cs" />
     <Compile Include="AdjustPrice.cs" />
     <Compile Include="Areas.cs" />
-    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="Borrow.cs" />
     <Compile Include="Breakage.cs" />

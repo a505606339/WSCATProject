@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BLL;
 using Model;
 using HelperUtility;
+using System.Text.RegularExpressions;
 
 namespace WSCATProject
 {
@@ -48,6 +49,14 @@ namespace WSCATProject
         /// 点击的项,1为仓库,2为供应商
         /// </summary>
         private int _Click = 0;
+        /// <summary>
+        /// 用户选择的商品总数
+        /// </summary>
+        private decimal _MaterialNumber = 0;
+        /// <summary>
+        /// 用户选择的商品总值
+        /// </summary>
+        private decimal _MaterialMoney = 0.00m;
 
         #region 初始化操作
         protected override void InitTopLab()
@@ -64,13 +73,21 @@ namespace WSCATProject
             labTop7.Text = "快递单号：";
             labTop8.Text = "快递员：";
             labTop9.Text = "快递电话：";
-            labtextboxTop3.Enabled = false;
-            labtextboxTop4.Enabled = false;
-            labtextboxTop5.Enabled = false;
-            labtextboxTop6.Enabled = false;
+            //labtextboxTop3.Enabled = false;
+            //labtextboxTop4.Enabled = false;
+            //labtextboxTop5.Enabled = false;
+            //labtextboxTop6.Enabled = false;
+
+            labtextboxTop6.Visible = false;
+
             labtextboxTop7.Enabled = false;
             labtextboxTop8.Enabled = false;
             labtextboxTop9.Enabled = false;
+
+            labBotton4.Visible = false;
+            labtextboxBotton4.Visible = false;
+
+            comboBoxEx1.SelectedIndex = 0;
         }
 
         protected override void InitTopLabText()
@@ -78,6 +95,29 @@ namespace WSCATProject
             base.InitTopLabText();
             labtextboxTop1.Text = "采购开单";
         }
+
+        private void InitDataGridView()
+        {
+            //改为点击可编辑
+            superGridControl1.PrimaryGrid.MouseEditMode = MouseEditMode.SingleClick;
+            //新增一行 用于给客户操作
+            superGridControl1.PrimaryGrid.NewRow(true);
+            //最后一行做统计行
+            GridRow gr = (GridRow)superGridControl1.PrimaryGrid.
+                Rows[superGridControl1.PrimaryGrid.Rows.Count - 1];
+            gr.ReadOnly = true;
+            gr.CellStyles.Default.Background.Color1 = Color.Gray;
+            gr.Cells["gridColumnStock"].Value = "合计";
+            gr.Cells["gridColumnStock"].CellStyles.Default.Alignment = 
+                DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gr.Cells["gridColumnNumber"].Value = 0;
+            gr.Cells["gridColumnNumber"].CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gr.Cells["gridColumnNumber"].CellStyles.Default.Background.Color1 = Color.Red;
+            gr.Cells["gridColumnMoney"].Value = 0;
+            gr.Cells["gridColumnMoney"].CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            gr.Cells["gridColumnMoney"].CellStyles.Default.Background.Color1 = Color.Red;
+        }
+
         #endregion
 
         private void BuyInForm_Load(object sender, EventArgs e)
@@ -88,20 +128,20 @@ namespace WSCATProject
             _AllMaterial = mm.GetList("");
             _AllStorage = sm.GetList("");
             _AllSupplier = sum.SelSupplierTable();
-            //改为点击可编辑
-            superGridControl1.PrimaryGrid.MouseEditMode = MouseEditMode.SingleClick;
+            
             //禁用自动创建列
             dataGridView1.AutoGenerateColumns = false;
             dataGridViewFujia.AutoGenerateColumns = false;
             //初始化商品下拉列表
             InitMaterialDataGridView();
+            //初始化datagridview
+            InitDataGridView();
 
             dataGridView1.DataSource = _AllMaterial.Tables[0];
             //绑定事件 双击事填充内容并隐藏列表
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
             dataGridViewFujia.CellDoubleClick += DataGridViewFujia_CellDoubleClick;
-            //新增一行 用于给客户操作
-            superGridControl1.PrimaryGrid.NewRow(true);
+            
             //采购单单号
             _BuyOdd = BuildCode.ModuleCode("BA");
             textBoxOddNumbers.Text = _BuyOdd;
@@ -125,21 +165,31 @@ namespace WSCATProject
             gr.Cells["gridColumnModel"].Value = dataGridView1.Rows[e.RowIndex].Cells["Ma_Model"].Value;
             gr.Cells["gridColumnUnit"].Value = dataGridView1.Rows[e.RowIndex].Cells["Ma_Unit"].Value;
             gr.Cells["gridColumnNumber"].Value = 1;
-            gr.Cells["gridColumnPrice"].Value = dataGridView1.Rows[e.RowIndex].Cells["Ma_Price"].Value;
+            decimal price = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["Ma_Price"].Value.Equals("") ?
+                0 : dataGridView1.Rows[e.RowIndex].Cells["Ma_Price"].Value);
+            gr.Cells["gridColumnPrice"].Value = price;
             gr.Cells["gridColumnDis"].Value = 100;
-            gr.Cells["gridColumnDisPrice"].Value = dataGridView1.Rows[e.RowIndex].Cells["Ma_Price"].Value;
-            gr.Cells["gridColumnMoney"].Value = dataGridView1.Rows[e.RowIndex].Cells["Ma_Price"].Value;
+            gr.Cells["gridColumnDisPrice"].Value = price;
+            gr.Cells["gridColumnMoney"].Value = price;
             //gr.Cells["gridColumnRemark"].Value = dataGridView1.Rows[e.RowIndex].Cells["Ma_Unit"].Value;
             resizablePanelData.Visible = false;
+            //新增一行
             superGridControl1.PrimaryGrid.NewRow(superGridControl1.PrimaryGrid.Rows.Count);
+            //当上一次有选择仓库时 默认本次也为上次选择仓库
             if (!string.IsNullOrEmpty(_ClickStorage.Value) && !string.IsNullOrEmpty(_ClickStorage.Key))
             {
                 gr.Cells["gridColumnStockCode"].Value = _ClickStorage.Key;
                 gr.Cells["gridColumnStock"].Value = _ClickStorage.Value;
             }
+            //递增数量和金额 默认为1和单价
+            gr = (GridRow)superGridControl1.PrimaryGrid.LastSelectableRow;
+            _MaterialNumber += 1;
+            _MaterialMoney += price;
+            gr.Cells["gridColumnNumber"].Value = _MaterialNumber;
+            gr.Cells["gridColumnMoney"].Value = _MaterialMoney;
         }
 
-        //双击填充到供应商或是仓库列
+        //双击填充到供应商或是仓库列 
         private void DataGridViewFujia_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (_Click == 2)
@@ -430,7 +480,7 @@ namespace WSCATProject
             }
         }
 
-        //双击显示详细的商品界面
+        //双击显示详细的商品界面 
         private void superGridControl1_CellDoubleClick(object sender,
             GridCellDoubleClickEventArgs e)
         {
@@ -457,7 +507,7 @@ namespace WSCATProject
             }
         }
 
-        //保存按钮
+        //保存按钮 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(_ProfeCode))
@@ -487,6 +537,7 @@ namespace WSCATProject
                 buy.Buy_PayMethod = 0;
                 buy.Buy_IsPutSto = 0;
                 buy.Buy_class = "采购申请单";
+                //buy.Buy_PayMethod = 
                 foreach (GridRow gr in grs)
                 {
                     BuyDetail buyDetail = new BuyDetail();
@@ -520,11 +571,11 @@ namespace WSCATProject
                     buyDetail.Buy_MaName = gr["gridColumnName"].Value.ToString();
                     buyDetail.Buy_Model = gr["gridColumnModel"].Value.ToString();
                     buyDetail.Buy_Unit = gr["gridColumnUnit"].Value.ToString();
-                    buyDetail.Buy_CurNumber = gr["gridColumnNumber"].Value.ToString();
-                    buyDetail.Buy_DiscountAPrice = gr["gridColumnPrice"].Value.ToString();
-                    buyDetail.Buy_Discount = gr["gridColumnDis"].Value.ToString();
-                    buyDetail.Buy_DiscountBPrice = gr["gridColumnDisPrice"].Value.ToString();
-                    buyDetail.Buy_AmountMoney = gr["gridColumnMoney"].Value.ToString();
+                    buyDetail.Buy_CurNumber = Convert.ToDecimal(gr["gridColumnNumber"].Value);
+                    buyDetail.Buy_DiscountAPrice = Convert.ToDecimal(gr["gridColumnPrice"].Value);
+                    buyDetail.Buy_Discount = Convert.ToDecimal(gr["gridColumnDis"].Value);
+                    buyDetail.Buy_DiscountBPrice = Convert.ToDecimal(gr["gridColumnDisPrice"].Value);
+                    buyDetail.Buy_AmountMoney = Convert.ToDecimal(gr["gridColumnMoney"].Value);
                     buyDetail.Buy_Clear = 1;
                     buyDetail.Buy_Remark = gr["gridColumnRemark"].Value == null ? 
                         "" : gr["gridColumnRemark"].Value.ToString();
@@ -554,13 +605,30 @@ namespace WSCATProject
             }
         }
 
+        //点击绑定仓库
         private void superGridControl1_BeginEdit(object sender, GridEditEventArgs e)
         {
-            if (e.GridCell.GridColumn.Name == "gridColumnStock")
+            if (e.GridCell.GridColumn.Name == "gridColumnStock" && !resizablePanel1.Visible)
             {
                 //绑定仓库列表
                 InitStorageList();
             }
+        }
+
+        //验证完全后,统计单元格数据
+        private void superGridControl1_CellValidated(object sender, GridCellValidatedEventArgs e)
+        {
+            
+        }
+
+        private void superGridControl1_CellValidating(object sender, GridCellValidatingEventArgs e)
+        {
+            
+        }
+
+        private void superGridControl1_EditorValueChanged(object sender, GridEditEventArgs e)
+        {
+            
         }
     }
 }
